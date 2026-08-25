@@ -71,11 +71,11 @@ def generate_html(classified_findings, output_path):
                         <p><strong>Confidence:</strong> {finding['rule_confidence']:.2f}</p>
                         <p class="explanation">{finding['rule_explanation']}</p>
                     </div>
-                    <div class="decision-column ml-disabled">
+                    <div class="decision-column">
                         <h4>ML Support Decision</h4>
-                        <p class="disabled-msg">No trained ML model or training dataset is available in this repository.</p>
-                        <p><strong>ML Prediction:</strong> <span class="null-text">null</span></p>
-                        <p><strong>ML Confidence:</strong> <span class="null-text">null</span></p>
+                        <p><strong>ML Prediction:</strong> <span class="text-{finding['ml_prediction'] if finding['ml_prediction'] else 'inconclusive'}">{finding['ml_prediction'].replace('_', ' ') if finding['ml_prediction'] else 'N/A'}</span></p>
+                        <p><strong>ML Confidence:</strong> {f"{finding['ml_confidence']:.2f}" if finding['ml_confidence'] else 'N/A'}</p>
+                        <p class="explanation">Random Forest model prediction based on extracted features from replay results and finding characteristics.</p>
                     </div>
                 </div>
                 

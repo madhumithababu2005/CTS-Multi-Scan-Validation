@@ -3,6 +3,14 @@ import json
 import argparse
 import sys
 
+# Import ML prediction module
+try:
+    from ml.predict import run_ml_classification
+    ML_AVAILABLE = True
+except ImportError:
+    ML_AVAILABLE = False
+    print("Warning: ML module not available. ML predictions will be disabled.", file=sys.stderr)
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Classify findings using Rule Engine and optional ML.")
     parser.add_argument(
@@ -40,6 +48,21 @@ def run_classification(findings_path, replay_path, output_path):
     except Exception as e:
         print(f"Error parsing input files: {e}", file=sys.stderr)
         sys.exit(1)
+    
+    # Run ML classification if available
+    ml_results = {}
+    ml_enabled = ML_AVAILABLE
+    if ml_enabled:
+        print("Running ML classification...")
+        try:
+            model_path = os.path.join(os.path.dirname(__file__), "ml", "model.pkl")
+            ml_results = run_ml_classification(findings, replay_results, model_path)
+            print("ML classification completed.")
+        except Exception as e:
+            print(f"Warning: ML classification failed: {e}. ML predictions will be disabled.", file=sys.stderr)
+            ml_enabled = False
+    else:
+        print("ML classification skipped (ML module not available).")
         
     # Map replay results by ID for easy lookup
     replay_map = {r["id"]: r for r in replay_results}
@@ -73,9 +96,12 @@ def run_classification(findings_path, replay_path, output_path):
             rule_confidence = 0.5
             rule_explanation = "Replay was inconclusive due to connection/protocol errors or unexpected response behavior."
             
-        # 2. ML Supporting component (Clean optional interface - null as requested)
-        ml_prediction = None
-        ml_confidence = None
+        # 2. ML Classification
+        if ml_enabled and fid in ml_results:
+            ml_prediction, ml_confidence = ml_results[fid]
+        else:
+            ml_prediction = None
+            ml_confidence = None
         
         # 3. Final Hybrid Decision
         final_classification = rule_classification
