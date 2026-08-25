@@ -1,0 +1,156 @@
+[
+  {
+    "id": 1,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "Missing Content-Security-Policy header on replay",
+    "url": "http://localhost:3000"
+  },
+  {
+    "id": 2,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "Missing Content-Security-Policy header on replay",
+    "url": "http://localhost:3000/ftp/coupons_2013.md.bak"
+  },
+  {
+    "id": 3,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "Missing Content-Security-Policy header on replay",
+    "url": "http://localhost:3000/ftp/package-lock.json.bak"
+  },
+  {
+    "id": 4,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "Missing Content-Security-Policy header on replay",
+    "url": "http://localhost:3000/ftp/package.json.bak"
+  },
+  {
+    "id": 5,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "Missing Content-Security-Policy header on replay",
+    "url": "http://localhost:3000/sitemap.xml"
+  },
+  {
+    "id": 6,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "verdict": "reproduced",
+    "reason": "Missing Content-Security-Policy header on replay",
+    "url": "http://localhost:3000/assets"
+  },
+  {
+    "id": 7,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "verdict": "reproduced",
+    "reason": "Missing Content-Security-Policy header on replay",
+    "url": "http://localhost:3000/assets/public"
+  },
+  {
+    "id": 8,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "reproduced",
+    "reason": "Access-Control-Allow-Origin = *",
+    "url": "http://localhost:3000"
+  },
+  {
+    "id": 9,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "reproduced",
+    "reason": "Access-Control-Allow-Origin = *",
+    "url": "http://localhost:3000/assets/public/favicon_js.ico"
+  },
+  {
+    "id": 10,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "reproduced",
+    "reason": "Access-Control-Allow-Origin = *",
+    "url": "http://localhost:3000/robots.txt"
+  },
+  {
+    "id": 11,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "reproduced",
+    "reason": "Access-Control-Allow-Origin = *",
+    "url": "http://localhost:3000/scripts.js"
+  },
+  {
+    "id": 12,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "reproduced",
+    "reason": "Access-Control-Allow-Origin = *",
+    "url": "http://localhost:3000/styles.css"
+  },
+  {
+    "id": 13,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "reproduced",
+    "reason": "Unix timestamp found in response: 1528301887",
+    "url": "http://localhost:3000/styles.css"
+  },
+  {
+    "id": 14,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "reproduced",
+    "reason": "Unix timestamp found in response: 1528301887",
+    "url": "http://localhost:3000/styles.css"
+  },
+  {
+    "id": 15,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "reproduced",
+    "reason": "Unix timestamp found in response: 1528301887",
+    "url": "http://localhost:3000/styles.css"
+  },
+  {
+    "id": 16,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "reproduced",
+    "reason": "Unix timestamp found in response: 1528301887",
+    "url": "http://localhost:3000/styles.css"
+  },
+  {
+    "id": 17,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "reproduced",
+    "reason": "Unix timestamp found in response: 1528301887",
+    "url": "http://localhost:3000/styles.css"
+  },
+  {
+    "id": 18,
+    "rule": "Modern Web Application",
+    "verdict": "inconclusive",
+    "reason": "No replay/verification logic defined for this rule type",
+    "url": "http://localhost:3000"
+  },
+  {
+    "id": 19,
+    "rule": "Modern Web Application",
+    "verdict": "inconclusive",
+    "reason": "No replay/verification logic defined for this rule type",
+    "url": "http://localhost:3000/"
+  },
+  {
+    "id": 20,
+    "rule": "Modern Web Application",
+    "verdict": "inconclusive",
+    "reason": "No replay/verification logic defined for this rule type",
+    "url": "http://localhost:3000/juice-shop/build/routes/fileServer.js:52:13"
+  },
+  {
+    "id": 21,
+    "rule": "Modern Web Application",
+    "verdict": "inconclusive",
+    "reason": "No replay/verification logic defined for this rule type",
+    "url": "http://localhost:3000/juice-shop/node_modules/express/lib/router/index.js:421:3"
+  },
+  {
+    "id": 22,
+    "rule": "Modern Web Application",
+    "verdict": "inconclusive",
+    "reason": "No replay/verification logic defined for this rule type",
+    "url": "http://localhost:3000/sitemap.xml"
+  }
+]
