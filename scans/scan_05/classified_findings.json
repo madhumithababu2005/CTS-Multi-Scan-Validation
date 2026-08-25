@@ -9,7 +9,7 @@
     "rule_confidence": 0.95,
     "rule_explanation": "Replay evidence reproduced the reported security condition.",
     "ml_prediction": "true_positive",
-    "ml_confidence": 0.6,
+    "ml_confidence": 0.62,
     "final_classification": "true_positive",
     "final_reason": "Replay evidence reproduced the reported security condition."
   }
