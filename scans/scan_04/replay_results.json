@@ -1,0 +1,961 @@
+[
+  {
+    "id": 1,
+    "rule": "Off-site Redirect",
+    "verdict": "reproduced",
+    "reason": "Replay returned HTTP 302 with Location header: https://github.com/juice-shop/juice-shop",
+    "url": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 2,
+    "rule": "External Redirect",
+    "verdict": "reproduced",
+    "reason": "Replay returned HTTP 302 with Location header: https://3494521288377286390.owasp.org/?https://github.com/juice-shop/juice-shop",
+    "url": "http://localhost:3000/redirect?to=https%3A%2F%2F3494521288377286390.owasp.org%2F%3Fhttps%3A%2F%2Fgithub.com%2Fjuice-shop%2Fjuice-shop"
+  },
+  {
+    "id": 3,
+    "rule": "SQL Injection",
+    "verdict": "reproduced",
+    "reason": "Replay returned HTTP 500, indicating the tested input still triggers a server-side error.",
+    "url": "http://localhost:3000/rest/products/search?q=%27%28"
+  },
+  {
+    "id": 4,
+    "rule": "SQL Injection",
+    "verdict": "inconclusive",
+    "reason": "Replay request failed: ReadTimeout: HTTPConnectionPool(host='localhost', port=3000): Read timed out. (read timeout=10)",
+    "url": "http://localhost:3000/rest/user/login"
+  },
+  {
+    "id": 5,
+    "rule": "Session ID in URL Rewrite",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0unwo3.0&sid=_fRiprIJgcG8i1qeAAAC"
+  },
+  {
+    "id": 6,
+    "rule": "Session ID in URL Rewrite",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=websocket&sid=8XOfeW5jOmNDXP1HAAAE"
+  },
+  {
+    "id": 7,
+    "rule": "Session ID in URL Rewrite",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=websocket&sid=_fRiprIJgcG8i1qeAAAC"
+  },
+  {
+    "id": 8,
+    "rule": "Session ID in URL Rewrite",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0unxmc&sid=8XOfeW5jOmNDXP1HAAAE"
+  },
+  {
+    "id": 9,
+    "rule": "Session ID in URL Rewrite",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0unwo3&sid=_fRiprIJgcG8i1qeAAAC"
+  },
+  {
+    "id": 10,
+    "rule": "Missing Anti-clickjacking Header",
+    "verdict": "reproduced",
+    "reason": "Replay response contained neither X-Frame-Options nor CSP.",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0unwo3&sid=_fRiprIJgcG8i1qeAAAC"
+  },
+  {
+    "id": 11,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "Replay response does not contain a Content-Security-Policy header.",
+    "url": "http://localhost:3000"
+  },
+  {
+    "id": 12,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "Replay response does not contain a Content-Security-Policy header.",
+    "url": "http://localhost:3000/ftp/coupons_2013.md.bak"
+  },
+  {
+    "id": 13,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "Replay response does not contain a Content-Security-Policy header.",
+    "url": "http://localhost:3000/ftp/package-lock.json.bak"
+  },
+  {
+    "id": 14,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "Replay response does not contain a Content-Security-Policy header.",
+    "url": "http://localhost:3000/ftp/package.json.bak"
+  },
+  {
+    "id": 15,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "Replay response does not contain a Content-Security-Policy header.",
+    "url": "http://localhost:3000/sitemap.xml"
+  },
+  {
+    "id": 16,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/assets"
+  },
+  {
+    "id": 17,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/assets/i18n"
+  },
+  {
+    "id": 18,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/assets/public"
+  },
+  {
+    "id": 19,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/assets/public/images/carousel"
+  },
+  {
+    "id": 20,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/assets/public/images/products"
+  },
+  {
+    "id": 21,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/in-product-messaging/budget-threshold-banner?organization=juice-shop"
+  },
+  {
+    "id": 22,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 23,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop/funding_links?fragment=1"
+  },
+  {
+    "id": 24,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop/raw/master/screenshots/slideshow.gif"
+  },
+  {
+    "id": 25,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop/sponsor_button"
+  },
+  {
+    "id": 26,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/assets/public/favicon_js.ico"
+  },
+  {
+    "id": 27,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/chunk-DBPdFzgj.js"
+  },
+  {
+    "id": 28,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/rolldown-runtime-BoHGiXSq.js"
+  },
+  {
+    "id": 29,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/scripts.js"
+  },
+  {
+    "id": 30,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/styles.css"
+  },
+  {
+    "id": 31,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://avatars.githubusercontent.com/u/155815?s=64&v=4"
+  },
+  {
+    "id": 32,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://avatars.githubusercontent.com/u/20478531?s=64&v=4"
+  },
+  {
+    "id": 33,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://avatars.githubusercontent.com/u/30633088?s=64&v=4"
+  },
+  {
+    "id": 34,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://avatars.githubusercontent.com/u/30755453?s=64&v=4"
+  },
+  {
+    "id": 35,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://avatars.githubusercontent.com/u/61591748?s=64&v=4"
+  },
+  {
+    "id": 36,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/app-foundation-c56b0828175e6b06.js"
+  },
+  {
+    "id": 37,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/dark-f6186b2d117410d4.css"
+  },
+  {
+    "id": 38,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/dark_high_contrast-f39e8ef7b7418526.css"
+  },
+  {
+    "id": 39,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/light_high_contrast-9d093cb5adfc6a5b.css"
+  },
+  {
+    "id": 40,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/primer-primitives-ae6d9799eadb7678.css"
+  },
+  {
+    "id": 41,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://raw.githubusercontent.com/juice-shop/juice-shop/master/frontend/src/assets/public/images/JuiceShop_Logo_100px.png"
+  },
+  {
+    "id": 42,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://raw.githubusercontent.com/juice-shop/juice-shop/master/frontend/src/assets/public/images/JuiceShop_Logo_400px.png"
+  },
+  {
+    "id": 43,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://raw.githubusercontent.com/juice-shop/juice-shop/master/screenshots/slideshow.gif"
+  },
+  {
+    "id": 44,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://raw.githubusercontent.com/juice-shop/pwning-juice-shop/master/docs/modules/ROOT/assets/images/cover.jpg"
+  },
+  {
+    "id": 45,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://raw.githubusercontent.com/juice-shop/pwning-juice-shop/master/docs/modules/ROOT/assets/images/introduction/back.jpg"
+  },
+  {
+    "id": 46,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://api.github.com/_private/browser/stats"
+  },
+  {
+    "id": 47,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://collector.github.com/github/collect"
+  },
+  {
+    "id": 48,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://collector.github.com/github/collect"
+  },
+  {
+    "id": 49,
+    "rule": "Sub Resource Integrity Attribute Missing",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 50,
+    "rule": "Sub Resource Integrity Attribute Missing",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 51,
+    "rule": "Sub Resource Integrity Attribute Missing",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 52,
+    "rule": "Sub Resource Integrity Attribute Missing",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 53,
+    "rule": "Sub Resource Integrity Attribute Missing",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 54,
+    "rule": "Information Disclosure - JWT in Browser localStorage",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "http://localhost:3000/"
+  },
+  {
+    "id": 55,
+    "rule": "Private IP Disclosure",
+    "verdict": "reproduced",
+    "reason": "Replay response contains private IP: 192.168.99.100",
+    "url": "http://localhost:3000/rest/admin/application-configuration"
+  },
+  {
+    "id": 56,
+    "rule": "Private IP Disclosure",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 57,
+    "rule": "Private IP Disclosure",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop/overview-files/master"
+  },
+  {
+    "id": 58,
+    "rule": "Cookie No HttpOnly Flag",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 59,
+    "rule": "Cross-Domain JavaScript Source File Inclusion",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 60,
+    "rule": "Cross-Domain JavaScript Source File Inclusion",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 61,
+    "rule": "Cross-Domain JavaScript Source File Inclusion",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 62,
+    "rule": "Cross-Domain JavaScript Source File Inclusion",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 63,
+    "rule": "Cross-Domain JavaScript Source File Inclusion",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 64,
+    "rule": "X-Content-Type-Options Header Missing",
+    "verdict": "reproduced",
+    "reason": "Replay response does not contain X-Content-Type-Options.",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0unwo3.0&sid=_fRiprIJgcG8i1qeAAAC"
+  },
+  {
+    "id": 65,
+    "rule": "X-Content-Type-Options Header Missing",
+    "verdict": "reproduced",
+    "reason": "Replay response does not contain X-Content-Type-Options.",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0unwmZ"
+  },
+  {
+    "id": 66,
+    "rule": "X-Content-Type-Options Header Missing",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/fluidicon.png"
+  },
+  {
+    "id": 67,
+    "rule": "X-Content-Type-Options Header Missing",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/app-foundation-c56b0828175e6b06.js"
+  },
+  {
+    "id": 68,
+    "rule": "X-Content-Type-Options Header Missing",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/dark-f6186b2d117410d4.css"
+  },
+  {
+    "id": 69,
+    "rule": "X-Content-Type-Options Header Missing",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/dark_high_contrast-f39e8ef7b7418526.css"
+  },
+  {
+    "id": 70,
+    "rule": "X-Content-Type-Options Header Missing",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/light_high_contrast-9d093cb5adfc6a5b.css"
+  },
+  {
+    "id": 71,
+    "rule": "X-Content-Type-Options Header Missing",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/primer-primitives-ae6d9799eadb7678.css"
+  },
+  {
+    "id": 72,
+    "rule": "X-Content-Type-Options Header Missing",
+    "verdict": "reproduced",
+    "reason": "Replay response does not contain X-Content-Type-Options.",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0unwo3&sid=_fRiprIJgcG8i1qeAAAC"
+  },
+  {
+    "id": 73,
+    "rule": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/app-foundation-c56b0828175e6b06.js"
+  },
+  {
+    "id": 74,
+    "rule": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/dark-f6186b2d117410d4.css"
+  },
+  {
+    "id": 75,
+    "rule": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/dark_high_contrast-f39e8ef7b7418526.css"
+  },
+  {
+    "id": 76,
+    "rule": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/light_high_contrast-9d093cb5adfc6a5b.css"
+  },
+  {
+    "id": 77,
+    "rule": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/primer-primitives-ae6d9799eadb7678.css"
+  },
+  {
+    "id": 78,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/styles.css"
+  },
+  {
+    "id": 79,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/styles.css"
+  },
+  {
+    "id": 80,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/styles.css"
+  },
+  {
+    "id": 81,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/styles.css"
+  },
+  {
+    "id": 82,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/styles.css"
+  },
+  {
+    "id": 83,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 84,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 85,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 86,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop/refs?type=branch"
+  },
+  {
+    "id": 87,
+    "rule": "Application Error Disclosure",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/api"
+  },
+  {
+    "id": 88,
+    "rule": "Application Error Disclosure",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/rest"
+  },
+  {
+    "id": 89,
+    "rule": "Application Error Disclosure",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/rest/admin"
+  },
+  {
+    "id": 90,
+    "rule": "Application Error Disclosure",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/rest/products"
+  },
+  {
+    "id": 91,
+    "rule": "Application Error Disclosure",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/rest/products/1"
+  },
+  {
+    "id": 92,
+    "rule": "Application Error Disclosure",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/rest/user"
+  },
+  {
+    "id": 93,
+    "rule": "Application Error Disclosure",
+    "verdict": "inconclusive",
+    "reason": "The finding requires specialized evidence beyond the generic HTTP replay implemented here.",
+    "url": "http://localhost:3000/rest/user/login"
+  },
+  {
+    "id": 94,
+    "rule": "Application Error Disclosure",
+    "verdict": "inconclusive",
+    "reason": "Replay request failed: ReadTimeout: HTTPConnectionPool(host='localhost', port=3000): Read timed out. (read timeout=10)",
+    "url": "http://localhost:3000/api/Feedbacks/"
+  },
+  {
+    "id": 95,
+    "rule": "Information Disclosure - Sensitive Information in Browser localStorage",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "http://localhost:3000/"
+  },
+  {
+    "id": 96,
+    "rule": "Re-examine Cache-control Directives",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 97,
+    "rule": "Re-examine Cache-control Directives",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop/branch-and-tag-count"
+  },
+  {
+    "id": 98,
+    "rule": "Re-examine Cache-control Directives",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop/latest-commit"
+  },
+  {
+    "id": 99,
+    "rule": "Re-examine Cache-control Directives",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop/recently-touched-branches"
+  },
+  {
+    "id": 100,
+    "rule": "Re-examine Cache-control Directives",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.com/juice-shop/juice-shop/tree-commit-info"
+  },
+  {
+    "id": 101,
+    "rule": "Information Disclosure - Suspicious Comments",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/chunk-lazy-element-select-panel-8c1eea897ff46aa6.js"
+  },
+  {
+    "id": 102,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://avatars.githubusercontent.com/u/155815?s=64&v=4"
+  },
+  {
+    "id": 103,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://avatars.githubusercontent.com/u/20478531?s=64&v=4"
+  },
+  {
+    "id": 104,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://avatars.githubusercontent.com/u/30633088?s=64&v=4"
+  },
+  {
+    "id": 105,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://avatars.githubusercontent.com/u/30755453?s=64&v=4"
+  },
+  {
+    "id": 106,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://avatars.githubusercontent.com/u/61591748?s=64&v=4"
+  },
+  {
+    "id": 107,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://camo.githubusercontent.com/22d4e3abb65751eff3a77f51c5591198d44c752ba95c2f66c22167b745cd2a52/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f676f6f6472656164732d77726974652532307265766965772d34393535373234302e737667"
+  },
+  {
+    "id": 108,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://camo.githubusercontent.com/3cb35407c95a900bc631b8ee05eafe8f23969e38f2d1b152434d427e5867fafc/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f737570706f72742d6f776173702532306a7569636525323073686f702d626c7565"
+  },
+  {
+    "id": 109,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://camo.githubusercontent.com/a4d9b6a13bd97dbe23c3f56d39423165de1f40fc3e850500be7e80e0e007e56b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6f776173702d666c61677368697025323070726f6a6563742d3438413634362e737667"
+  },
+  {
+    "id": 110,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://camo.githubusercontent.com/b130c82fc62abf6a1c9ac71134b91be1b9c73f409f2bceb10906170e260e7645/68747470733a2f2f696d672e736869656c64732e696f2f747769747465722f666f6c6c6f772f6f776173705f6a7569636573686f702e7376673f7374796c653d736f6369616c266c6162656c3d466f6c6c6f77"
+  },
+  {
+    "id": 111,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://camo.githubusercontent.com/da2f2650834e4fe0a66443c55f7a8162de97f14ca160a34eab7dba1139bc2372/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4f574153502d436f64655f6f665f436f6e647563742d626c7565"
+  },
+  {
+    "id": 112,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/app-foundation-c56b0828175e6b06.js"
+  },
+  {
+    "id": 113,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/dark-f6186b2d117410d4.css"
+  },
+  {
+    "id": 114,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/dark_high_contrast-f39e8ef7b7418526.css"
+  },
+  {
+    "id": 115,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/light_high_contrast-9d093cb5adfc6a5b.css"
+  },
+  {
+    "id": 116,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://github.githubassets.com/assets/primer-primitives-ae6d9799eadb7678.css"
+  },
+  {
+    "id": 117,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://camo.githubusercontent.com/11461f0de59380c9e9a375fc1f78cc92b98fc2f084a1da2735c384f62946f214/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6a756963652d73686f702f6a756963652d73686f702e737667"
+  },
+  {
+    "id": 118,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://camo.githubusercontent.com/206317980388c202d744195cb2487aa582a966fd999290a6f7192b1aea879654/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732f6a756963652d73686f702f6a756963652d73686f702f676f6f64253230666972737425323069737375652e737667"
+  },
+  {
+    "id": 119,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://camo.githubusercontent.com/7426eabb0342adad0388a46003484973c3f0f96b0e66a5c94c0fae908368685d/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f6a756963652d73686f702f6a756963652d73686f702e737667"
+  },
+  {
+    "id": 120,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://camo.githubusercontent.com/87f67e1a0df45ffe82ca1c833f3fd792c442157d3e255d455d0a95c76c47e9f6/68747470733a2f2f696d672e736869656c64732e696f2f6b6579626173652f7067702f626b696d6d696e696368"
+  },
+  {
+    "id": 121,
+    "rule": "Retrieved from Cache",
+    "verdict": "inconclusive",
+    "reason": "Finding targets an external resource, so local replay cannot reliably reproduce it.",
+    "url": "https://camo.githubusercontent.com/a7bee59aff087da48a860443c91b55b734a3665d5558f8be650a968dfa752d47/68747470733a2f2f696d672e736869656c64732e696f2f656e64706f696e743f75726c3d68747470733a2f2f64617368626f6172642e637970726573732e696f2f62616467652f73696d706c652f3368726b68752f646576656c6f70267374796c653d666c6174266c6f676f3d63797072657373"
+  },
+  {
+    "id": 122,
+    "rule": "Modern Web Application",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "http://localhost:3000"
+  },
+  {
+    "id": 123,
+    "rule": "Modern Web Application",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "http://localhost:3000/"
+  },
+  {
+    "id": 124,
+    "rule": "Modern Web Application",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "http://localhost:3000/assets/public/images/uploads/%E1%93%9A%E1%98%8F%E1%97%A2-"
+  },
+  {
+    "id": 125,
+    "rule": "Modern Web Application",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "http://localhost:3000/ftp/"
+  },
+  {
+    "id": 126,
+    "rule": "Modern Web Application",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "http://localhost:3000/sitemap.xml"
+  },
+  {
+    "id": 127,
+    "rule": "Modern Web Application",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 128,
+    "rule": "Modern Web Application",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "https://github.com/juice-shop/juice-shop/sponsor_button"
+  },
+  {
+    "id": 129,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "http://localhost:3000/"
+  },
+  {
+    "id": 130,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "http://localhost:3000/"
+  },
+  {
+    "id": 131,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 132,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 133,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 134,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "http://localhost:3000/"
+  },
+  {
+    "id": 135,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "http://localhost:3000/"
+  },
+  {
+    "id": 136,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "http://localhost:3000/"
+  },
+  {
+    "id": 137,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "verdict": "inconclusive",
+    "reason": "Requires browser-level evidence rather than HTTP replay.",
+    "url": "https://github.com/juice-shop/juice-shop"
+  }
+]

@@ -1,0 +1,2615 @@
+[
+  {
+    "id": 1,
+    "rule": "Off-site Redirect",
+    "url": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "language=en",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 2,
+    "rule": "External Redirect",
+    "url": "http://localhost:3000/redirect?to=https%3A%2F%2F3494521288377286390.owasp.org%2F%3Fhttps%3A%2F%2Fgithub.com%2Fjuice-shop%2Fjuice-shop",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 3,
+    "rule": "SQL Injection",
+    "url": "http://localhost:3000/rest/products/search?q=%27%28",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 4,
+    "rule": "SQL Injection",
+    "url": "http://localhost:3000/rest/user/login",
+    "method": "POST",
+    "request_headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Authorization": "********",
+      "Connection": "keep-alive",
+      "Content-Type": "application/json",
+      "Cookie": "language=cs_CZ; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJkYXRhIjp7ImlkIjoyNSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6IiIsInBhc3N3b3JkIjoiZDQxZDhjZDk4ZjAwYjIwNGU5ODAwOTk4ZWNmODQyN2UiLCJyb2xlIjoiY3VzdG9tZXIiLCJkZWx1eGVUb2tlbiI6IiIsImxhc3RMb2dpbklwIjoiMC4wLjAuMCIsInByb2ZpbGVJbWFnZSI6Ii9hc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHQuc3ZnIiwidG90cFNlY3JldCI6IiIsImlzQWN0aXZlIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDI2LTA4LTI1IDExOjU4OjIzLjI0NSArMDA6MDAiLCJ1cGRhdGVkQXQiOiIyMDI2LTA4LTI1IDExOjU4OjIzLjI0NSArMDA6MDAiLCJkZWxldGVkQXQiOm51bGx9LCJiaWQiOjYsImlhdCI6MTc4NzY1OTQ5OX0.sURDfr_7NNKA_IEt8RB8uWZYDFV8u1Uxg-te9InQzu8LKwxPjPMahwOIKrF7_knO5Oo_nacXrS7zdVz0-_8ra0G4Gui4_kmvTBzYQkzuYEHVsNFS1N9rp2jd-1o7yPbGqAaYMKJ_XZZfuMWX0Gi9Em5spfxg373fyRBrTISOCas",
+      "Origin": "http://localhost:3000",
+      "Priority": "u=4",
+      "Referer": "http://localhost:3000/",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "content-length": "27",
+      "host": "localhost:3000"
+    },
+    "request_body": {
+      "text": "{\"email\":\"'\",\"password\":\"\"}"
+    }
+  },
+  {
+    "id": 5,
+    "rule": "Session ID in URL Rewrite",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0unwo3.0&sid=_fRiprIJgcG8i1qeAAAC",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Referer": "http://localhost:3000/",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 6,
+    "rule": "Session ID in URL Rewrite",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=websocket&sid=8XOfeW5jOmNDXP1HAAAE",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Cache-Control": "no-cache",
+      "Connection": "Upgrade",
+      "Origin": "http://localhost:3000",
+      "Pragma": "no-cache",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "websocket",
+      "Sec-Fetch-Site": "same-origin",
+      "Sec-WebSocket-Key": "fsunQO7zzVH5+dC3YTJt7w==",
+      "Sec-WebSocket-Version": "13",
+      "Upgrade": "websocket",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 7,
+    "rule": "Session ID in URL Rewrite",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=websocket&sid=_fRiprIJgcG8i1qeAAAC",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Cache-Control": "no-cache",
+      "Connection": "Upgrade",
+      "Origin": "http://localhost:3000",
+      "Pragma": "no-cache",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "websocket",
+      "Sec-Fetch-Site": "same-origin",
+      "Sec-WebSocket-Key": "vaT9Y0gWPQ7Q+g45k5pybQ==",
+      "Sec-WebSocket-Version": "13",
+      "Upgrade": "websocket",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 8,
+    "rule": "Session ID in URL Rewrite",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0unxmc&sid=8XOfeW5jOmNDXP1HAAAE",
+    "method": "POST",
+    "request_headers": {
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Content-Length": "2",
+      "Content-type": "text/plain;charset=UTF-8",
+      "Origin": "http://localhost:3000",
+      "Referer": "http://localhost:3000/",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {
+      "text": "40"
+    }
+  },
+  {
+    "id": 9,
+    "rule": "Session ID in URL Rewrite",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0unwo3&sid=_fRiprIJgcG8i1qeAAAC",
+    "method": "POST",
+    "request_headers": {
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Content-Length": "2",
+      "Content-type": "text/plain;charset=UTF-8",
+      "Origin": "http://localhost:3000",
+      "Referer": "http://localhost:3000/",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {
+      "text": "40"
+    }
+  },
+  {
+    "id": 10,
+    "rule": "Missing Anti-clickjacking Header",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0unwo3&sid=_fRiprIJgcG8i1qeAAAC",
+    "method": "POST",
+    "request_headers": {
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Content-Length": "2",
+      "Content-type": "text/plain;charset=UTF-8",
+      "Origin": "http://localhost:3000",
+      "Referer": "http://localhost:3000/",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {
+      "text": "40"
+    }
+  },
+  {
+    "id": 11,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "url": "http://localhost:3000",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 12,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "url": "http://localhost:3000/ftp/coupons_2013.md.bak",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/ftp",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 13,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "url": "http://localhost:3000/ftp/package-lock.json.bak",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/ftp",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 14,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "url": "http://localhost:3000/ftp/package.json.bak",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/ftp",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 15,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "url": "http://localhost:3000/sitemap.xml",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 16,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "url": "http://localhost:3000/assets",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 17,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "url": "http://localhost:3000/assets/i18n",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 18,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "url": "http://localhost:3000/assets/public",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 19,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "url": "http://localhost:3000/assets/public/images/carousel",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 20,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "url": "http://localhost:3000/assets/public/images/products",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 21,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "url": "https://github.com/in-product-messaging/budget-threshold-banner?organization=juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "_gh_sess=XwEYa31g4ec3egrs8sgNDc1ISFZmTa8OMVRh9KKJ6riraBumUXy62omkMWLHdWJv0BHjJeW4kACbUW8DAefk2iczRHbA7qMgyFRS8i6Bj%2Brm%2BtdsqYuRW7iw6qwed%2FXk2tfpmLV1QZ1%2FsoizMfdON%2Fx59x6aNocPoMG0GpYBBA6P1QXgMxHtqY6Z7c11ju0b7Z6RPNryd05FPEsWmskTiJMEpEG1fP1HHaO4nEon5g32rPCBftXFL3C2nltImCn1XFfvCSrrr9KN5g8LEDJJeg%3D%3D--Y4%2FgaFTccoxampN0--i9f60uOCyiHDSxOgezxGYA%3D%3D; _octo=GH1.1.574243605.1787659037; logged_in=no; cpu_bucket=xlg; preferred_color_mode=light",
+      "Priority": "u=4",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "X-Fetch-Nonce": "v2:b2124822-b494-3ee3-5f0c-dd4b1193fd52",
+      "X-Fetch-Nonce-To-Validate": "v2:b2124822-b494-3ee3-5f0c-dd4b1193fd52",
+      "X-GitHub-Client-Version": "85b0f11fac4cfbe1a80fb8bb78e8cf8a84a33289",
+      "X-Requested-With": "XMLHttpRequest",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 22,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 23,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "url": "https://github.com/juice-shop/juice-shop/funding_links?fragment=1",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "_gh_sess=XwEYa31g4ec3egrs8sgNDc1ISFZmTa8OMVRh9KKJ6riraBumUXy62omkMWLHdWJv0BHjJeW4kACbUW8DAefk2iczRHbA7qMgyFRS8i6Bj%2Brm%2BtdsqYuRW7iw6qwed%2FXk2tfpmLV1QZ1%2FsoizMfdON%2Fx59x6aNocPoMG0GpYBBA6P1QXgMxHtqY6Z7c11ju0b7Z6RPNryd05FPEsWmskTiJMEpEG1fP1HHaO4nEon5g32rPCBftXFL3C2nltImCn1XFfvCSrrr9KN5g8LEDJJeg%3D%3D--Y4%2FgaFTccoxampN0--i9f60uOCyiHDSxOgezxGYA%3D%3D; _octo=GH1.1.574243605.1787659037; logged_in=no; cpu_bucket=xlg; preferred_color_mode=light; tz=Asia%2FKolkata",
+      "Priority": "u=4",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "X-Fetch-Nonce": "v2:b2124822-b494-3ee3-5f0c-dd4b1193fd52",
+      "X-Fetch-Nonce-To-Validate": "v2:b2124822-b494-3ee3-5f0c-dd4b1193fd52",
+      "X-GitHub-Client-Version": "85b0f11fac4cfbe1a80fb8bb78e8cf8a84a33289",
+      "X-Requested-With": "XMLHttpRequest",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 24,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "url": "https://github.com/juice-shop/juice-shop/raw/master/screenshots/slideshow.gif",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "_gh_sess=XwEYa31g4ec3egrs8sgNDc1ISFZmTa8OMVRh9KKJ6riraBumUXy62omkMWLHdWJv0BHjJeW4kACbUW8DAefk2iczRHbA7qMgyFRS8i6Bj%2Brm%2BtdsqYuRW7iw6qwed%2FXk2tfpmLV1QZ1%2FsoizMfdON%2Fx59x6aNocPoMG0GpYBBA6P1QXgMxHtqY6Z7c11ju0b7Z6RPNryd05FPEsWmskTiJMEpEG1fP1HHaO4nEon5g32rPCBftXFL3C2nltImCn1XFfvCSrrr9KN5g8LEDJJeg%3D%3D--Y4%2FgaFTccoxampN0--i9f60uOCyiHDSxOgezxGYA%3D%3D; _octo=GH1.1.574243605.1787659037; logged_in=no",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 25,
+    "rule": "CSP: Failure to Define Directive with No Fallback",
+    "url": "https://github.com/juice-shop/juice-shop/sponsor_button",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "_gh_sess=XwEYa31g4ec3egrs8sgNDc1ISFZmTa8OMVRh9KKJ6riraBumUXy62omkMWLHdWJv0BHjJeW4kACbUW8DAefk2iczRHbA7qMgyFRS8i6Bj%2Brm%2BtdsqYuRW7iw6qwed%2FXk2tfpmLV1QZ1%2FsoizMfdON%2Fx59x6aNocPoMG0GpYBBA6P1QXgMxHtqY6Z7c11ju0b7Z6RPNryd05FPEsWmskTiJMEpEG1fP1HHaO4nEon5g32rPCBftXFL3C2nltImCn1XFfvCSrrr9KN5g8LEDJJeg%3D%3D--Y4%2FgaFTccoxampN0--i9f60uOCyiHDSxOgezxGYA%3D%3D; _octo=GH1.1.574243605.1787659037; logged_in=no; cpu_bucket=xlg; preferred_color_mode=light",
+      "Priority": "u=4",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "X-Fetch-Nonce": "v2:b2124822-b494-3ee3-5f0c-dd4b1193fd52",
+      "X-Fetch-Nonce-To-Validate": "v2:b2124822-b494-3ee3-5f0c-dd4b1193fd52",
+      "X-GitHub-Client-Version": "85b0f11fac4cfbe1a80fb8bb78e8cf8a84a33289",
+      "X-Requested-With": "XMLHttpRequest",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 26,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "http://localhost:3000/assets/public/favicon_js.ico",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 27,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "http://localhost:3000/chunk-DBPdFzgj.js",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/sitemap.xml",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 28,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "http://localhost:3000/rolldown-runtime-BoHGiXSq.js",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 29,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "http://localhost:3000/scripts.js",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 30,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "http://localhost:3000/styles.css",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/sitemap.xml",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 31,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://avatars.githubusercontent.com/u/155815?s=64&v=4",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=4, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "avatars.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 32,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://avatars.githubusercontent.com/u/20478531?s=64&v=4",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=4, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "avatars.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 33,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://avatars.githubusercontent.com/u/30633088?s=64&v=4",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=4, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "avatars.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 34,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://avatars.githubusercontent.com/u/30755453?s=64&v=4",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=4, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "avatars.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 35,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://avatars.githubusercontent.com/u/61591748?s=64&v=4",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=4, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "avatars.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 36,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://github.githubassets.com/assets/app-foundation-c56b0828175e6b06.js",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=1",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "script",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 37,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://github.githubassets.com/assets/dark-f6186b2d117410d4.css",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/css,*/*;q=0.1",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=2",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "style",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 38,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://github.githubassets.com/assets/dark_high_contrast-f39e8ef7b7418526.css",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/css,*/*;q=0.1",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=2",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "style",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 39,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://github.githubassets.com/assets/light_high_contrast-9d093cb5adfc6a5b.css",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/css,*/*;q=0.1",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=2",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "style",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 40,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://github.githubassets.com/assets/primer-primitives-ae6d9799eadb7678.css",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/css,*/*;q=0.1",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=2",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "style",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 41,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://raw.githubusercontent.com/juice-shop/juice-shop/master/frontend/src/assets/public/images/JuiceShop_Logo_100px.png",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "raw.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 42,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://raw.githubusercontent.com/juice-shop/juice-shop/master/frontend/src/assets/public/images/JuiceShop_Logo_400px.png",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "raw.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 43,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://raw.githubusercontent.com/juice-shop/juice-shop/master/screenshots/slideshow.gif",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "raw.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 44,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://raw.githubusercontent.com/juice-shop/pwning-juice-shop/master/docs/modules/ROOT/assets/images/cover.jpg",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "raw.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 45,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://raw.githubusercontent.com/juice-shop/pwning-juice-shop/master/docs/modules/ROOT/assets/images/introduction/back.jpg",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "raw.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 46,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://api.github.com/_private/browser/stats",
+    "method": "POST",
+    "request_headers": {
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Content-Length": "675",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "_octo=GH1.1.574243605.1787659037; logged_in=no; cpu_bucket=xlg; preferred_color_mode=light; tz=Asia%2FKolkata",
+      "Origin": "https://github.com",
+      "Priority": "u=6",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "same-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "api.github.com"
+    },
+    "request_body": {
+      "text": "{\"stats\": [{\"customMetric\":{\"name\":\"browser.vitals.session\",\"hash\":\"467ac7d28cdbf4c8a7c33ccc8dd1986b474115bb57db3f0504b490d3e30455e3\",\"type\":\"count\",\"value\":1,\"tags\":{\"type\":\"automated\"}},\"ui\":false,\"timestamp\":1787659044220,\"loggedIn\":false,\"staff\":false,\"bundler\":\"rspack\",\"app\":\"code-view\",\"ssr\":\"true\"},{\"incrementKey\":\"FETCH_ERROR\",\"requestUrl\":\"https://github.com/juice-shop/juice-shop\",\"referredRequestUrl\":\"https://github.com/in-product-messaging/budget-threshold-banner?organization=juice-shop\",\"incrementTags\":{\"status\":\"401\"},\"timestamp\":1787659047342,\"loggedIn\":false,\"staff\":false,\"bundler\":\"rspack\",\"ui\":false,\"app\":\"code-view\",\"ssr\":\"true\"}], \"target\": \"full\"}"
+    }
+  },
+  {
+    "id": 47,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://collector.github.com/github/collect",
+    "method": "POST",
+    "request_headers": {
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Content-Length": "7155",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "_octo=GH1.1.574243605.1787659037; logged_in=no; cpu_bucket=xlg; preferred_color_mode=light; tz=Asia%2FKolkata",
+      "Origin": "https://github.com",
+      "Priority": "u=6",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "same-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "collector.github.com"
+    },
+    "request_body": {
+      "text": "{\"client_id\":\"574243605.1787659037\",\"events\":[{\"page\":\"https://github.com/juice-shop/juice-shop\",\"title\":\"GitHub - juice-shop/juice-shop: OWASP Juice Shop: Probably the most modern and sophisticated insecure web application · GitHub\",\"context\":{\"user_id\":\"83415759\",\"user_login\":\"juice-shop\",\"repository_id\":\"24233689\",\"repository_nwo\":\"juice-shop/juice-shop\",\"repository_public\":\"true\",\"repository_is_fork\":\"false\",\"repository_network_root_id\":\"24233689\",\"repository_network_root_nwo\":\"juice-shop/juice-shop\",\"referrer\":\"\",\"request_id\":\"DEDC:663B8:1B9277:1D3933:6A8D831D\",\"visitor_id\":\"2466357505199801117\",\"region_edge\":\"centralindia\",\"region_render\":\"centralindia\",\"staff\":\"false\",\"queryName\":\"treeCommitInfo\",\"routeId\":\"codeViewTreeRoute\",\"duration_ms\":\"232\",\"target\":\"\"},\"type\":\"offline_cache.warmup\"},{\"page\":\"https://github.com/juice-shop/juice-shop\",\"title\":\"GitHub - juice-shop/juice-shop: OWASP Juice Shop: Probably the most modern and sophisticated insecure web application · GitHub\",\"context\":{\"user_id\":\"83415759\",\"user_login\":\"juice-shop\",\"repository_id\":\"24233689\",\"repository_nwo\":\"juice-shop/juice-shop\",\"repository_public\":\"true\",\"repository_is_fork\":\"false\",\"repository_network_root_id\":\"24233689\",\"repository_network_root_nwo\":\"juice-shop/juice-shop\",\"referrer\":\"\",\"request_id\":\"DEDC:663B8:1B9277:1D3933:6A8D831D\",\"visitor_id\":\"2466357505199801117\",\"region_edge\":\"centralindia\",\"region_render\":\"centralindia\",\"staff\":\"false\",\"queryName\":\"treeCommitInfo\",\"routeId\":\"codeViewTreeRoute\",\"read_duration_ms\":\"205\",\"target\":\"proto::d6cf26b51adb-[\\\"code-view\\\",\\\"codeViewRepoRoute\\\",\\\"/:owner/:repo\\\",\\\"treeCommitInfo\\\",{\\\"pathname\\\":\\\"/juice-shop/juice-shop/tree-commit-info\\\"}]\"},\"type\":\"offline_cache.cache_miss\"},{\"page\":\"https://github.com/juice-shop/juice-shop\",\"title\":\"GitHub - juice-shop/juice-shop: OWASP Juice Shop: Probably the most modern and sophisticated insecure web application · GitHub\",\"context\":{\"user_id\":\"83415759\",\"user_login\":\"juice-shop\",\"repository_id\":\"24233689\",\"repository_nwo\":\"juice-shop/juice-shop\",\"repository_public\":\"true\",\"repository_is_fork\":\"false\",\"repository_network_root_id\":\"24233689\",\"repository_network_root_nwo\":\"juice-shop/juice-shop\",\"referrer\":\"\",\"request_id\":\"DEDC:663B8:1B9277:1D3933:6A8D831D\",\"visitor_id\":\"2466357505199801117\",\"region_edge\":\"centralindia\",\"region_render\":\"centralindia\",\"staff\":\"false\",\"queryName\":\"treeCommitInfo\",\"routeId\":\"codeViewTreeRoute\",\"target\":\"\"},\"type\":\"offline_cache.cleanup_started\"},{\"page\":\"https://github.com/juice-shop/juice-shop\",\"title\":\"GitHub - juice-shop/juice-shop: OWASP Juice Shop: Probably the most modern and sophisticated insecure web application · GitHub\",\"context\":{\"user_id\":\"83415759\",\"user_login\":\"juice-shop\",\"repository_id\":\"24233689\",\"repository_nwo\":\"juice-shop/juice-shop\",\"repository_public\":\"true\",\"repository_is_fork\":\"false\",\"repository_network_root_id\":\"24233689\",\"repository_network_root_nwo\":\"juice-shop/juice-shop\",\"referrer\":\"\",\"request_id\":\"DEDC:663B8:1B9277:1D3933:6A8D831D\",\"visitor_id\":\"2466357505199801117\",\"region_edge\":\"centralindia\",\"region_render\":\"centralindia\",\"staff\":\"false\",\"queryName\":\"treeCommitInfo\",\"routeId\":\"codeViewTreeRoute\",\"removed_count\":\"0\",\"total_entries\":\"0\",\"duration_ms\":\"2\",\"drained\":\"true\",\"target\":\"\"},\"type\":\"offline_cache.cleanup_completed\"},{\"page\":\"https://github.com/juice-shop/juice-shop\",\"title\":\"GitHub - juice-shop/juice-shop: OWASP Juice Shop: Probably the most modern and sophisticated insecure web application · GitHub\",\"context\":{\"user_id\":\"83415759\",\"user_login\":\"juice-shop\",\"repository_id\":\"24233689\",\"repository_nwo\":\"juice-shop/juice-shop\",\"repository_public\":\"true\",\"repository_is_fork\":\"false\",\"repository_network_root_id\":\"24233689\",\"repository_network_root_nwo\":\"juice-shop/juice-shop\",\"referrer\":\"\",\"request_id\":\"DEDC:663B8:1B9277:1D3933:6A8D831D\",\"visitor_id\":\"2466357505199801117\",\"region_edge\":\"centralindia\",\"region_render\":\"centralindia\",\"staff\":\"false\"},\"type\":\"animated_image_player.render\"},{\"page\":\"https://github.com/juice-shop/juice-shop\",\"title\":\"GitHub - juice-shop/juice-shop: OWASP Juice Shop: Probably the most modern and sophisticated insecure web application · GitHub\",\"context\":{\"user_id\":\"83415759\",\"user_login\":\"juice-shop\",\"repository_id\":\"24233689\",\"repository_nwo\":\"juice-shop/juice-shop\",\"repository_public\":\"true\",\"repository_is_fork\":\"false\",\"repository_network_root_id\":\"24233689\",\"repository_network_root_nwo\":\"juice-shop/juice-shop\",\"referrer\":\"\",\"request_id\":\"DEDC:663B8:1B9277:1D3933:6A8D831D\",\"visitor_id\":\"2466357505199801117\",\"region_edge\":\"centralindia\",\"region_render\":\"centralindia\",\"staff\":\"false\",\"queryName\":\"treeCommitInfo\",\"routeId\":\"codeViewRepoRoute\",\"api_duration_ms\":\"3215\",\"total_ms\":\"3420\",\"target\":\"proto::d6cf26b51adb-[\\\"code-view\\\",\\\"codeViewRepoRoute\\\",\\\"/:owner/:repo\\\",\\\"treeCommitInfo\\\",{\\\"pathname\\\":\\\"/juice-shop/juice-shop/tree-commit-info\\\"}]\"},\"type\":\"offline_cache.cache_miss\"},{\"page\":\"https://github.com/juice-shop/juice-shop\",\"title\":\"GitHub - juice-shop/juice-shop: OWASP Juice Shop: Probably the most modern and sophisticated insecure web application · GitHub\",\"context\":{\"user_id\":\"83415759\",\"user_login\":\"juice-shop\",\"repository_id\":\"24233689\",\"repository_nwo\":\"juice-shop/juice-shop\",\"repository_public\":\"true\",\"repository_is_fork\":\"false\",\"repository_network_root_id\":\"24233689\",\"repository_network_root_nwo\":\"juice-shop/juice-shop\",\"referrer\":\"\",\"request_id\":\"DEDC:663B8:1B9277:1D3933:6A8D831D\",\"visitor_id\":\"2466357505199801117\",\"region_edge\":\"centralindia\",\"region_render\":\"centralindia\",\"staff\":\"false\",\"queryName\":\"treeCommitInfo\",\"routeId\":\"codeViewTreeRoute\",\"ttl\":\"259200000\",\"target\":\"proto::d6cf26b51adb-[\\\"code-view\\\",\\\"codeViewRepoRoute\\\",\\\"/:owner/:repo\\\",\\\"treeCommitInfo\\\",{\\\"pathname\\\":\\\"/juice-shop/juice-shop/tree-commit-info\\\"}]\"},\"type\":\"offline_cache.cache_set\"},{\"page\":\"https://github.com/juice-shop/juice-shop\",\"title\":\"GitHub - juice-shop/juice-shop: OWASP Juice Shop: Probably the most modern and sophisticated insecure web application · GitHub\",\"context\":{\"user_id\":\"83415759\",\"user_login\":\"juice-shop\",\"repository_id\":\"24233689\",\"repository_nwo\":\"juice-shop/juice-shop\",\"repository_public\":\"true\",\"repository_is_fork\":\"false\",\"repository_network_root_id\":\"24233689\",\"repository_network_root_nwo\":\"juice-shop/juice-shop\",\"referrer\":\"\",\"request_id\":\"DEDC:663B8:1B9277:1D3933:6A8D831D\",\"visitor_id\":\"2466357505199801117\",\"region_edge\":\"centralindia\",\"region_render\":\"centralindia\",\"staff\":\"false\",\"queryName\":\"treeCommitInfo\",\"routeId\":\"codeViewTreeRoute\",\"quota_bytes\":\"10737418240\",\"usage_bytes\":\"65536\",\"available_bytes\":\"10737352704\",\"usage_percent\":\"0.0006103515625\",\"target\":\"proto::d6cf26b51adb-[\\\"code-view\\\",\\\"codeViewRepoRoute\\\",\\\"/:owner/:repo\\\",\\\"treeCommitInfo\\\",{\\\"pathname\\\":\\\"/juice-shop/juice-shop/tree-commit-info\\\"}]\"},\"type\":\"offline_cache.storage_space\"}],\"request_context\":{\"referrer\":\"\",\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0\",\"screen_resolution\":\"1536x960\",\"browser_resolution\":\"1280x735\",\"browser_languages\":\"en-US,en\",\"pixel_ratio\":1.25,\"timestamp\":1787659053128,\"tz_seconds\":19800}}"
+    }
+  },
+  {
+    "id": 48,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "https://collector.github.com/github/collect",
+    "method": "POST",
+    "request_headers": {
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Content-Length": "1004",
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Cookie": "_octo=GH1.1.574243605.1787659037; logged_in=no; cpu_bucket=xlg; preferred_color_mode=light; tz=Asia%2FKolkata",
+      "Origin": "https://github.com",
+      "Priority": "u=6",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "same-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "collector.github.com"
+    },
+    "request_body": {
+      "text": "{\"client_id\":\"574243605.1787659037\",\"page_views\":[{\"page\":\"https://github.com/juice-shop/juice-shop\",\"title\":\"GitHub - juice-shop/juice-shop: OWASP Juice Shop: Probably the most modern and sophisticated insecure web application · GitHub\",\"context\":{\"user_id\":\"83415759\",\"user_login\":\"juice-shop\",\"repository_id\":\"24233689\",\"repository_nwo\":\"juice-shop/juice-shop\",\"repository_public\":\"true\",\"repository_is_fork\":\"false\",\"repository_network_root_id\":\"24233689\",\"repository_network_root_nwo\":\"juice-shop/juice-shop\",\"referrer\":\"\",\"request_id\":\"DEDC:663B8:1B9277:1D3933:6A8D831D\",\"visitor_id\":\"2466357505199801117\",\"region_edge\":\"centralindia\",\"region_render\":\"centralindia\",\"staff\":\"false\",\"react_app\":\"code-view\"}}],\"request_context\":{\"referrer\":\"\",\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0\",\"screen_resolution\":\"1536x960\",\"browser_resolution\":\"1280x735\",\"browser_languages\":\"en-US,en\",\"pixel_ratio\":1.25,\"timestamp\":1787659053934,\"tz_seconds\":19800}}"
+    }
+  },
+  {
+    "id": 49,
+    "rule": "Sub Resource Integrity Attribute Missing",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 50,
+    "rule": "Sub Resource Integrity Attribute Missing",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 51,
+    "rule": "Sub Resource Integrity Attribute Missing",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 52,
+    "rule": "Sub Resource Integrity Attribute Missing",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 53,
+    "rule": "Sub Resource Integrity Attribute Missing",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 54,
+    "rule": "Information Disclosure - JWT in Browser localStorage",
+    "url": "http://localhost:3000/",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "language=en",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 55,
+    "rule": "Private IP Disclosure",
+    "url": "http://localhost:3000/rest/admin/application-configuration",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=4",
+      "Referer": "http://localhost:3000/",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 56,
+    "rule": "Private IP Disclosure",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 57,
+    "rule": "Private IP Disclosure",
+    "url": "https://github.com/juice-shop/juice-shop/overview-files/master",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "application/json",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Content-Type": "application/json",
+      "Cookie": "_gh_sess=XwEYa31g4ec3egrs8sgNDc1ISFZmTa8OMVRh9KKJ6riraBumUXy62omkMWLHdWJv0BHjJeW4kACbUW8DAefk2iczRHbA7qMgyFRS8i6Bj%2Brm%2BtdsqYuRW7iw6qwed%2FXk2tfpmLV1QZ1%2FsoizMfdON%2Fx59x6aNocPoMG0GpYBBA6P1QXgMxHtqY6Z7c11ju0b7Z6RPNryd05FPEsWmskTiJMEpEG1fP1HHaO4nEon5g32rPCBftXFL3C2nltImCn1XFfvCSrrr9KN5g8LEDJJeg%3D%3D--Y4%2FgaFTccoxampN0--i9f60uOCyiHDSxOgezxGYA%3D%3D; _octo=GH1.1.574243605.1787659037; logged_in=no; cpu_bucket=xlg; preferred_color_mode=light",
+      "GitHub-Verified-Fetch": "true",
+      "Priority": "u=4",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "X-Fetch-Nonce": "v2:b2124822-b494-3ee3-5f0c-dd4b1193fd52",
+      "X-GitHub-Client-Version": "85b0f11fac4cfbe1a80fb8bb78e8cf8a84a33289",
+      "X-Requested-With": "XMLHttpRequest",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 58,
+    "rule": "Cookie No HttpOnly Flag",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 59,
+    "rule": "Cross-Domain JavaScript Source File Inclusion",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 60,
+    "rule": "Cross-Domain JavaScript Source File Inclusion",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 61,
+    "rule": "Cross-Domain JavaScript Source File Inclusion",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 62,
+    "rule": "Cross-Domain JavaScript Source File Inclusion",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 63,
+    "rule": "Cross-Domain JavaScript Source File Inclusion",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 64,
+    "rule": "X-Content-Type-Options Header Missing",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0unwo3.0&sid=_fRiprIJgcG8i1qeAAAC",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Referer": "http://localhost:3000/",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 65,
+    "rule": "X-Content-Type-Options Header Missing",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0unwmZ",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Referer": "http://localhost:3000/",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 66,
+    "rule": "X-Content-Type-Options Header Missing",
+    "url": "https://github.com/fluidicon.png",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "_gh_sess=XwEYa31g4ec3egrs8sgNDc1ISFZmTa8OMVRh9KKJ6riraBumUXy62omkMWLHdWJv0BHjJeW4kACbUW8DAefk2iczRHbA7qMgyFRS8i6Bj%2Brm%2BtdsqYuRW7iw6qwed%2FXk2tfpmLV1QZ1%2FsoizMfdON%2Fx59x6aNocPoMG0GpYBBA6P1QXgMxHtqY6Z7c11ju0b7Z6RPNryd05FPEsWmskTiJMEpEG1fP1HHaO4nEon5g32rPCBftXFL3C2nltImCn1XFfvCSrrr9KN5g8LEDJJeg%3D%3D--Y4%2FgaFTccoxampN0--i9f60uOCyiHDSxOgezxGYA%3D%3D; _octo=GH1.1.574243605.1787659037; logged_in=no; cpu_bucket=xlg; preferred_color_mode=light; tz=Asia%2FKolkata",
+      "Priority": "u=6",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 67,
+    "rule": "X-Content-Type-Options Header Missing",
+    "url": "https://github.githubassets.com/assets/app-foundation-c56b0828175e6b06.js",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=1",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "script",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 68,
+    "rule": "X-Content-Type-Options Header Missing",
+    "url": "https://github.githubassets.com/assets/dark-f6186b2d117410d4.css",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/css,*/*;q=0.1",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=2",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "style",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 69,
+    "rule": "X-Content-Type-Options Header Missing",
+    "url": "https://github.githubassets.com/assets/dark_high_contrast-f39e8ef7b7418526.css",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/css,*/*;q=0.1",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=2",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "style",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 70,
+    "rule": "X-Content-Type-Options Header Missing",
+    "url": "https://github.githubassets.com/assets/light_high_contrast-9d093cb5adfc6a5b.css",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/css,*/*;q=0.1",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=2",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "style",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 71,
+    "rule": "X-Content-Type-Options Header Missing",
+    "url": "https://github.githubassets.com/assets/primer-primitives-ae6d9799eadb7678.css",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/css,*/*;q=0.1",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=2",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "style",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 72,
+    "rule": "X-Content-Type-Options Header Missing",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0unwo3&sid=_fRiprIJgcG8i1qeAAAC",
+    "method": "POST",
+    "request_headers": {
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Content-Length": "2",
+      "Content-type": "text/plain;charset=UTF-8",
+      "Origin": "http://localhost:3000",
+      "Referer": "http://localhost:3000/",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {
+      "text": "40"
+    }
+  },
+  {
+    "id": 73,
+    "rule": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+    "url": "https://github.githubassets.com/assets/app-foundation-c56b0828175e6b06.js",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=1",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "script",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 74,
+    "rule": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+    "url": "https://github.githubassets.com/assets/dark-f6186b2d117410d4.css",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/css,*/*;q=0.1",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=2",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "style",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 75,
+    "rule": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+    "url": "https://github.githubassets.com/assets/dark_high_contrast-f39e8ef7b7418526.css",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/css,*/*;q=0.1",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=2",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "style",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 76,
+    "rule": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+    "url": "https://github.githubassets.com/assets/light_high_contrast-9d093cb5adfc6a5b.css",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/css,*/*;q=0.1",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=2",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "style",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 77,
+    "rule": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+    "url": "https://github.githubassets.com/assets/primer-primitives-ae6d9799eadb7678.css",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/css,*/*;q=0.1",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=2",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "style",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 78,
+    "rule": "Timestamp Disclosure - Unix",
+    "url": "http://localhost:3000/styles.css",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/sitemap.xml",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 79,
+    "rule": "Timestamp Disclosure - Unix",
+    "url": "http://localhost:3000/styles.css",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/sitemap.xml",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 80,
+    "rule": "Timestamp Disclosure - Unix",
+    "url": "http://localhost:3000/styles.css",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/sitemap.xml",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 81,
+    "rule": "Timestamp Disclosure - Unix",
+    "url": "http://localhost:3000/styles.css",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/sitemap.xml",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 82,
+    "rule": "Timestamp Disclosure - Unix",
+    "url": "http://localhost:3000/styles.css",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/sitemap.xml",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 83,
+    "rule": "Timestamp Disclosure - Unix",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 84,
+    "rule": "Timestamp Disclosure - Unix",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 85,
+    "rule": "Timestamp Disclosure - Unix",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 86,
+    "rule": "Timestamp Disclosure - Unix",
+    "url": "https://github.com/juice-shop/juice-shop/refs?type=branch",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "application/json",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "_gh_sess=XwEYa31g4ec3egrs8sgNDc1ISFZmTa8OMVRh9KKJ6riraBumUXy62omkMWLHdWJv0BHjJeW4kACbUW8DAefk2iczRHbA7qMgyFRS8i6Bj%2Brm%2BtdsqYuRW7iw6qwed%2FXk2tfpmLV1QZ1%2FsoizMfdON%2Fx59x6aNocPoMG0GpYBBA6P1QXgMxHtqY6Z7c11ju0b7Z6RPNryd05FPEsWmskTiJMEpEG1fP1HHaO4nEon5g32rPCBftXFL3C2nltImCn1XFfvCSrrr9KN5g8LEDJJeg%3D%3D--Y4%2FgaFTccoxampN0--i9f60uOCyiHDSxOgezxGYA%3D%3D; _octo=GH1.1.574243605.1787659037; logged_in=no; cpu_bucket=xlg; preferred_color_mode=light",
+      "Priority": "u=4",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 87,
+    "rule": "Application Error Disclosure",
+    "url": "http://localhost:3000/api",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 88,
+    "rule": "Application Error Disclosure",
+    "url": "http://localhost:3000/rest",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 89,
+    "rule": "Application Error Disclosure",
+    "url": "http://localhost:3000/rest/admin",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 90,
+    "rule": "Application Error Disclosure",
+    "url": "http://localhost:3000/rest/products",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 91,
+    "rule": "Application Error Disclosure",
+    "url": "http://localhost:3000/rest/products/1",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 92,
+    "rule": "Application Error Disclosure",
+    "url": "http://localhost:3000/rest/user",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 93,
+    "rule": "Application Error Disclosure",
+    "url": "http://localhost:3000/rest/user/login",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 94,
+    "rule": "Application Error Disclosure",
+    "url": "http://localhost:3000/api/Feedbacks/",
+    "method": "POST",
+    "request_headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Content-Length": "50",
+      "Content-Type": "application/json",
+      "Cookie": "language=en",
+      "Origin": "http://localhost:3000",
+      "Priority": "u=4",
+      "Referer": "http://localhost:3000/",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {
+      "text": "{\"captcha\":\"\",\"comment\":\" (anonymous)\",\"rating\":0}"
+    }
+  },
+  {
+    "id": 95,
+    "rule": "Information Disclosure - Sensitive Information in Browser localStorage",
+    "url": "http://localhost:3000/",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "language=en",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 96,
+    "rule": "Re-examine Cache-control Directives",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 97,
+    "rule": "Re-examine Cache-control Directives",
+    "url": "https://github.com/juice-shop/juice-shop/branch-and-tag-count",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "application/json",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Content-Type": "application/json",
+      "Cookie": "_gh_sess=XwEYa31g4ec3egrs8sgNDc1ISFZmTa8OMVRh9KKJ6riraBumUXy62omkMWLHdWJv0BHjJeW4kACbUW8DAefk2iczRHbA7qMgyFRS8i6Bj%2Brm%2BtdsqYuRW7iw6qwed%2FXk2tfpmLV1QZ1%2FsoizMfdON%2Fx59x6aNocPoMG0GpYBBA6P1QXgMxHtqY6Z7c11ju0b7Z6RPNryd05FPEsWmskTiJMEpEG1fP1HHaO4nEon5g32rPCBftXFL3C2nltImCn1XFfvCSrrr9KN5g8LEDJJeg%3D%3D--Y4%2FgaFTccoxampN0--i9f60uOCyiHDSxOgezxGYA%3D%3D; _octo=GH1.1.574243605.1787659037; logged_in=no; cpu_bucket=xlg; preferred_color_mode=light",
+      "GitHub-Is-React": "true",
+      "GitHub-Verified-Fetch": "true",
+      "Priority": "u=4",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "X-Fetch-Nonce": "v2:b2124822-b494-3ee3-5f0c-dd4b1193fd52",
+      "X-GitHub-Client-Version": "85b0f11fac4cfbe1a80fb8bb78e8cf8a84a33289",
+      "X-Requested-With": "XMLHttpRequest",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 98,
+    "rule": "Re-examine Cache-control Directives",
+    "url": "https://github.com/juice-shop/juice-shop/latest-commit",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "application/json",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Content-Type": "application/json",
+      "Cookie": "_gh_sess=XwEYa31g4ec3egrs8sgNDc1ISFZmTa8OMVRh9KKJ6riraBumUXy62omkMWLHdWJv0BHjJeW4kACbUW8DAefk2iczRHbA7qMgyFRS8i6Bj%2Brm%2BtdsqYuRW7iw6qwed%2FXk2tfpmLV1QZ1%2FsoizMfdON%2Fx59x6aNocPoMG0GpYBBA6P1QXgMxHtqY6Z7c11ju0b7Z6RPNryd05FPEsWmskTiJMEpEG1fP1HHaO4nEon5g32rPCBftXFL3C2nltImCn1XFfvCSrrr9KN5g8LEDJJeg%3D%3D--Y4%2FgaFTccoxampN0--i9f60uOCyiHDSxOgezxGYA%3D%3D; _octo=GH1.1.574243605.1787659037; logged_in=no; cpu_bucket=xlg; preferred_color_mode=light",
+      "GitHub-Is-React": "true",
+      "GitHub-Verified-Fetch": "true",
+      "Priority": "u=4",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "X-Fetch-Nonce": "v2:b2124822-b494-3ee3-5f0c-dd4b1193fd52",
+      "X-GitHub-Client-Version": "85b0f11fac4cfbe1a80fb8bb78e8cf8a84a33289",
+      "X-Requested-With": "XMLHttpRequest",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 99,
+    "rule": "Re-examine Cache-control Directives",
+    "url": "https://github.com/juice-shop/juice-shop/recently-touched-branches",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "application/json",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Content-Type": "application/json",
+      "Cookie": "_gh_sess=XwEYa31g4ec3egrs8sgNDc1ISFZmTa8OMVRh9KKJ6riraBumUXy62omkMWLHdWJv0BHjJeW4kACbUW8DAefk2iczRHbA7qMgyFRS8i6Bj%2Brm%2BtdsqYuRW7iw6qwed%2FXk2tfpmLV1QZ1%2FsoizMfdON%2Fx59x6aNocPoMG0GpYBBA6P1QXgMxHtqY6Z7c11ju0b7Z6RPNryd05FPEsWmskTiJMEpEG1fP1HHaO4nEon5g32rPCBftXFL3C2nltImCn1XFfvCSrrr9KN5g8LEDJJeg%3D%3D--Y4%2FgaFTccoxampN0--i9f60uOCyiHDSxOgezxGYA%3D%3D; _octo=GH1.1.574243605.1787659037; logged_in=no; cpu_bucket=xlg; preferred_color_mode=light",
+      "GitHub-Is-React": "true",
+      "GitHub-Verified-Fetch": "true",
+      "Priority": "u=4",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "X-Fetch-Nonce": "v2:b2124822-b494-3ee3-5f0c-dd4b1193fd52",
+      "X-GitHub-Client-Version": "85b0f11fac4cfbe1a80fb8bb78e8cf8a84a33289",
+      "X-Requested-With": "XMLHttpRequest",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 100,
+    "rule": "Re-examine Cache-control Directives",
+    "url": "https://github.com/juice-shop/juice-shop/tree-commit-info",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "application/json",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Content-Type": "application/json",
+      "Cookie": "_gh_sess=XwEYa31g4ec3egrs8sgNDc1ISFZmTa8OMVRh9KKJ6riraBumUXy62omkMWLHdWJv0BHjJeW4kACbUW8DAefk2iczRHbA7qMgyFRS8i6Bj%2Brm%2BtdsqYuRW7iw6qwed%2FXk2tfpmLV1QZ1%2FsoizMfdON%2Fx59x6aNocPoMG0GpYBBA6P1QXgMxHtqY6Z7c11ju0b7Z6RPNryd05FPEsWmskTiJMEpEG1fP1HHaO4nEon5g32rPCBftXFL3C2nltImCn1XFfvCSrrr9KN5g8LEDJJeg%3D%3D--Y4%2FgaFTccoxampN0--i9f60uOCyiHDSxOgezxGYA%3D%3D; _octo=GH1.1.574243605.1787659037; logged_in=no; cpu_bucket=xlg; preferred_color_mode=light",
+      "GitHub-Is-React": "true",
+      "GitHub-Verified-Fetch": "true",
+      "Priority": "u=4",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "X-Fetch-Nonce": "v2:b2124822-b494-3ee3-5f0c-dd4b1193fd52",
+      "X-GitHub-Client-Version": "85b0f11fac4cfbe1a80fb8bb78e8cf8a84a33289",
+      "X-Requested-With": "XMLHttpRequest",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 101,
+    "rule": "Information Disclosure - Suspicious Comments",
+    "url": "https://github.githubassets.com/assets/chunk-lazy-element-select-panel-8c1eea897ff46aa6.js",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Referer": "https://github.githubassets.com/assets/wp-runtime-c03333c01f391c25.js",
+      "Sec-Fetch-Dest": "script",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 102,
+    "rule": "Retrieved from Cache",
+    "url": "https://avatars.githubusercontent.com/u/155815?s=64&v=4",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=4, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "avatars.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 103,
+    "rule": "Retrieved from Cache",
+    "url": "https://avatars.githubusercontent.com/u/20478531?s=64&v=4",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=4, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "avatars.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 104,
+    "rule": "Retrieved from Cache",
+    "url": "https://avatars.githubusercontent.com/u/30633088?s=64&v=4",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=4, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "avatars.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 105,
+    "rule": "Retrieved from Cache",
+    "url": "https://avatars.githubusercontent.com/u/30755453?s=64&v=4",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=4, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "avatars.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 106,
+    "rule": "Retrieved from Cache",
+    "url": "https://avatars.githubusercontent.com/u/61591748?s=64&v=4",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=4, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "avatars.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 107,
+    "rule": "Retrieved from Cache",
+    "url": "https://camo.githubusercontent.com/22d4e3abb65751eff3a77f51c5591198d44c752ba95c2f66c22167b745cd2a52/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f676f6f6472656164732d77726974652532307265766965772d34393535373234302e737667",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "camo.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 108,
+    "rule": "Retrieved from Cache",
+    "url": "https://camo.githubusercontent.com/3cb35407c95a900bc631b8ee05eafe8f23969e38f2d1b152434d427e5867fafc/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f737570706f72742d6f776173702532306a7569636525323073686f702d626c7565",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "camo.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 109,
+    "rule": "Retrieved from Cache",
+    "url": "https://camo.githubusercontent.com/a4d9b6a13bd97dbe23c3f56d39423165de1f40fc3e850500be7e80e0e007e56b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6f776173702d666c61677368697025323070726f6a6563742d3438413634362e737667",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "camo.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 110,
+    "rule": "Retrieved from Cache",
+    "url": "https://camo.githubusercontent.com/b130c82fc62abf6a1c9ac71134b91be1b9c73f409f2bceb10906170e260e7645/68747470733a2f2f696d672e736869656c64732e696f2f747769747465722f666f6c6c6f772f6f776173705f6a7569636573686f702e7376673f7374796c653d736f6369616c266c6162656c3d466f6c6c6f77",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "camo.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 111,
+    "rule": "Retrieved from Cache",
+    "url": "https://camo.githubusercontent.com/da2f2650834e4fe0a66443c55f7a8162de97f14ca160a34eab7dba1139bc2372/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4f574153502d436f64655f6f665f436f6e647563742d626c7565",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "camo.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 112,
+    "rule": "Retrieved from Cache",
+    "url": "https://github.githubassets.com/assets/app-foundation-c56b0828175e6b06.js",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=1",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "script",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 113,
+    "rule": "Retrieved from Cache",
+    "url": "https://github.githubassets.com/assets/dark-f6186b2d117410d4.css",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/css,*/*;q=0.1",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=2",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "style",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 114,
+    "rule": "Retrieved from Cache",
+    "url": "https://github.githubassets.com/assets/dark_high_contrast-f39e8ef7b7418526.css",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/css,*/*;q=0.1",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=2",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "style",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 115,
+    "rule": "Retrieved from Cache",
+    "url": "https://github.githubassets.com/assets/light_high_contrast-9d093cb5adfc6a5b.css",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/css,*/*;q=0.1",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=2",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "style",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 116,
+    "rule": "Retrieved from Cache",
+    "url": "https://github.githubassets.com/assets/primer-primitives-ae6d9799eadb7678.css",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/css,*/*;q=0.1",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Origin": "https://github.com",
+      "Priority": "u=2",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "style",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.githubassets.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 117,
+    "rule": "Retrieved from Cache",
+    "url": "https://camo.githubusercontent.com/11461f0de59380c9e9a375fc1f78cc92b98fc2f084a1da2735c384f62946f214/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6a756963652d73686f702f6a756963652d73686f702e737667",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "camo.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 118,
+    "rule": "Retrieved from Cache",
+    "url": "https://camo.githubusercontent.com/206317980388c202d744195cb2487aa582a966fd999290a6f7192b1aea879654/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732f6a756963652d73686f702f6a756963652d73686f702f676f6f64253230666972737425323069737375652e737667",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "camo.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 119,
+    "rule": "Retrieved from Cache",
+    "url": "https://camo.githubusercontent.com/7426eabb0342adad0388a46003484973c3f0f96b0e66a5c94c0fae908368685d/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f6a756963652d73686f702f6a756963652d73686f702e737667",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "camo.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 120,
+    "rule": "Retrieved from Cache",
+    "url": "https://camo.githubusercontent.com/87f67e1a0df45ffe82ca1c833f3fd792c442157d3e255d455d0a95c76c47e9f6/68747470733a2f2f696d672e736869656c64732e696f2f6b6579626173652f7067702f626b696d6d696e696368",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "camo.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 121,
+    "rule": "Retrieved from Cache",
+    "url": "https://camo.githubusercontent.com/a7bee59aff087da48a860443c91b55b734a3665d5558f8be650a968dfa752d47/68747470733a2f2f696d672e736869656c64732e696f2f656e64706f696e743f75726c3d68747470733a2f2f64617368626f6172642e637970726573732e696f2f62616467652f73696d706c652f3368726b68752f646576656c6f70267374796c653d666c6174266c6f676f3d63797072657373",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "cross-site",
+      "Sec-Fetch-Storage-Access": "none",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "camo.githubusercontent.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 122,
+    "rule": "Modern Web Application",
+    "url": "http://localhost:3000",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 123,
+    "rule": "Modern Web Application",
+    "url": "http://localhost:3000/",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/ftp",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 124,
+    "rule": "Modern Web Application",
+    "url": "http://localhost:3000/assets/public/images/uploads/%E1%93%9A%E1%98%8F%E1%97%A2-",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "language=en",
+      "Priority": "u=4, i",
+      "Referer": "http://localhost:3000/",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 125,
+    "rule": "Modern Web Application",
+    "url": "http://localhost:3000/ftp/",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "referer": "http://localhost:3000/ftp/quarantine",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 126,
+    "rule": "Modern Web Application",
+    "url": "http://localhost:3000/sitemap.xml",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "localhost:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 127,
+    "rule": "Modern Web Application",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 128,
+    "rule": "Modern Web Application",
+    "url": "https://github.com/juice-shop/juice-shop/sponsor_button",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "_gh_sess=XwEYa31g4ec3egrs8sgNDc1ISFZmTa8OMVRh9KKJ6riraBumUXy62omkMWLHdWJv0BHjJeW4kACbUW8DAefk2iczRHbA7qMgyFRS8i6Bj%2Brm%2BtdsqYuRW7iw6qwed%2FXk2tfpmLV1QZ1%2FsoizMfdON%2Fx59x6aNocPoMG0GpYBBA6P1QXgMxHtqY6Z7c11ju0b7Z6RPNryd05FPEsWmskTiJMEpEG1fP1HHaO4nEon5g32rPCBftXFL3C2nltImCn1XFfvCSrrr9KN5g8LEDJJeg%3D%3D--Y4%2FgaFTccoxampN0--i9f60uOCyiHDSxOgezxGYA%3D%3D; _octo=GH1.1.574243605.1787659037; logged_in=no; cpu_bucket=xlg; preferred_color_mode=light",
+      "Priority": "u=4",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "X-Fetch-Nonce": "v2:b2124822-b494-3ee3-5f0c-dd4b1193fd52",
+      "X-Fetch-Nonce-To-Validate": "v2:b2124822-b494-3ee3-5f0c-dd4b1193fd52",
+      "X-GitHub-Client-Version": "85b0f11fac4cfbe1a80fb8bb78e8cf8a84a33289",
+      "X-Requested-With": "XMLHttpRequest",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 129,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "url": "http://localhost:3000/",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "language=en",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 130,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "url": "http://localhost:3000/",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "language=en",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 131,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "_gh_sess=XwEYa31g4ec3egrs8sgNDc1ISFZmTa8OMVRh9KKJ6riraBumUXy62omkMWLHdWJv0BHjJeW4kACbUW8DAefk2iczRHbA7qMgyFRS8i6Bj%2Brm%2BtdsqYuRW7iw6qwed%2FXk2tfpmLV1QZ1%2FsoizMfdON%2Fx59x6aNocPoMG0GpYBBA6P1QXgMxHtqY6Z7c11ju0b7Z6RPNryd05FPEsWmskTiJMEpEG1fP1HHaO4nEon5g32rPCBftXFL3C2nltImCn1XFfvCSrrr9KN5g8LEDJJeg%3D%3D--Y4%2FgaFTccoxampN0--i9f60uOCyiHDSxOgezxGYA%3D%3D; _octo=GH1.1.574243605.1787659037; logged_in=no",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 132,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "_gh_sess=XwEYa31g4ec3egrs8sgNDc1ISFZmTa8OMVRh9KKJ6riraBumUXy62omkMWLHdWJv0BHjJeW4kACbUW8DAefk2iczRHbA7qMgyFRS8i6Bj%2Brm%2BtdsqYuRW7iw6qwed%2FXk2tfpmLV1QZ1%2FsoizMfdON%2Fx59x6aNocPoMG0GpYBBA6P1QXgMxHtqY6Z7c11ju0b7Z6RPNryd05FPEsWmskTiJMEpEG1fP1HHaO4nEon5g32rPCBftXFL3C2nltImCn1XFfvCSrrr9KN5g8LEDJJeg%3D%3D--Y4%2FgaFTccoxampN0--i9f60uOCyiHDSxOgezxGYA%3D%3D; _octo=GH1.1.574243605.1787659037; logged_in=no",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 133,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "_gh_sess=XwEYa31g4ec3egrs8sgNDc1ISFZmTa8OMVRh9KKJ6riraBumUXy62omkMWLHdWJv0BHjJeW4kACbUW8DAefk2iczRHbA7qMgyFRS8i6Bj%2Brm%2BtdsqYuRW7iw6qwed%2FXk2tfpmLV1QZ1%2FsoizMfdON%2Fx59x6aNocPoMG0GpYBBA6P1QXgMxHtqY6Z7c11ju0b7Z6RPNryd05FPEsWmskTiJMEpEG1fP1HHaO4nEon5g32rPCBftXFL3C2nltImCn1XFfvCSrrr9KN5g8LEDJJeg%3D%3D--Y4%2FgaFTccoxampN0--i9f60uOCyiHDSxOgezxGYA%3D%3D; _octo=GH1.1.574243605.1787659037; logged_in=no",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 134,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "url": "http://localhost:3000/",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "language=en",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 135,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "url": "http://localhost:3000/",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "language=en",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 136,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "url": "http://localhost:3000/",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "language=en",
+      "Priority": "u=0, i",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "localhost:3000"
+    },
+    "request_body": {}
+  },
+  {
+    "id": 137,
+    "rule": "Information Disclosure - Information in Browser localStorage",
+    "url": "https://github.com/juice-shop/juice-shop",
+    "method": "GET",
+    "request_headers": {
+      "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Connection": "keep-alive",
+      "Cookie": "_gh_sess=XwEYa31g4ec3egrs8sgNDc1ISFZmTa8OMVRh9KKJ6riraBumUXy62omkMWLHdWJv0BHjJeW4kACbUW8DAefk2iczRHbA7qMgyFRS8i6Bj%2Brm%2BtdsqYuRW7iw6qwed%2FXk2tfpmLV1QZ1%2FsoizMfdON%2Fx59x6aNocPoMG0GpYBBA6P1QXgMxHtqY6Z7c11ju0b7Z6RPNryd05FPEsWmskTiJMEpEG1fP1HHaO4nEon5g32rPCBftXFL3C2nltImCn1XFfvCSrrr9KN5g8LEDJJeg%3D%3D--Y4%2FgaFTccoxampN0--i9f60uOCyiHDSxOgezxGYA%3D%3D; _octo=GH1.1.574243605.1787659037; logged_in=no",
+      "Priority": "u=5, i",
+      "Referer": "https://github.com/juice-shop/juice-shop",
+      "Sec-Fetch-Dest": "image",
+      "Sec-Fetch-Mode": "no-cors",
+      "Sec-Fetch-Site": "same-origin",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "host": "github.com"
+    },
+    "request_body": {}
+  }
+]

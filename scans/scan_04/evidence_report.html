@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ZAP Evidence Report - Scan 04</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+.summary {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 15px 25px;
+    border-radius: 8px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 13px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #f2f2f2;
+}
+
+.true_positive {
+    font-weight: bold;
+}
+
+.false_positive {
+    font-weight: bold;
+}
+
+.inconclusive {
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<h1>ZAP Evidence Report — Scan 04</h1>
+
+<p>Total findings: <strong>137</strong></p>
+
+<div class="summary">
+    <div class="card">
+        <strong>True Positives</strong><br>
+        13
+    </div>
+
+    <div class="card">
+        <strong>False Positives</strong><br>
+        0
+    </div>
+
+    <div class="card">
+        <strong>Inconclusive</strong><br>
+        124
+    </div>
+</div>
+
+<table>
+<thead>
+<tr>
+    <th>ID</th>
+    <th>Rule</th>
+    <th>URL</th>
+    <th>Replay Verdict</th>
+    <th>Evidence</th>
+    <th>Rule Classification</th>
+    <th>Rule Confidence</th>
+    <th>ML Prediction</th>
+    <th>ML Confidence</th>
+    <th>Final Classification</th>
+    <th>Final Reason</th>
+</tr>
+</thead>
+
+<tbody>
+
+    <tr>
+        <td>1</td>
+        <td>Off-site Redirect</td>
+        <td>http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop</td>
+        <td>reproduced</td>
+        <td>Replay returned HTTP 302 with Location header: https://github.com/juice-shop/juice-shop</td>
+        <td>true_positive</td>
+        <td>0.95</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="true_positive">true_positive</td>
+        <td>Replay evidence reproduced the reported security condition.</td>
+    </tr>
+    
+    <tr>
+        <td>2</td>
+        <td>External Redirect</td>
+        <td>http://localhost:3000/redirect?to=https%3A%2F%2F3494521288377286390.owasp.org%2F%3Fhttps%3A%2F%2Fgithub.com%2Fjuice-shop%2Fjuice-shop</td>
+        <td>reproduced</td>
+        <td>Replay returned HTTP 302 with Location header: https://3494521288377286390.owasp.org/?https://github.com/juice-shop/juice-shop</td>
+        <td>true_positive</td>
+        <td>0.95</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="true_positive">true_positive</td>
+        <td>Replay evidence reproduced the reported security condition.</td>
+    </tr>
+    
+    <tr>
+        <td>3</td>
+        <td>SQL Injection</td>
+        <td>http://localhost:3000/rest/products/search?q=%27%28</td>
+        <td>reproduced</td>
+        <td>Replay returned HTTP 500, indicating the tested input still triggers a server-side error.</td>
+        <td>true_positive</td>
+        <td>0.95</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="true_positive">true_positive</td>
+        <td>Replay evidence reproduced the reported security condition.</td>
+    </tr>
+    
+    <tr>
+        <td>4</td>
+        <td>SQL Injection</td>
+        <td>http://localhost:3000/rest/user/login</td>
+        <td>inconclusive</td>
+        <td>Replay request failed: ReadTimeout: HTTPConnectionPool(host=&#x27;localhost&#x27;, port=3000): Read timed out. (read timeout=10)</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>5</td>
+        <td>Session ID in URL Rewrite</td>
+        <td>http://localhost:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=Q0unwo3.0&amp;sid=_fRiprIJgcG8i1qeAAAC</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>6</td>
+        <td>Session ID in URL Rewrite</td>
+        <td>http://localhost:3000/socket.io/?EIO=4&amp;transport=websocket&amp;sid=8XOfeW5jOmNDXP1HAAAE</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>7</td>
+        <td>Session ID in URL Rewrite</td>
+        <td>http://localhost:3000/socket.io/?EIO=4&amp;transport=websocket&amp;sid=_fRiprIJgcG8i1qeAAAC</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>8</td>
+        <td>Session ID in URL Rewrite</td>
+        <td>http://localhost:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=Q0unxmc&amp;sid=8XOfeW5jOmNDXP1HAAAE</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>9</td>
+        <td>Session ID in URL Rewrite</td>
+        <td>http://localhost:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=Q0unwo3&amp;sid=_fRiprIJgcG8i1qeAAAC</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>10</td>
+        <td>Missing Anti-clickjacking Header</td>
+        <td>http://localhost:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=Q0unwo3&amp;sid=_fRiprIJgcG8i1qeAAAC</td>
+        <td>reproduced</td>
+        <td>Replay response contained neither X-Frame-Options nor CSP.</td>
+        <td>true_positive</td>
+        <td>0.95</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="true_positive">true_positive</td>
+        <td>Replay evidence reproduced the reported security condition.</td>
+    </tr>
+    
+    <tr>
+        <td>11</td>
+        <td>Content Security Policy (CSP) Header Not Set</td>
+        <td>http://localhost:3000</td>
+        <td>reproduced</td>
+        <td>Replay response does not contain a Content-Security-Policy header.</td>
+        <td>true_positive</td>
+        <td>0.95</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="true_positive">true_positive</td>
+        <td>Replay evidence reproduced the reported security condition.</td>
+    </tr>
+    
+    <tr>
+        <td>12</td>
+        <td>Content Security Policy (CSP) Header Not Set</td>
+        <td>http://localhost:3000/ftp/coupons_2013.md.bak</td>
+        <td>reproduced</td>
+        <td>Replay response does not contain a Content-Security-Policy header.</td>
+        <td>true_positive</td>
+        <td>0.95</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="true_positive">true_positive</td>
+        <td>Replay evidence reproduced the reported security condition.</td>
+    </tr>
+    
+    <tr>
+        <td>13</td>
+        <td>Content Security Policy (CSP) Header Not Set</td>
+        <td>http://localhost:3000/ftp/package-lock.json.bak</td>
+        <td>reproduced</td>
+        <td>Replay response does not contain a Content-Security-Policy header.</td>
+        <td>true_positive</td>
+        <td>0.95</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="true_positive">true_positive</td>
+        <td>Replay evidence reproduced the reported security condition.</td>
+    </tr>
+    
+    <tr>
+        <td>14</td>
+        <td>Content Security Policy (CSP) Header Not Set</td>
+        <td>http://localhost:3000/ftp/package.json.bak</td>
+        <td>reproduced</td>
+        <td>Replay response does not contain a Content-Security-Policy header.</td>
+        <td>true_positive</td>
+        <td>0.95</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="true_positive">true_positive</td>
+        <td>Replay evidence reproduced the reported security condition.</td>
+    </tr>
+    
+    <tr>
+        <td>15</td>
+        <td>Content Security Policy (CSP) Header Not Set</td>
+        <td>http://localhost:3000/sitemap.xml</td>
+        <td>reproduced</td>
+        <td>Replay response does not contain a Content-Security-Policy header.</td>
+        <td>true_positive</td>
+        <td>0.95</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="true_positive">true_positive</td>
+        <td>Replay evidence reproduced the reported security condition.</td>
+    </tr>
+    
+    <tr>
+        <td>16</td>
+        <td>CSP: Failure to Define Directive with No Fallback</td>
+        <td>http://localhost:3000/assets</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>17</td>
+        <td>CSP: Failure to Define Directive with No Fallback</td>
+        <td>http://localhost:3000/assets/i18n</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>18</td>
+        <td>CSP: Failure to Define Directive with No Fallback</td>
+        <td>http://localhost:3000/assets/public</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>19</td>
+        <td>CSP: Failure to Define Directive with No Fallback</td>
+        <td>http://localhost:3000/assets/public/images/carousel</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>20</td>
+        <td>CSP: Failure to Define Directive with No Fallback</td>
+        <td>http://localhost:3000/assets/public/images/products</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>21</td>
+        <td>CSP: Failure to Define Directive with No Fallback</td>
+        <td>https://github.com/in-product-messaging/budget-threshold-banner?organization=juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>22</td>
+        <td>CSP: Failure to Define Directive with No Fallback</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>23</td>
+        <td>CSP: Failure to Define Directive with No Fallback</td>
+        <td>https://github.com/juice-shop/juice-shop/funding_links?fragment=1</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>24</td>
+        <td>CSP: Failure to Define Directive with No Fallback</td>
+        <td>https://github.com/juice-shop/juice-shop/raw/master/screenshots/slideshow.gif</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>25</td>
+        <td>CSP: Failure to Define Directive with No Fallback</td>
+        <td>https://github.com/juice-shop/juice-shop/sponsor_button</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>26</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>http://localhost:3000/assets/public/favicon_js.ico</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>27</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>http://localhost:3000/chunk-DBPdFzgj.js</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>28</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>http://localhost:3000/rolldown-runtime-BoHGiXSq.js</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>29</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>http://localhost:3000/scripts.js</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>30</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>http://localhost:3000/styles.css</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>31</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://avatars.githubusercontent.com/u/155815?s=64&amp;v=4</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>32</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://avatars.githubusercontent.com/u/20478531?s=64&amp;v=4</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>33</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://avatars.githubusercontent.com/u/30633088?s=64&amp;v=4</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>34</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://avatars.githubusercontent.com/u/30755453?s=64&amp;v=4</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>35</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://avatars.githubusercontent.com/u/61591748?s=64&amp;v=4</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>36</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://github.githubassets.com/assets/app-foundation-c56b0828175e6b06.js</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>37</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://github.githubassets.com/assets/dark-f6186b2d117410d4.css</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>38</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://github.githubassets.com/assets/dark_high_contrast-f39e8ef7b7418526.css</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>39</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://github.githubassets.com/assets/light_high_contrast-9d093cb5adfc6a5b.css</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>40</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://github.githubassets.com/assets/primer-primitives-ae6d9799eadb7678.css</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>41</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://raw.githubusercontent.com/juice-shop/juice-shop/master/frontend/src/assets/public/images/JuiceShop_Logo_100px.png</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>42</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://raw.githubusercontent.com/juice-shop/juice-shop/master/frontend/src/assets/public/images/JuiceShop_Logo_400px.png</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>43</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://raw.githubusercontent.com/juice-shop/juice-shop/master/screenshots/slideshow.gif</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>44</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://raw.githubusercontent.com/juice-shop/pwning-juice-shop/master/docs/modules/ROOT/assets/images/cover.jpg</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>45</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://raw.githubusercontent.com/juice-shop/pwning-juice-shop/master/docs/modules/ROOT/assets/images/introduction/back.jpg</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>46</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://api.github.com/_private/browser/stats</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>47</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://collector.github.com/github/collect</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>48</td>
+        <td>Cross-Domain Misconfiguration</td>
+        <td>https://collector.github.com/github/collect</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>49</td>
+        <td>Sub Resource Integrity Attribute Missing</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>50</td>
+        <td>Sub Resource Integrity Attribute Missing</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>51</td>
+        <td>Sub Resource Integrity Attribute Missing</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>52</td>
+        <td>Sub Resource Integrity Attribute Missing</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>53</td>
+        <td>Sub Resource Integrity Attribute Missing</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>54</td>
+        <td>Information Disclosure - JWT in Browser localStorage</td>
+        <td>http://localhost:3000/</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>55</td>
+        <td>Private IP Disclosure</td>
+        <td>http://localhost:3000/rest/admin/application-configuration</td>
+        <td>reproduced</td>
+        <td>Replay response contains private IP: 192.168.99.100</td>
+        <td>true_positive</td>
+        <td>0.95</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="true_positive">true_positive</td>
+        <td>Replay evidence reproduced the reported security condition.</td>
+    </tr>
+    
+    <tr>
+        <td>56</td>
+        <td>Private IP Disclosure</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>57</td>
+        <td>Private IP Disclosure</td>
+        <td>https://github.com/juice-shop/juice-shop/overview-files/master</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>58</td>
+        <td>Cookie No HttpOnly Flag</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>59</td>
+        <td>Cross-Domain JavaScript Source File Inclusion</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>60</td>
+        <td>Cross-Domain JavaScript Source File Inclusion</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>61</td>
+        <td>Cross-Domain JavaScript Source File Inclusion</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>62</td>
+        <td>Cross-Domain JavaScript Source File Inclusion</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>63</td>
+        <td>Cross-Domain JavaScript Source File Inclusion</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>64</td>
+        <td>X-Content-Type-Options Header Missing</td>
+        <td>http://localhost:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=Q0unwo3.0&amp;sid=_fRiprIJgcG8i1qeAAAC</td>
+        <td>reproduced</td>
+        <td>Replay response does not contain X-Content-Type-Options.</td>
+        <td>true_positive</td>
+        <td>0.95</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="true_positive">true_positive</td>
+        <td>Replay evidence reproduced the reported security condition.</td>
+    </tr>
+    
+    <tr>
+        <td>65</td>
+        <td>X-Content-Type-Options Header Missing</td>
+        <td>http://localhost:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=Q0unwmZ</td>
+        <td>reproduced</td>
+        <td>Replay response does not contain X-Content-Type-Options.</td>
+        <td>true_positive</td>
+        <td>0.95</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="true_positive">true_positive</td>
+        <td>Replay evidence reproduced the reported security condition.</td>
+    </tr>
+    
+    <tr>
+        <td>66</td>
+        <td>X-Content-Type-Options Header Missing</td>
+        <td>https://github.com/fluidicon.png</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>67</td>
+        <td>X-Content-Type-Options Header Missing</td>
+        <td>https://github.githubassets.com/assets/app-foundation-c56b0828175e6b06.js</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>68</td>
+        <td>X-Content-Type-Options Header Missing</td>
+        <td>https://github.githubassets.com/assets/dark-f6186b2d117410d4.css</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>69</td>
+        <td>X-Content-Type-Options Header Missing</td>
+        <td>https://github.githubassets.com/assets/dark_high_contrast-f39e8ef7b7418526.css</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>70</td>
+        <td>X-Content-Type-Options Header Missing</td>
+        <td>https://github.githubassets.com/assets/light_high_contrast-9d093cb5adfc6a5b.css</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>71</td>
+        <td>X-Content-Type-Options Header Missing</td>
+        <td>https://github.githubassets.com/assets/primer-primitives-ae6d9799eadb7678.css</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>72</td>
+        <td>X-Content-Type-Options Header Missing</td>
+        <td>http://localhost:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=Q0unwo3&amp;sid=_fRiprIJgcG8i1qeAAAC</td>
+        <td>reproduced</td>
+        <td>Replay response does not contain X-Content-Type-Options.</td>
+        <td>true_positive</td>
+        <td>0.95</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="true_positive">true_positive</td>
+        <td>Replay evidence reproduced the reported security condition.</td>
+    </tr>
+    
+    <tr>
+        <td>73</td>
+        <td>Server Leaks Version Information via &quot;Server&quot; HTTP Response Header Field</td>
+        <td>https://github.githubassets.com/assets/app-foundation-c56b0828175e6b06.js</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>74</td>
+        <td>Server Leaks Version Information via &quot;Server&quot; HTTP Response Header Field</td>
+        <td>https://github.githubassets.com/assets/dark-f6186b2d117410d4.css</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>75</td>
+        <td>Server Leaks Version Information via &quot;Server&quot; HTTP Response Header Field</td>
+        <td>https://github.githubassets.com/assets/dark_high_contrast-f39e8ef7b7418526.css</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>76</td>
+        <td>Server Leaks Version Information via &quot;Server&quot; HTTP Response Header Field</td>
+        <td>https://github.githubassets.com/assets/light_high_contrast-9d093cb5adfc6a5b.css</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>77</td>
+        <td>Server Leaks Version Information via &quot;Server&quot; HTTP Response Header Field</td>
+        <td>https://github.githubassets.com/assets/primer-primitives-ae6d9799eadb7678.css</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>78</td>
+        <td>Timestamp Disclosure - Unix</td>
+        <td>http://localhost:3000/styles.css</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>79</td>
+        <td>Timestamp Disclosure - Unix</td>
+        <td>http://localhost:3000/styles.css</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>80</td>
+        <td>Timestamp Disclosure - Unix</td>
+        <td>http://localhost:3000/styles.css</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>81</td>
+        <td>Timestamp Disclosure - Unix</td>
+        <td>http://localhost:3000/styles.css</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>82</td>
+        <td>Timestamp Disclosure - Unix</td>
+        <td>http://localhost:3000/styles.css</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>83</td>
+        <td>Timestamp Disclosure - Unix</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>84</td>
+        <td>Timestamp Disclosure - Unix</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>85</td>
+        <td>Timestamp Disclosure - Unix</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>86</td>
+        <td>Timestamp Disclosure - Unix</td>
+        <td>https://github.com/juice-shop/juice-shop/refs?type=branch</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>87</td>
+        <td>Application Error Disclosure</td>
+        <td>http://localhost:3000/api</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>88</td>
+        <td>Application Error Disclosure</td>
+        <td>http://localhost:3000/rest</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>89</td>
+        <td>Application Error Disclosure</td>
+        <td>http://localhost:3000/rest/admin</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>90</td>
+        <td>Application Error Disclosure</td>
+        <td>http://localhost:3000/rest/products</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>91</td>
+        <td>Application Error Disclosure</td>
+        <td>http://localhost:3000/rest/products/1</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>92</td>
+        <td>Application Error Disclosure</td>
+        <td>http://localhost:3000/rest/user</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>93</td>
+        <td>Application Error Disclosure</td>
+        <td>http://localhost:3000/rest/user/login</td>
+        <td>inconclusive</td>
+        <td>The finding requires specialized evidence beyond the generic HTTP replay implemented here.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>94</td>
+        <td>Application Error Disclosure</td>
+        <td>http://localhost:3000/api/Feedbacks/</td>
+        <td>inconclusive</td>
+        <td>Replay request failed: ReadTimeout: HTTPConnectionPool(host=&#x27;localhost&#x27;, port=3000): Read timed out. (read timeout=10)</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>95</td>
+        <td>Information Disclosure - Sensitive Information in Browser localStorage</td>
+        <td>http://localhost:3000/</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>96</td>
+        <td>Re-examine Cache-control Directives</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>97</td>
+        <td>Re-examine Cache-control Directives</td>
+        <td>https://github.com/juice-shop/juice-shop/branch-and-tag-count</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>98</td>
+        <td>Re-examine Cache-control Directives</td>
+        <td>https://github.com/juice-shop/juice-shop/latest-commit</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>99</td>
+        <td>Re-examine Cache-control Directives</td>
+        <td>https://github.com/juice-shop/juice-shop/recently-touched-branches</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>100</td>
+        <td>Re-examine Cache-control Directives</td>
+        <td>https://github.com/juice-shop/juice-shop/tree-commit-info</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>101</td>
+        <td>Information Disclosure - Suspicious Comments</td>
+        <td>https://github.githubassets.com/assets/chunk-lazy-element-select-panel-8c1eea897ff46aa6.js</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>102</td>
+        <td>Retrieved from Cache</td>
+        <td>https://avatars.githubusercontent.com/u/155815?s=64&amp;v=4</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>103</td>
+        <td>Retrieved from Cache</td>
+        <td>https://avatars.githubusercontent.com/u/20478531?s=64&amp;v=4</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>104</td>
+        <td>Retrieved from Cache</td>
+        <td>https://avatars.githubusercontent.com/u/30633088?s=64&amp;v=4</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>105</td>
+        <td>Retrieved from Cache</td>
+        <td>https://avatars.githubusercontent.com/u/30755453?s=64&amp;v=4</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>106</td>
+        <td>Retrieved from Cache</td>
+        <td>https://avatars.githubusercontent.com/u/61591748?s=64&amp;v=4</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>107</td>
+        <td>Retrieved from Cache</td>
+        <td>https://camo.githubusercontent.com/22d4e3abb65751eff3a77f51c5591198d44c752ba95c2f66c22167b745cd2a52/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f676f6f6472656164732d77726974652532307265766965772d34393535373234302e737667</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>108</td>
+        <td>Retrieved from Cache</td>
+        <td>https://camo.githubusercontent.com/3cb35407c95a900bc631b8ee05eafe8f23969e38f2d1b152434d427e5867fafc/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f737570706f72742d6f776173702532306a7569636525323073686f702d626c7565</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>109</td>
+        <td>Retrieved from Cache</td>
+        <td>https://camo.githubusercontent.com/a4d9b6a13bd97dbe23c3f56d39423165de1f40fc3e850500be7e80e0e007e56b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6f776173702d666c61677368697025323070726f6a6563742d3438413634362e737667</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>110</td>
+        <td>Retrieved from Cache</td>
+        <td>https://camo.githubusercontent.com/b130c82fc62abf6a1c9ac71134b91be1b9c73f409f2bceb10906170e260e7645/68747470733a2f2f696d672e736869656c64732e696f2f747769747465722f666f6c6c6f772f6f776173705f6a7569636573686f702e7376673f7374796c653d736f6369616c266c6162656c3d466f6c6c6f77</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>111</td>
+        <td>Retrieved from Cache</td>
+        <td>https://camo.githubusercontent.com/da2f2650834e4fe0a66443c55f7a8162de97f14ca160a34eab7dba1139bc2372/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4f574153502d436f64655f6f665f436f6e647563742d626c7565</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>112</td>
+        <td>Retrieved from Cache</td>
+        <td>https://github.githubassets.com/assets/app-foundation-c56b0828175e6b06.js</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>113</td>
+        <td>Retrieved from Cache</td>
+        <td>https://github.githubassets.com/assets/dark-f6186b2d117410d4.css</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>114</td>
+        <td>Retrieved from Cache</td>
+        <td>https://github.githubassets.com/assets/dark_high_contrast-f39e8ef7b7418526.css</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>115</td>
+        <td>Retrieved from Cache</td>
+        <td>https://github.githubassets.com/assets/light_high_contrast-9d093cb5adfc6a5b.css</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>116</td>
+        <td>Retrieved from Cache</td>
+        <td>https://github.githubassets.com/assets/primer-primitives-ae6d9799eadb7678.css</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>117</td>
+        <td>Retrieved from Cache</td>
+        <td>https://camo.githubusercontent.com/11461f0de59380c9e9a375fc1f78cc92b98fc2f084a1da2735c384f62946f214/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6a756963652d73686f702f6a756963652d73686f702e737667</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>118</td>
+        <td>Retrieved from Cache</td>
+        <td>https://camo.githubusercontent.com/206317980388c202d744195cb2487aa582a966fd999290a6f7192b1aea879654/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732f6a756963652d73686f702f6a756963652d73686f702f676f6f64253230666972737425323069737375652e737667</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>119</td>
+        <td>Retrieved from Cache</td>
+        <td>https://camo.githubusercontent.com/7426eabb0342adad0388a46003484973c3f0f96b0e66a5c94c0fae908368685d/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f6a756963652d73686f702f6a756963652d73686f702e737667</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>120</td>
+        <td>Retrieved from Cache</td>
+        <td>https://camo.githubusercontent.com/87f67e1a0df45ffe82ca1c833f3fd792c442157d3e255d455d0a95c76c47e9f6/68747470733a2f2f696d672e736869656c64732e696f2f6b6579626173652f7067702f626b696d6d696e696368</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>121</td>
+        <td>Retrieved from Cache</td>
+        <td>https://camo.githubusercontent.com/a7bee59aff087da48a860443c91b55b734a3665d5558f8be650a968dfa752d47/68747470733a2f2f696d672e736869656c64732e696f2f656e64706f696e743f75726c3d68747470733a2f2f64617368626f6172642e637970726573732e696f2f62616467652f73696d706c652f3368726b68752f646576656c6f70267374796c653d666c6174266c6f676f3d63797072657373</td>
+        <td>inconclusive</td>
+        <td>Finding targets an external resource, so local replay cannot reliably reproduce it.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>122</td>
+        <td>Modern Web Application</td>
+        <td>http://localhost:3000</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>123</td>
+        <td>Modern Web Application</td>
+        <td>http://localhost:3000/</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>124</td>
+        <td>Modern Web Application</td>
+        <td>http://localhost:3000/assets/public/images/uploads/%E1%93%9A%E1%98%8F%E1%97%A2-</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>125</td>
+        <td>Modern Web Application</td>
+        <td>http://localhost:3000/ftp/</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>126</td>
+        <td>Modern Web Application</td>
+        <td>http://localhost:3000/sitemap.xml</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>127</td>
+        <td>Modern Web Application</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>128</td>
+        <td>Modern Web Application</td>
+        <td>https://github.com/juice-shop/juice-shop/sponsor_button</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>129</td>
+        <td>Information Disclosure - Information in Browser localStorage</td>
+        <td>http://localhost:3000/</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>130</td>
+        <td>Information Disclosure - Information in Browser localStorage</td>
+        <td>http://localhost:3000/</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>131</td>
+        <td>Information Disclosure - Information in Browser localStorage</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>132</td>
+        <td>Information Disclosure - Information in Browser localStorage</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>133</td>
+        <td>Information Disclosure - Information in Browser localStorage</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>134</td>
+        <td>Information Disclosure - Information in Browser localStorage</td>
+        <td>http://localhost:3000/</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>135</td>
+        <td>Information Disclosure - Information in Browser localStorage</td>
+        <td>http://localhost:3000/</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>136</td>
+        <td>Information Disclosure - Information in Browser localStorage</td>
+        <td>http://localhost:3000/</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+    <tr>
+        <td>137</td>
+        <td>Information Disclosure - Information in Browser localStorage</td>
+        <td>https://github.com/juice-shop/juice-shop</td>
+        <td>inconclusive</td>
+        <td>Requires browser-level evidence rather than HTTP replay.</td>
+        <td>inconclusive</td>
+        <td>0.50</td>
+        <td>None</td>
+        <td>None</td>
+        <td class="inconclusive">inconclusive</td>
+        <td>Replay evidence was insufficient to make a reliable true-positive or false-positive decision.</td>
+    </tr>
+    
+</tbody>
+
+</table>
+
+</body>
+</html>
