@@ -1,0 +1,415 @@
+import os
+import json
+import argparse
+import sys
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Generate HTML Evidence Report.")
+    parser.add_argument(
+        "--classified", 
+        default="scans/scan_01/classified_findings.json",
+        help="Path to classified_findings.json"
+    )
+    parser.add_argument(
+        "--output", 
+        default="scans/scan_01/evidence_report.html",
+        help="Path to output HTML report"
+    )
+    return parser.parse_args()
+
+def generate_html(classified_findings, output_path):
+    # Count stats
+    total = len(classified_findings)
+    tp = sum(1 for f in classified_findings if f["final_classification"] == "true_positive")
+    fp = sum(1 for f in classified_findings if f["final_classification"] == "false_positive")
+    inconclusive = sum(1 for f in classified_findings if f["final_classification"] == "inconclusive")
+
+    # Generate rows
+    rows_html = ""
+    for idx, finding in enumerate(classified_findings):
+        fid = finding["id"]
+        rule = finding["rule"]
+        url = finding["url"]
+        verdict = finding["replay_verdict"]
+        evidence = finding["evidence"]
+        rule_class = finding["rule_classification"]
+        final_class = finding["final_classification"]
+        final_reason = finding["final_reason"]
+        
+        # Color classes
+        class_badges = {
+            "true_positive": "badge-tp",
+            "false_positive": "badge-fp",
+            "inconclusive": "badge-inc"
+        }
+        
+        badge_class = class_badges.get(final_class, "badge-inc")
+        badge_text = final_class.replace("_", " ").upper()
+        
+        rows_html += f"""
+        <div class="finding-card" id="finding-card-{fid}">
+            <div class="card-header">
+                <span class="finding-id">ID: #{fid}</span>
+                <span class="badge {badge_class}">{badge_text}</span>
+            </div>
+            <div class="card-body">
+                <h3 class="finding-rule">{rule}</h3>
+                <div class="info-grid">
+                    <div><strong>Target URL:</strong> <code class="code-url">{url}</code></div>
+                    <div><strong>Replay Verdict:</strong> <span class="verdict-text verdict-{verdict}">{verdict}</span></div>
+                </div>
+                
+                <div class="evidence-box">
+                    <strong>Replay Evidence:</strong>
+                    <pre>{evidence}</pre>
+                </div>
+                
+                <div class="decision-section">
+                    <div class="decision-column">
+                        <h4>Rule Engine Decision</h4>
+                        <p><strong>Classification:</strong> <span class="text-{rule_class}">{rule_class.replace('_', ' ')}</span></p>
+                        <p><strong>Confidence:</strong> {finding['rule_confidence']:.2f}</p>
+                        <p class="explanation">{finding['rule_explanation']}</p>
+                    </div>
+                    <div class="decision-column ml-disabled">
+                        <h4>ML Support Decision</h4>
+                        <p class="disabled-msg">No trained ML model or training dataset is available in this repository.</p>
+                        <p><strong>ML Prediction:</strong> <span class="null-text">null</span></p>
+                        <p><strong>ML Confidence:</strong> <span class="null-text">null</span></p>
+                    </div>
+                </div>
+                
+                <div class="final-verdict-box">
+                    <strong>Final Classification Verdict:</strong>
+                    <p class="final-reason">{final_reason}</p>
+                </div>
+            </div>
+        </div>
+        """
+
+    html_content = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CTS Multi-Scan Validation evidence report for scan_01 showing automated replay results and findings classification.">
+    <title>CTS Multi-Scan Validation - Scan 01 Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {{
+            --bg-color: #0b0f19;
+            --card-bg: #151d30;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --border-color: #1f2937;
+            
+            --tp-color: #10b981;
+            --tp-bg: rgba(16, 185, 129, 0.15);
+            --fp-color: #ef4444;
+            --fp-bg: rgba(239, 68, 68, 0.15);
+            --inc-color: #f59e0b;
+            --inc-bg: rgba(245, 158, 11, 0.15);
+        }}
+
+        * {{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }}
+
+        body {{
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 40px 20px;
+            line-height: 1.6;
+        }}
+
+        .container {{
+            max-width: 1000px;
+            margin: 0 auto;
+        }}
+
+        header {{
+            margin-bottom: 40px;
+            text-align: center;
+        }}
+
+        h1 {{
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }}
+
+        .subtitle {{
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }}
+
+        /* Summary Stats Dashboard */
+        .stats-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }}
+
+        .stat-card {{
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            transition: transform 0.2s ease;
+        }}
+
+        .stat-card:hover {{
+            transform: translateY(-2px);
+        }}
+
+        .stat-value {{
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 5px;
+        }}
+
+        .stat-total {{ color: var(--primary); }}
+        .stat-tp {{ color: var(--tp-color); }}
+        .stat-fp {{ color: var(--fp-color); }}
+        .stat-inc {{ color: var(--inc-color); }}
+
+        /* Finding Card */
+        .finding-card {{
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }}
+
+        .card-header {{
+            background-color: rgba(255, 255, 255, 0.02);
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }}
+
+        .finding-id {{
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }}
+
+        .badge {{
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }}
+
+        .badge-tp {{ background-color: var(--tp-bg); color: var(--tp-color); border: 1px solid var(--tp-color); }}
+        .badge-fp {{ background-color: var(--fp-bg); color: var(--fp-color); border: 1px solid var(--fp-color); }}
+        .badge-inc {{ background-color: var(--inc-bg); color: var(--inc-color); border: 1px solid var(--inc-color); }}
+
+        .card-body {{
+            padding: 24px;
+        }}
+
+        .finding-rule {{
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }}
+
+        .info-grid {{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }}
+
+        .code-url {{
+            background-color: #0b0f19;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-family: monospace;
+            color: #60a5fa;
+            word-break: break-all;
+        }}
+
+        .verdict-text {{
+            font-weight: 600;
+            text-transform: capitalize;
+        }}
+        .verdict-reproduced {{ color: var(--tp-color); }}
+        .verdict-not_reproduced {{ color: var(--fp-color); }}
+        .verdict-inconclusive {{ color: var(--inc-color); }}
+
+        .evidence-box {{
+            background-color: #0b0f19;
+            border-left: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 24px;
+        }}
+
+        .evidence-box pre {{
+            white-space: pre-wrap;
+            word-break: break-all;
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin-top: 8px;
+            color: #e5e7eb;
+        }}
+
+        /* Decision split columns */
+        .decision-section {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }}
+
+        .decision-column {{
+            background-color: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 12px;
+        }}
+
+        .decision-column h4 {{
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }}
+
+        .decision-column p {{
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+        }}
+
+        .explanation {{
+            color: var(--text-muted);
+            margin-top: 10px;
+            font-style: italic;
+        }}
+
+        .ml-disabled {{
+            border-style: dashed;
+            opacity: 0.75;
+        }}
+
+        .disabled-msg {{
+            color: var(--inc-color);
+            font-size: 0.85rem !important;
+            font-weight: 500;
+            margin-bottom: 12px !important;
+        }}
+
+        .null-text {{
+            color: var(--text-muted);
+            font-family: monospace;
+            font-style: italic;
+        }}
+
+        .text-true_positive {{ color: var(--tp-color); font-weight: 600; }}
+        .text-false_positive {{ color: var(--fp-color); font-weight: 600; }}
+        .text-inconclusive {{ color: var(--inc-color); font-weight: 600; }}
+
+        .final-verdict-box {{
+            background-color: rgba(59, 130, 246, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 16px;
+            border-radius: 12px;
+        }}
+
+        .final-reason {{
+            font-weight: 500;
+            color: #ffffff;
+            margin-top: 4px;
+        }}
+
+        footer {{
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 60px;
+            font-size: 0.85rem;
+        }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CTS Multi-Scan Validation</h1>
+            <p class="subtitle">Evidence Analysis Report &mdash; Scan 01</p>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card" id="stat-total">
+                <p class="subtitle">Total Findings</p>
+                <div class="stat-value stat-total">{total}</div>
+            </div>
+            <div class="stat-card" id="stat-tp">
+                <p class="subtitle">True Positives</p>
+                <div class="stat-value stat-tp">{tp}</div>
+            </div>
+            <div class="stat-card" id="stat-fp">
+                <p class="subtitle">False Positives</p>
+                <div class="stat-value stat-fp">{fp}</div>
+            </div>
+            <div class="stat-card" id="stat-inc">
+                <p class="subtitle">Inconclusive</p>
+                <div class="stat-value stat-inc">{inconclusive}</div>
+            </div>
+        </section>
+
+        <main>
+            {rows_html if rows_html else "<p style='text-align: center; color: var(--text-muted);'>No classified findings available. Please run the pipeline script.</p>"}
+        </main>
+
+        <footer>
+            <p>CTS Automated False-Positive Detection Project &bull; Scan 01 Repository</p>
+        </footer>
+    </div>
+</body>
+</html>
+"""
+    # Write report
+    output_dir = os.path.dirname(output_path)
+    if output_dir and not os.path.exists(output_dir):
+        os.makedirs(output_dir, exist_ok=True)
+        
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write(html_content)
+        
+    print(f"Evidence HTML report generated at {output_path}")
+
+if __name__ == "__main__":
+    args = parse_args()
+    
+    if not os.path.exists(args.classified):
+        print(f"Error: Classified findings file does not exist: {args.classified}", file=sys.stderr)
+        sys.exit(1)
+        
+    try:
+        with open(args.classified, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as e:
+        print(f"Error parsing classified findings JSON: {e}", file=sys.stderr)
+        sys.exit(1)
+        
+    generate_html(data, args.output)

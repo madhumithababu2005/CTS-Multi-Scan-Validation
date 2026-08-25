@@ -1,0 +1,177 @@
+[
+  {
+    "id": 1,
+    "rule": "Missing Anti-clickjacking Header",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: x-frame-options",
+    "url": "http://127.0.0.1:5000"
+  },
+  {
+    "id": 2,
+    "rule": "Missing Anti-clickjacking Header",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: x-frame-options",
+    "url": "http://127.0.0.1:5000/"
+  },
+  {
+    "id": 3,
+    "rule": "Missing Anti-clickjacking Header",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: x-frame-options",
+    "url": "http://127.0.0.1:5000/uploads/"
+  },
+  {
+    "id": 4,
+    "rule": "Missing Anti-clickjacking Header",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: x-frame-options",
+    "url": "http://127.0.0.1:5000/uploads/backup_config.json.bak"
+  },
+  {
+    "id": 5,
+    "rule": "Missing Anti-clickjacking Header",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: x-frame-options",
+    "url": "http://127.0.0.1:5000/uploads/notes.txt"
+  },
+  {
+    "id": 6,
+    "rule": "Directory Browsing",
+    "verdict": "reproduced",
+    "reason": "Directory listing is enabled and visible.",
+    "url": "http://127.0.0.1:5000/uploads"
+  },
+  {
+    "id": 7,
+    "rule": "Directory Browsing",
+    "verdict": "reproduced",
+    "reason": "Directory listing is enabled and visible.",
+    "url": "http://127.0.0.1:5000/uploads/"
+  },
+  {
+    "id": 8,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: content-security-policy",
+    "url": "http://127.0.0.1:5000"
+  },
+  {
+    "id": 9,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: content-security-policy",
+    "url": "http://127.0.0.1:5000/"
+  },
+  {
+    "id": 10,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: content-security-policy",
+    "url": "http://127.0.0.1:5000/robots.txt"
+  },
+  {
+    "id": 11,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: content-security-policy",
+    "url": "http://127.0.0.1:5000/sitemap.xml"
+  },
+  {
+    "id": 12,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: content-security-policy",
+    "url": "http://127.0.0.1:5000/uploads/notes.txt"
+  },
+  {
+    "id": 13,
+    "rule": "Application Error Disclosure",
+    "verdict": "reproduced",
+    "reason": "Endpoint responded successfully (Status: 200). Evidence inconclusive but connection succeeded.",
+    "url": "http://127.0.0.1:5000/uploads"
+  },
+  {
+    "id": 14,
+    "rule": "Application Error Disclosure",
+    "verdict": "reproduced",
+    "reason": "Endpoint responded successfully (Status: 200). Evidence inconclusive but connection succeeded.",
+    "url": "http://127.0.0.1:5000/uploads/"
+  },
+  {
+    "id": 15,
+    "rule": "Private IP Disclosure",
+    "verdict": "reproduced",
+    "reason": "Private IP address leaked in response: 192.168.1.9",
+    "url": "http://127.0.0.1:5000/status"
+  },
+  {
+    "id": 16,
+    "rule": "X-Content-Type-Options Header Missing",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: x-frame-options, content-security-policy, x-content-type-options",
+    "url": "http://127.0.0.1:5000"
+  },
+  {
+    "id": 17,
+    "rule": "X-Content-Type-Options Header Missing",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: x-frame-options, content-security-policy, x-content-type-options",
+    "url": "http://127.0.0.1:5000/"
+  },
+  {
+    "id": 18,
+    "rule": "X-Content-Type-Options Header Missing",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: x-frame-options, content-security-policy, x-content-type-options",
+    "url": "http://127.0.0.1:5000/status"
+  },
+  {
+    "id": 19,
+    "rule": "X-Content-Type-Options Header Missing",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: x-frame-options, content-security-policy, x-content-type-options",
+    "url": "http://127.0.0.1:5000/uploads/backup_config.json.bak"
+  },
+  {
+    "id": 20,
+    "rule": "X-Content-Type-Options Header Missing",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: x-frame-options, content-security-policy, x-content-type-options",
+    "url": "http://127.0.0.1:5000/uploads/notes.txt"
+  },
+  {
+    "id": 21,
+    "rule": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: x-frame-options, content-security-policy, x-content-type-options",
+    "url": "http://127.0.0.1:5000"
+  },
+  {
+    "id": 22,
+    "rule": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: x-frame-options, content-security-policy, x-content-type-options",
+    "url": "http://127.0.0.1:5000/"
+  },
+  {
+    "id": 23,
+    "rule": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: x-frame-options, content-security-policy, x-content-type-options",
+    "url": "http://127.0.0.1:5000/robots.txt"
+  },
+  {
+    "id": 24,
+    "rule": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: x-frame-options, content-security-policy, x-content-type-options",
+    "url": "http://127.0.0.1:5000/sitemap.xml"
+  },
+  {
+    "id": 25,
+    "rule": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+    "verdict": "reproduced",
+    "reason": "Security header(s) still missing: x-frame-options, content-security-policy, x-content-type-options",
+    "url": "http://127.0.0.1:5000/uploads/notes.txt"
+  }
+]

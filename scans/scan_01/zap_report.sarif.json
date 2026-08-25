@@ -1,0 +1,1850 @@
+{
+   "runs": [
+      {
+         "results": [ 
+            {
+               "level": "warning",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "snippet": {
+                               "text": ""
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options."
+               },
+               "ruleId": "10020",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "1134",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>Vulnerable Test Target<\/title>\n        <style>\n            body { font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; padding: 40px; }\n            .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }\n            h1 { color: #d9534f; }\n            a { color: #0275d8; text-decoration: none; }\n            a:hover { text-decoration: underline; }\n            ul { line-height: 1.8; }\n        <\/style>\n    <\/head>\n    <body>\n        <div class=\"container\">\n            <h1>Authorized Vulnerable Test Target<\/h1>\n            <p>This is a deliberately vulnerable web application for security testing and scanner validation.<\/p>\n            <h3>Endpoints:<\/h3>\n            <ul>\n                <li><a href=\"\/status\">\/status<\/a> - System Status Information (Private IP disclosure vulnerability)<\/li>\n                <li><a href=\"\/uploads\/\">\/uploads\/<\/a> - Uploads Directory (Directory browsing vulnerability)<\/li>\n            <\/ul>\n        <\/div>\n    <\/body>\n    <\/html>\n    "
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "warning",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "snippet": {
+                               "text": ""
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options."
+               },
+               "ruleId": "10020",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "referer" : "http:\/\/127.0.0.1:5000\/uploads\/",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "1134",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>Vulnerable Test Target<\/title>\n        <style>\n            body { font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; padding: 40px; }\n            .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }\n            h1 { color: #d9534f; }\n            a { color: #0275d8; text-decoration: none; }\n            a:hover { text-decoration: underline; }\n            ul { line-height: 1.8; }\n        <\/style>\n    <\/head>\n    <body>\n        <div class=\"container\">\n            <h1>Authorized Vulnerable Test Target<\/h1>\n            <p>This is a deliberately vulnerable web application for security testing and scanner validation.<\/p>\n            <h3>Endpoints:<\/h3>\n            <ul>\n                <li><a href=\"\/status\">\/status<\/a> - System Status Information (Private IP disclosure vulnerability)<\/li>\n                <li><a href=\"\/uploads\/\">\/uploads\/<\/a> - Uploads Directory (Directory browsing vulnerability)<\/li>\n            <\/ul>\n        <\/div>\n    <\/body>\n    <\/html>\n    "
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "warning",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/uploads\/"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "snippet": {
+                               "text": ""
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options."
+               },
+               "ruleId": "10020",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/uploads\/",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "referer" : "http:\/\/127.0.0.1:5000",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "531",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>Index of \/uploads\/<\/title>\n    <\/head>\n    <body>\n        <h1>Index of \/uploads\/<\/h1>\n        <ul>\n            <li><a href=\"\/\">Parent Directory<\/a><\/li>\n            \n                <li><a href=\"\/uploads\/backup_config.json.bak\">backup_config.json.bak<\/a><\/li>\n            \n                <li><a href=\"\/uploads\/notes.txt\">notes.txt<\/a><\/li>\n            \n                <li><a href=\"\/uploads\/todo.md\">todo.md<\/a><\/li>\n            \n        <\/ul>\n    <\/body>\n    <\/html>\n    "
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "warning",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/uploads\/backup_config.json.bak"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "snippet": {
+                               "text": ""
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options."
+               },
+               "ruleId": "10020",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/uploads\/backup_config.json.bak",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "referer" : "http:\/\/127.0.0.1:5000\/uploads\/",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "81",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "Contents of backup_config.json.bak: Dummy confidential data for security testing."
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "warning",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/uploads\/notes.txt"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "snippet": {
+                               "text": ""
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options."
+               },
+               "ruleId": "10020",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/uploads\/notes.txt",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "referer" : "http:\/\/127.0.0.1:5000\/uploads\/",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "68",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "Contents of notes.txt: Dummy confidential data for security testing."
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "warning",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/uploads"
+                        },
+                        
+                        "region": {
+                           "startLine": 5,
+                           
+                           "snippet": {
+                               "text": "<title>Index of \/uploads\/<\/title>"
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "Web server identified: Apache 2"
+               },
+               "ruleId": "10033",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/uploads",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "531",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:23 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>Index of \/uploads\/<\/title>\n    <\/head>\n    <body>\n        <h1>Index of \/uploads\/<\/h1>\n        <ul>\n            <li><a href=\"\/\">Parent Directory<\/a><\/li>\n            \n                <li><a href=\"\/uploads\/backup_config.json.bak\">backup_config.json.bak<\/a><\/li>\n            \n                <li><a href=\"\/uploads\/notes.txt\">notes.txt<\/a><\/li>\n            \n                <li><a href=\"\/uploads\/todo.md\">todo.md<\/a><\/li>\n            \n        <\/ul>\n    <\/body>\n    <\/html>\n    "
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "warning",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/uploads\/"
+                        },
+                        
+                        "region": {
+                           "startLine": 5,
+                           
+                           "snippet": {
+                               "text": "<title>Index of \/uploads\/<\/title>"
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "Web server identified: Apache 2"
+               },
+               "ruleId": "10033",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/uploads\/",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "referer" : "http:\/\/127.0.0.1:5000",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "531",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>Index of \/uploads\/<\/title>\n    <\/head>\n    <body>\n        <h1>Index of \/uploads\/<\/h1>\n        <ul>\n            <li><a href=\"\/\">Parent Directory<\/a><\/li>\n            \n                <li><a href=\"\/uploads\/backup_config.json.bak\">backup_config.json.bak<\/a><\/li>\n            \n                <li><a href=\"\/uploads\/notes.txt\">notes.txt<\/a><\/li>\n            \n                <li><a href=\"\/uploads\/todo.md\">todo.md<\/a><\/li>\n            \n        <\/ul>\n    <\/body>\n    <\/html>\n    "
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "warning",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "snippet": {
+                               "text": ""
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files."
+               },
+               "ruleId": "10038",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "1134",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>Vulnerable Test Target<\/title>\n        <style>\n            body { font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; padding: 40px; }\n            .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }\n            h1 { color: #d9534f; }\n            a { color: #0275d8; text-decoration: none; }\n            a:hover { text-decoration: underline; }\n            ul { line-height: 1.8; }\n        <\/style>\n    <\/head>\n    <body>\n        <div class=\"container\">\n            <h1>Authorized Vulnerable Test Target<\/h1>\n            <p>This is a deliberately vulnerable web application for security testing and scanner validation.<\/p>\n            <h3>Endpoints:<\/h3>\n            <ul>\n                <li><a href=\"\/status\">\/status<\/a> - System Status Information (Private IP disclosure vulnerability)<\/li>\n                <li><a href=\"\/uploads\/\">\/uploads\/<\/a> - Uploads Directory (Directory browsing vulnerability)<\/li>\n            <\/ul>\n        <\/div>\n    <\/body>\n    <\/html>\n    "
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "warning",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "snippet": {
+                               "text": ""
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files."
+               },
+               "ruleId": "10038",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "referer" : "http:\/\/127.0.0.1:5000\/uploads\/",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "1134",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>Vulnerable Test Target<\/title>\n        <style>\n            body { font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; padding: 40px; }\n            .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }\n            h1 { color: #d9534f; }\n            a { color: #0275d8; text-decoration: none; }\n            a:hover { text-decoration: underline; }\n            ul { line-height: 1.8; }\n        <\/style>\n    <\/head>\n    <body>\n        <div class=\"container\">\n            <h1>Authorized Vulnerable Test Target<\/h1>\n            <p>This is a deliberately vulnerable web application for security testing and scanner validation.<\/p>\n            <h3>Endpoints:<\/h3>\n            <ul>\n                <li><a href=\"\/status\">\/status<\/a> - System Status Information (Private IP disclosure vulnerability)<\/li>\n                <li><a href=\"\/uploads\/\">\/uploads\/<\/a> - Uploads Directory (Directory browsing vulnerability)<\/li>\n            <\/ul>\n        <\/div>\n    <\/body>\n    <\/html>\n    "
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "warning",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/robots.txt"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "snippet": {
+                               "text": ""
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files."
+               },
+               "ruleId": "10038",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/robots.txt",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 404,
+                   "reasonPhrase": "NOT FOUND",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "207",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "<!doctype html>\n<html lang=en>\n<title>404 Not Found<\/title>\n<h1>Not Found<\/h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.<\/p>\n"
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "warning",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/sitemap.xml"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "snippet": {
+                               "text": ""
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files."
+               },
+               "ruleId": "10038",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/sitemap.xml",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 404,
+                   "reasonPhrase": "NOT FOUND",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "207",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "<!doctype html>\n<html lang=en>\n<title>404 Not Found<\/title>\n<h1>Not Found<\/h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.<\/p>\n"
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "warning",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/uploads\/notes.txt"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "snippet": {
+                               "text": ""
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files."
+               },
+               "ruleId": "10038",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/uploads\/notes.txt",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "referer" : "http:\/\/127.0.0.1:5000\/uploads\/",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "68",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "Contents of notes.txt: Dummy confidential data for security testing."
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "warning",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/uploads"
+                        },
+                        
+                        "region": {
+                           "startLine": 10,
+                           
+                           "snippet": {
+                               "text": "Parent Directory"
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "This page contains an error\/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page."
+               },
+               "ruleId": "90022",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/uploads",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "531",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:23 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>Index of \/uploads\/<\/title>\n    <\/head>\n    <body>\n        <h1>Index of \/uploads\/<\/h1>\n        <ul>\n            <li><a href=\"\/\">Parent Directory<\/a><\/li>\n            \n                <li><a href=\"\/uploads\/backup_config.json.bak\">backup_config.json.bak<\/a><\/li>\n            \n                <li><a href=\"\/uploads\/notes.txt\">notes.txt<\/a><\/li>\n            \n                <li><a href=\"\/uploads\/todo.md\">todo.md<\/a><\/li>\n            \n        <\/ul>\n    <\/body>\n    <\/html>\n    "
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "warning",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/uploads\/"
+                        },
+                        
+                        "region": {
+                           "startLine": 10,
+                           
+                           "snippet": {
+                               "text": "Parent Directory"
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "This page contains an error\/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page."
+               },
+               "ruleId": "90022",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/uploads\/",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "referer" : "http:\/\/127.0.0.1:5000",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "531",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>Index of \/uploads\/<\/title>\n    <\/head>\n    <body>\n        <h1>Index of \/uploads\/<\/h1>\n        <ul>\n            <li><a href=\"\/\">Parent Directory<\/a><\/li>\n            \n                <li><a href=\"\/uploads\/backup_config.json.bak\">backup_config.json.bak<\/a><\/li>\n            \n                <li><a href=\"\/uploads\/notes.txt\">notes.txt<\/a><\/li>\n            \n                <li><a href=\"\/uploads\/todo.md\">todo.md<\/a><\/li>\n            \n        <\/ul>\n    <\/body>\n    <\/html>\n    "
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "note",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/status"
+                        },
+                        
+                        "region": {
+                           "startLine": 2,
+                           
+                           "snippet": {
+                               "text": "192.168.1.9"
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "192.168.1.9\n192.168.1.9\n"
+               },
+               "ruleId": "2",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/status",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "referer" : "http:\/\/127.0.0.1:5000",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "191",
+                       "Content-Type" : "application\/json",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "{\n  \"internal_ip\": \"192.168.1.9\",\n  \"message\": \"Server status checks are running on node allan with private address 192.168.1.9.\",\n  \"service\": \"CTS-Validation-Agent\",\n  \"status\": \"online\"\n}\n"
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "note",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "snippet": {
+                               "text": ""
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+               },
+               "ruleId": "10021",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "1134",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>Vulnerable Test Target<\/title>\n        <style>\n            body { font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; padding: 40px; }\n            .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }\n            h1 { color: #d9534f; }\n            a { color: #0275d8; text-decoration: none; }\n            a:hover { text-decoration: underline; }\n            ul { line-height: 1.8; }\n        <\/style>\n    <\/head>\n    <body>\n        <div class=\"container\">\n            <h1>Authorized Vulnerable Test Target<\/h1>\n            <p>This is a deliberately vulnerable web application for security testing and scanner validation.<\/p>\n            <h3>Endpoints:<\/h3>\n            <ul>\n                <li><a href=\"\/status\">\/status<\/a> - System Status Information (Private IP disclosure vulnerability)<\/li>\n                <li><a href=\"\/uploads\/\">\/uploads\/<\/a> - Uploads Directory (Directory browsing vulnerability)<\/li>\n            <\/ul>\n        <\/div>\n    <\/body>\n    <\/html>\n    "
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "note",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "snippet": {
+                               "text": ""
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+               },
+               "ruleId": "10021",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "referer" : "http:\/\/127.0.0.1:5000\/uploads\/",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "1134",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>Vulnerable Test Target<\/title>\n        <style>\n            body { font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; padding: 40px; }\n            .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }\n            h1 { color: #d9534f; }\n            a { color: #0275d8; text-decoration: none; }\n            a:hover { text-decoration: underline; }\n            ul { line-height: 1.8; }\n        <\/style>\n    <\/head>\n    <body>\n        <div class=\"container\">\n            <h1>Authorized Vulnerable Test Target<\/h1>\n            <p>This is a deliberately vulnerable web application for security testing and scanner validation.<\/p>\n            <h3>Endpoints:<\/h3>\n            <ul>\n                <li><a href=\"\/status\">\/status<\/a> - System Status Information (Private IP disclosure vulnerability)<\/li>\n                <li><a href=\"\/uploads\/\">\/uploads\/<\/a> - Uploads Directory (Directory browsing vulnerability)<\/li>\n            <\/ul>\n        <\/div>\n    <\/body>\n    <\/html>\n    "
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "note",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/status"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "snippet": {
+                               "text": ""
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+               },
+               "ruleId": "10021",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/status",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "referer" : "http:\/\/127.0.0.1:5000",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "191",
+                       "Content-Type" : "application\/json",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "{\n  \"internal_ip\": \"192.168.1.9\",\n  \"message\": \"Server status checks are running on node allan with private address 192.168.1.9.\",\n  \"service\": \"CTS-Validation-Agent\",\n  \"status\": \"online\"\n}\n"
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "note",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/uploads\/backup_config.json.bak"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "snippet": {
+                               "text": ""
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+               },
+               "ruleId": "10021",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/uploads\/backup_config.json.bak",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "referer" : "http:\/\/127.0.0.1:5000\/uploads\/",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "81",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "Contents of backup_config.json.bak: Dummy confidential data for security testing."
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "note",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/uploads\/notes.txt"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "snippet": {
+                               "text": ""
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+               },
+               "ruleId": "10021",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/uploads\/notes.txt",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "referer" : "http:\/\/127.0.0.1:5000\/uploads\/",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "68",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "Contents of notes.txt: Dummy confidential data for security testing."
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "note",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "properties" : { 
+                               "startLineFailure" : "Resolved invalid start line: 0 - used fallback value instead."
+                            }, 
+                           "snippet": {
+                               "text": "Werkzeug\/3.1.6 Python\/3.11.9"
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "The web\/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web\/application server is subject to."
+               },
+               "ruleId": "10036",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "1134",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>Vulnerable Test Target<\/title>\n        <style>\n            body { font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; padding: 40px; }\n            .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }\n            h1 { color: #d9534f; }\n            a { color: #0275d8; text-decoration: none; }\n            a:hover { text-decoration: underline; }\n            ul { line-height: 1.8; }\n        <\/style>\n    <\/head>\n    <body>\n        <div class=\"container\">\n            <h1>Authorized Vulnerable Test Target<\/h1>\n            <p>This is a deliberately vulnerable web application for security testing and scanner validation.<\/p>\n            <h3>Endpoints:<\/h3>\n            <ul>\n                <li><a href=\"\/status\">\/status<\/a> - System Status Information (Private IP disclosure vulnerability)<\/li>\n                <li><a href=\"\/uploads\/\">\/uploads\/<\/a> - Uploads Directory (Directory browsing vulnerability)<\/li>\n            <\/ul>\n        <\/div>\n    <\/body>\n    <\/html>\n    "
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "note",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "properties" : { 
+                               "startLineFailure" : "Resolved invalid start line: 0 - used fallback value instead."
+                            }, 
+                           "snippet": {
+                               "text": "Werkzeug\/3.1.6 Python\/3.11.9"
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "The web\/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web\/application server is subject to."
+               },
+               "ruleId": "10036",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "referer" : "http:\/\/127.0.0.1:5000\/uploads\/",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "1134",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n        <title>Vulnerable Test Target<\/title>\n        <style>\n            body { font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; padding: 40px; }\n            .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }\n            h1 { color: #d9534f; }\n            a { color: #0275d8; text-decoration: none; }\n            a:hover { text-decoration: underline; }\n            ul { line-height: 1.8; }\n        <\/style>\n    <\/head>\n    <body>\n        <div class=\"container\">\n            <h1>Authorized Vulnerable Test Target<\/h1>\n            <p>This is a deliberately vulnerable web application for security testing and scanner validation.<\/p>\n            <h3>Endpoints:<\/h3>\n            <ul>\n                <li><a href=\"\/status\">\/status<\/a> - System Status Information (Private IP disclosure vulnerability)<\/li>\n                <li><a href=\"\/uploads\/\">\/uploads\/<\/a> - Uploads Directory (Directory browsing vulnerability)<\/li>\n            <\/ul>\n        <\/div>\n    <\/body>\n    <\/html>\n    "
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "note",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/robots.txt"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "properties" : { 
+                               "startLineFailure" : "Resolved invalid start line: 0 - used fallback value instead."
+                            }, 
+                           "snippet": {
+                               "text": "Werkzeug\/3.1.6 Python\/3.11.9"
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "The web\/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web\/application server is subject to."
+               },
+               "ruleId": "10036",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/robots.txt",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 404,
+                   "reasonPhrase": "NOT FOUND",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "207",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "<!doctype html>\n<html lang=en>\n<title>404 Not Found<\/title>\n<h1>Not Found<\/h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.<\/p>\n"
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "note",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/sitemap.xml"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "properties" : { 
+                               "startLineFailure" : "Resolved invalid start line: 0 - used fallback value instead."
+                            }, 
+                           "snippet": {
+                               "text": "Werkzeug\/3.1.6 Python\/3.11.9"
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "The web\/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web\/application server is subject to."
+               },
+               "ruleId": "10036",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/sitemap.xml",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 404,
+                   "reasonPhrase": "NOT FOUND",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "207",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "<!doctype html>\n<html lang=en>\n<title>404 Not Found<\/title>\n<h1>Not Found<\/h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.<\/p>\n"
+                   },
+                   "noResponseReceived": true
+               }
+            },
+            {
+               "level": "note",
+               "locations": [
+                  {
+                     "physicalLocation": {
+                        "artifactLocation": {
+                           "uri": "http:\/\/127.0.0.1:5000\/uploads\/notes.txt"
+                        },
+                        
+                        "region": {
+                           "startLine": 1,
+                           
+                           "properties" : { 
+                               "startLineFailure" : "Resolved invalid start line: 0 - used fallback value instead."
+                            }, 
+                           "snippet": {
+                               "text": "Werkzeug\/3.1.6 Python\/3.11.9"
+                           }
+                        }
+                     },
+                     "properties": {
+                         "attack": ""
+                     }
+                  }
+               ],
+               "message": {
+                  "text": "The web\/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web\/application server is subject to."
+               },
+               "ruleId": "10036",
+               "webRequest": {
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "target": "http:\/\/127.0.0.1:5000\/uploads\/notes.txt",
+                   "method": "GET",
+                   "headers": {
+                       "cache-control" : "no-cache",
+                       "host" : "127.0.0.1:5000",
+                       "pragma" : "no-cache",
+                       "referer" : "http:\/\/127.0.0.1:5000\/uploads\/",
+                       "user-agent" : "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/141.0.0.0 Safari\/537.36"
+                   },
+                   "body": {
+                       
+                   }
+               },
+               "webResponse": {
+                   "statusCode": 200,
+                   "reasonPhrase": "OK",
+                   "protocol": "HTTP",
+                   "version": "1.1",
+                   "headers": {
+                       "Connection" : "close",
+                       "Content-Length" : "68",
+                       "Content-Type" : "text\/html; charset=utf-8",
+                       "Date" : "Tue, 25 Aug 2026 10:06:03 GMT",
+                       "Server" : "Werkzeug\/3.1.6 Python\/3.11.9"
+                   },
+                   "body": {
+                       "text": "Contents of notes.txt: Dummy confidential data for security testing."
+                   },
+                   "noResponseReceived": true
+               }
+            }
+         ],
+         "taxonomies": [
+            {
+               "downloadUri": "https:\/\/cwe.mitre.org\/data\/xml\/cwec_v4.8.xml.zip",
+               "guid":  "b000a760-3e52-3565-a35c-f61369da53b7",
+               "informationUri": "https:\/\/cwe.mitre.org\/data\/published\/cwe_v4.8.pdf",
+               "isComprehensive": true,
+               "language": "en",
+               "minimumRequiredLocalizedDataSemanticVersion": "4.8",
+               "name":  "CWE",
+               "organization": "MITRE",
+               "releaseDateUtc": "2022-06-28",
+               "shortDescription": {
+                  "text": "The MITRE Common Weakness Enumeration"
+               },
+               "taxa": [
+                  {
+                     "guid": "b70a7030-c124-3e5f-a628-a76f82820eed",
+                     "helpUri": "https:\/\/cwe.mitre.org\/data\/definitions\/497.html",
+                     "id": "497"
+                  },
+                  {
+                     "guid": "fe950454-6ab8-3b99-818a-d7798a7f3887",
+                     "helpUri": "https:\/\/cwe.mitre.org\/data\/definitions\/548.html",
+                     "id": "548"
+                  },
+                  {
+                     "guid": "cda8daff-04d0-303e-8191-8c5a6320f75d",
+                     "helpUri": "https:\/\/cwe.mitre.org\/data\/definitions\/550.html",
+                     "id": "550"
+                  },
+                  {
+                     "guid": "c60fb1e0-6538-36e7-9dfd-7702d6cf8b1f",
+                     "helpUri": "https:\/\/cwe.mitre.org\/data\/definitions\/693.html",
+                     "id": "693"
+                  },
+                  {
+                     "guid": "d8d0ef05-721c-3cbc-8dff-5209722467f8",
+                     "helpUri": "https:\/\/cwe.mitre.org\/data\/definitions\/1021.html",
+                     "id": "1021"
+                  }
+               ],
+               "version": "4.8"
+            }
+         ],
+         "tool": {
+            "driver": {
+               "guid": "3716e880-7ee2-34d2-9cf1-0f88c0dc613a",
+               "informationUri": "https:\/\/www.zaproxy.org\/",
+               "name": "ZAP",
+               "rules": [ 
+                  {
+                     "id": "2",
+                     "defaultConfiguration": {
+                        "level": "note"
+                     },
+                     "fullDescription": {
+                        "text": "A private IP (such as 10.x.x.x, 172.x.x.x, 192.168.x.x) or an Amazon EC2 private hostname (for example, ip-10-0-56-78) has been found in the HTTP response body. This information might be helpful for further attacks targeting internal systems."
+                     },
+                     "name": "Private IP Disclosure",
+                     "properties": {
+                            "references": [
+                                "https:\/\/datatracker.ietf.org\/doc\/html\/rfc1918"
+                            ],
+                            "solution": {
+                                "text": "Remove the private IP address from the HTTP response body. For comments, use JSP\/ASP\/PHP comment instead of HTML\/JavaScript comment which can be seen by client browsers."
+                            },
+                            "confidence": "medium"
+                     },
+                     "relationships": [ 
+                        {
+                           "kinds": [
+                              "superset"
+                           ],
+                           "target": {
+                              "guid":"b70a7030-c124-3e5f-a628-a76f82820eed",
+                              "id": "497",
+                              "toolComponent": {
+                                 "guid": "b000a760-3e52-3565-a35c-f61369da53b7",
+                                 "name": "CWE"
+                              }
+                           }
+                        }
+                        
+                     ],
+                     "shortDescription": {
+                        "text": "Private IP Disclosure"
+                     }
+                  },
+                  {
+                     "id": "10020",
+                     "defaultConfiguration": {
+                        "level": "warning"
+                     },
+                     "fullDescription": {
+                        "text": "The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options."
+                     },
+                     "name": "Missing Anti-clickjacking Header",
+                     "properties": {
+                            "references": [
+                                "https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/HTTP\/Reference\/Headers\/X-Frame-Options"
+                            ],
+                            "solution": {
+                                "text": "Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site\/app.\nIf you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive."
+                            },
+                            "confidence": "medium"
+                     },
+                     "relationships": [ 
+                        {
+                           "kinds": [
+                              "superset"
+                           ],
+                           "target": {
+                              "guid":"d8d0ef05-721c-3cbc-8dff-5209722467f8",
+                              "id": "1021",
+                              "toolComponent": {
+                                 "guid": "b000a760-3e52-3565-a35c-f61369da53b7",
+                                 "name": "CWE"
+                              }
+                           }
+                        }
+                        
+                     ],
+                     "shortDescription": {
+                        "text": "Missing Anti-clickjacking Header"
+                     }
+                  },
+                  {
+                     "id": "10021",
+                     "defaultConfiguration": {
+                        "level": "note"
+                     },
+                     "fullDescription": {
+                        "text": "The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing."
+                     },
+                     "name": "X-Content-Type-Options Header Missing",
+                     "properties": {
+                            "references": [
+                                "https:\/\/learn.microsoft.com\/en-us\/previous-versions\/windows\/internet-explorer\/ie-developer\/compatibility\/gg622941(v=vs.85)",
+                                "https:\/\/owasp.org\/www-community\/Security_Headers"
+                            ],
+                            "solution": {
+                                "text": "Ensure that the application\/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.\nIf possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application\/web server to not perform MIME-sniffing."
+                            },
+                            "confidence": "medium"
+                     },
+                     "relationships": [ 
+                        {
+                           "kinds": [
+                              "superset"
+                           ],
+                           "target": {
+                              "guid":"c60fb1e0-6538-36e7-9dfd-7702d6cf8b1f",
+                              "id": "693",
+                              "toolComponent": {
+                                 "guid": "b000a760-3e52-3565-a35c-f61369da53b7",
+                                 "name": "CWE"
+                              }
+                           }
+                        }
+                        
+                     ],
+                     "shortDescription": {
+                        "text": "X-Content-Type-Options Header Missing"
+                     }
+                  },
+                  {
+                     "id": "10033",
+                     "defaultConfiguration": {
+                        "level": "warning"
+                     },
+                     "fullDescription": {
+                        "text": "It is possible to view a listing of the directory contents. Directory listings may reveal hidden scripts, include files, backup source files, etc., which can be accessed to reveal sensitive information."
+                     },
+                     "name": "Directory Browsing",
+                     "properties": {
+                            "references": [
+                                "https:\/\/cwe.mitre.org\/data\/definitions\/548.html"
+                            ],
+                            "solution": {
+                                "text": "Configure the web server to disable directory browsing."
+                            },
+                            "confidence": "medium"
+                     },
+                     "relationships": [ 
+                        {
+                           "kinds": [
+                              "superset"
+                           ],
+                           "target": {
+                              "guid":"fe950454-6ab8-3b99-818a-d7798a7f3887",
+                              "id": "548",
+                              "toolComponent": {
+                                 "guid": "b000a760-3e52-3565-a35c-f61369da53b7",
+                                 "name": "CWE"
+                              }
+                           }
+                        }
+                        
+                     ],
+                     "shortDescription": {
+                        "text": "Directory Browsing"
+                     }
+                  },
+                  {
+                     "id": "10036",
+                     "defaultConfiguration": {
+                        "level": "note"
+                     },
+                     "fullDescription": {
+                        "text": "The web\/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web\/application server is subject to."
+                     },
+                     "name": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+                     "properties": {
+                            "references": [
+                                "https:\/\/httpd.apache.org\/docs\/current\/mod\/core.html#servertokens",
+                                "https:\/\/learn.microsoft.com\/en-us\/previous-versions\/msp-n-p\/ff648552(v=pandp.10)",
+                                "https:\/\/www.troyhunt.com\/shhh-dont-let-your-response-headers\/"
+                            ],
+                            "solution": {
+                                "text": "Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details."
+                            },
+                            "confidence": "high"
+                     },
+                     "relationships": [ 
+                        {
+                           "kinds": [
+                              "superset"
+                           ],
+                           "target": {
+                              "guid":"b70a7030-c124-3e5f-a628-a76f82820eed",
+                              "id": "497",
+                              "toolComponent": {
+                                 "guid": "b000a760-3e52-3565-a35c-f61369da53b7",
+                                 "name": "CWE"
+                              }
+                           }
+                        }
+                        
+                     ],
+                     "shortDescription": {
+                        "text": "Server Leaks Version Information via \"Server\" HTTP Response Header Field"
+                     }
+                  },
+                  {
+                     "id": "10038",
+                     "defaultConfiguration": {
+                        "level": "warning"
+                     },
+                     "fullDescription": {
+                        "text": "Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files."
+                     },
+                     "name": "Content Security Policy (CSP) Header Not Set",
+                     "properties": {
+                            "references": [
+                                "https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/HTTP\/Guides\/CSP",
+                                "https:\/\/cheatsheetseries.owasp.org\/cheatsheets\/Content_Security_Policy_Cheat_Sheet.html",
+                                "https:\/\/www.w3.org\/TR\/CSP\/",
+                                "https:\/\/w3c.github.io\/webappsec-csp\/",
+                                "https:\/\/web.dev\/articles\/csp",
+                                "https:\/\/caniuse.com\/#feat=contentsecuritypolicy",
+                                "https:\/\/content-security-policy.com\/"
+                            ],
+                            "solution": {
+                                "text": "Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header."
+                            },
+                            "confidence": "high"
+                     },
+                     "relationships": [ 
+                        {
+                           "kinds": [
+                              "superset"
+                           ],
+                           "target": {
+                              "guid":"c60fb1e0-6538-36e7-9dfd-7702d6cf8b1f",
+                              "id": "693",
+                              "toolComponent": {
+                                 "guid": "b000a760-3e52-3565-a35c-f61369da53b7",
+                                 "name": "CWE"
+                              }
+                           }
+                        }
+                        
+                     ],
+                     "shortDescription": {
+                        "text": "Content Security Policy (CSP) Header Not Set"
+                     }
+                  },
+                  {
+                     "id": "90022",
+                     "defaultConfiguration": {
+                        "level": "warning"
+                     },
+                     "fullDescription": {
+                        "text": "This page contains an error\/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page."
+                     },
+                     "name": "Application Error Disclosure",
+                     "properties": {
+                            "references": [],
+                            "solution": {
+                                "text": "Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference\/identifier to the client (browser) while logging the details on the server side and not exposing them to the user."
+                            },
+                            "confidence": "medium"
+                     },
+                     "relationships": [ 
+                        {
+                           "kinds": [
+                              "superset"
+                           ],
+                           "target": {
+                              "guid":"cda8daff-04d0-303e-8191-8c5a6320f75d",
+                              "id": "550",
+                              "toolComponent": {
+                                 "guid": "b000a760-3e52-3565-a35c-f61369da53b7",
+                                 "name": "CWE"
+                              }
+                           }
+                        }
+                        
+                     ],
+                     "shortDescription": {
+                        "text": "Application Error Disclosure"
+                     }
+                  }
+                  
+               ],
+               "semanticVersion": "2.17.0",
+               "supportedTaxonomies": [ 
+                  {
+                     "guid": "b000a760-3e52-3565-a35c-f61369da53b7",
+                     "name": "CWE"
+                  }
+               ],
+               "version": "2.17.0"
+            }
+         }
+      }
+   ],
+   "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+   "version": "2.1.0"
+}
