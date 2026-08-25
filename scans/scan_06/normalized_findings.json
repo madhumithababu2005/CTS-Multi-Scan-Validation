@@ -1,0 +1,276 @@
+[
+  {
+    "id": 1,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "url": "http://juice-shop:3000",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "user-agent": ""
+    },
+    "request_body": ""
+  },
+  {
+    "id": 2,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "url": "http://juice-shop:3000/ftp/coupons_2013.md.bak",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "referer": "http://juice-shop:3000/ftp",
+      "user-agent": ""
+    },
+    "request_body": ""
+  },
+  {
+    "id": 3,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "url": "http://juice-shop:3000/ftp/encrypt.pyc",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "referer": "http://juice-shop:3000/ftp",
+      "user-agent": ""
+    },
+    "request_body": ""
+  },
+  {
+    "id": 4,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "url": "http://juice-shop:3000/sitemap.xml",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "user-agent": ""
+    },
+    "request_body": ""
+  },
+  {
+    "id": 5,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "http://juice-shop:3000",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": ""
+  },
+  {
+    "id": 6,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "http://juice-shop:3000/sitemap.xml",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "user-agent": ""
+    },
+    "request_body": ""
+  },
+  {
+    "id": 7,
+    "rule": "Cross-Domain Misconfiguration",
+    "url": "http://juice-shop:3000/styles.css",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "referer": "http://juice-shop:3000",
+      "user-agent": ""
+    },
+    "request_body": ""
+  },
+  {
+    "id": 8,
+    "rule": "Timestamp Disclosure - Unix",
+    "url": "http://juice-shop:3000/styles.css",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "referer": "http://juice-shop:3000",
+      "user-agent": ""
+    },
+    "request_body": ""
+  },
+  {
+    "id": 9,
+    "rule": "Timestamp Disclosure - Unix",
+    "url": "http://juice-shop:3000/styles.css",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "referer": "http://juice-shop:3000",
+      "user-agent": ""
+    },
+    "request_body": ""
+  },
+  {
+    "id": 10,
+    "rule": "Timestamp Disclosure - Unix",
+    "url": "http://juice-shop:3000/styles.css",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "referer": "http://juice-shop:3000",
+      "user-agent": ""
+    },
+    "request_body": ""
+  },
+  {
+    "id": 11,
+    "rule": "Timestamp Disclosure - Unix",
+    "url": "http://juice-shop:3000/styles.css",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "referer": "http://juice-shop:3000",
+      "user-agent": ""
+    },
+    "request_body": ""
+  },
+  {
+    "id": 12,
+    "rule": "Timestamp Disclosure - Unix",
+    "url": "http://juice-shop:3000/styles.css",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "referer": "http://juice-shop:3000",
+      "user-agent": ""
+    },
+    "request_body": ""
+  },
+  {
+    "id": 13,
+    "rule": "User Agent Fuzzer",
+    "url": "http://juice-shop:3000/assets",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "referer": "http://juice-shop:3000/sitemap.xml",
+      "user-agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)"
+    },
+    "request_body": ""
+  },
+  {
+    "id": 14,
+    "rule": "User Agent Fuzzer",
+    "url": "http://juice-shop:3000/assets/public",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "referer": "http://juice-shop:3000/sitemap.xml",
+      "user-agent": "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)"
+    },
+    "request_body": ""
+  },
+  {
+    "id": 15,
+    "rule": "User Agent Fuzzer",
+    "url": "http://juice-shop:3000/assets/public",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "referer": "http://juice-shop:3000/sitemap.xml",
+      "user-agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)"
+    },
+    "request_body": ""
+  },
+  {
+    "id": 16,
+    "rule": "Modern Web Application",
+    "url": "http://juice-shop:3000",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "request_body": ""
+  },
+  {
+    "id": 17,
+    "rule": "Modern Web Application",
+    "url": "http://juice-shop:3000/",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "referer": "http://juice-shop:3000/ftp",
+      "user-agent": ""
+    },
+    "request_body": ""
+  },
+  {
+    "id": 18,
+    "rule": "Modern Web Application",
+    "url": "http://juice-shop:3000/juice-shop/build/routes/fileServer.js:52:13",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "referer": "http://juice-shop:3000/ftp/coupons_2013.md.bak",
+      "user-agent": ""
+    },
+    "request_body": ""
+  },
+  {
+    "id": 19,
+    "rule": "Modern Web Application",
+    "url": "http://juice-shop:3000/juice-shop/build/routes/fileServer.js:68:18",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "referer": "http://juice-shop:3000/ftp/coupons_2013.md.bak",
+      "user-agent": ""
+    },
+    "request_body": ""
+  },
+  {
+    "id": 20,
+    "rule": "Modern Web Application",
+    "url": "http://juice-shop:3000/sitemap.xml",
+    "method": "GET",
+    "request_headers": {
+      "cache-control": "no-cache",
+      "host": "juice-shop:3000",
+      "pragma": "no-cache",
+      "user-agent": ""
+    },
+    "request_body": ""
+  }
+]

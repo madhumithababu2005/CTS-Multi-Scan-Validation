@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "CSP header is still missing",
+    "url": "http://juice-shop:3000"
+  },
+  {
+    "id": 2,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "CSP header is still missing",
+    "url": "http://juice-shop:3000/ftp/coupons_2013.md.bak"
+  },
+  {
+    "id": 3,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "CSP header is still missing",
+    "url": "http://juice-shop:3000/ftp/encrypt.pyc"
+  },
+  {
+    "id": 4,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "CSP header is still missing",
+    "url": "http://juice-shop:3000/sitemap.xml"
+  },
+  {
+    "id": 5,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "reproduced",
+    "reason": "Access-Control-Allow-Origin is wildcard (*)",
+    "url": "http://juice-shop:3000"
+  },
+  {
+    "id": 6,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "reproduced",
+    "reason": "Access-Control-Allow-Origin is wildcard (*)",
+    "url": "http://juice-shop:3000/sitemap.xml"
+  },
+  {
+    "id": 7,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "reproduced",
+    "reason": "Access-Control-Allow-Origin is wildcard (*)",
+    "url": "http://juice-shop:3000/styles.css"
+  },
+  {
+    "id": 8,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "reproduced",
+    "reason": "Unix-like timestamp was observed in replay response",
+    "url": "http://juice-shop:3000/styles.css"
+  },
+  {
+    "id": 9,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "reproduced",
+    "reason": "Unix-like timestamp was observed in replay response",
+    "url": "http://juice-shop:3000/styles.css"
+  },
+  {
+    "id": 10,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "reproduced",
+    "reason": "Unix-like timestamp was observed in replay response",
+    "url": "http://juice-shop:3000/styles.css"
+  },
+  {
+    "id": 11,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "reproduced",
+    "reason": "Unix-like timestamp was observed in replay response",
+    "url": "http://juice-shop:3000/styles.css"
+  },
+  {
+    "id": 12,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "reproduced",
+    "reason": "Unix-like timestamp was observed in replay response",
+    "url": "http://juice-shop:3000/styles.css"
+  },
+  {
+    "id": 13,
+    "rule": "User Agent Fuzzer",
+    "verdict": "inconclusive",
+    "reason": "User Agent Fuzzer requires comparison against a baseline response",
+    "url": "http://juice-shop:3000/assets"
+  },
+  {
+    "id": 14,
+    "rule": "User Agent Fuzzer",
+    "verdict": "inconclusive",
+    "reason": "User Agent Fuzzer requires comparison against a baseline response",
+    "url": "http://juice-shop:3000/assets/public"
+  },
+  {
+    "id": 15,
+    "rule": "User Agent Fuzzer",
+    "verdict": "inconclusive",
+    "reason": "User Agent Fuzzer requires comparison against a baseline response",
+    "url": "http://juice-shop:3000/assets/public"
+  },
+  {
+    "id": 16,
+    "rule": "Modern Web Application",
+    "verdict": "inconclusive",
+    "reason": "Modern Web Application is informational and not a direct security condition",
+    "url": "http://juice-shop:3000"
+  },
+  {
+    "id": 17,
+    "rule": "Modern Web Application",
+    "verdict": "inconclusive",
+    "reason": "Modern Web Application is informational and not a direct security condition",
+    "url": "http://juice-shop:3000/"
+  },
+  {
+    "id": 18,
+    "rule": "Modern Web Application",
+    "verdict": "inconclusive",
+    "reason": "Modern Web Application is informational and not a direct security condition",
+    "url": "http://juice-shop:3000/juice-shop/build/routes/fileServer.js:52:13"
+  },
+  {
+    "id": 19,
+    "rule": "Modern Web Application",
+    "verdict": "inconclusive",
+    "reason": "Modern Web Application is informational and not a direct security condition",
+    "url": "http://juice-shop:3000/juice-shop/build/routes/fileServer.js:68:18"
+  },
+  {
+    "id": 20,
+    "rule": "Modern Web Application",
+    "verdict": "inconclusive",
+    "reason": "Modern Web Application is informational and not a direct security condition",
+    "url": "http://juice-shop:3000/sitemap.xml"
+  }
+]

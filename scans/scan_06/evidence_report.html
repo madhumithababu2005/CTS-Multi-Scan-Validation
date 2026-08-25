@@ -1,0 +1,1428 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CTS Evidence Report - Scan 06</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 30px;
+    color: #222;
+}
+
+h1 {
+    text-align: center;
+}
+
+.summary {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.finding {
+    background: white;
+    padding: 20px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border-left: 6px solid #777;
+}
+
+.true_positive {
+    border-left-color: green;
+}
+
+.false_positive {
+    border-left-color: red;
+}
+
+.inconclusive {
+    border-left-color: orange;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.value {
+    margin-bottom: 10px;
+}
+
+.tp {
+    color: green;
+    font-weight: bold;
+}
+
+.fp {
+    color: red;
+    font-weight: bold;
+}
+
+.inc {
+    color: darkorange;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<h1>CTS Multi-Scan Validation</h1>
+<h2 style="text-align:center;">Evidence Report - Scan 06</h2>
+
+<div class="summary">
+<h2>Scan Summary</h2>
+
+<p><b>Total Findings:</b> 20</p>
+<p class="tp">True Positives: 12</p>
+<p class="fp">False Positives: 0</p>
+<p class="inc">Inconclusive: 8</p>
+
+</div>
+
+<div class="finding true_positive">
+
+<h2>Finding #1</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+Content Security Policy (CSP) Header Not Set
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+reproduced
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+CSP header is still missing
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.9
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (CSP header is still missing)
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.6
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>true_positive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (CSP header is still missing)
+</div>
+
+</div>
+
+<div class="finding true_positive">
+
+<h2>Finding #2</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+Content Security Policy (CSP) Header Not Set
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000/ftp/coupons_2013.md.bak
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+reproduced
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+CSP header is still missing
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.9
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (CSP header is still missing)
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.7
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>true_positive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (CSP header is still missing)
+</div>
+
+</div>
+
+<div class="finding true_positive">
+
+<h2>Finding #3</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+Content Security Policy (CSP) Header Not Set
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000/ftp/encrypt.pyc
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+reproduced
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+CSP header is still missing
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.9
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (CSP header is still missing)
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.7
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>true_positive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (CSP header is still missing)
+</div>
+
+</div>
+
+<div class="finding true_positive">
+
+<h2>Finding #4</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+Content Security Policy (CSP) Header Not Set
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000/sitemap.xml
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+reproduced
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+CSP header is still missing
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.9
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (CSP header is still missing)
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.6
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>true_positive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (CSP header is still missing)
+</div>
+
+</div>
+
+<div class="finding true_positive">
+
+<h2>Finding #5</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+Cross-Domain Misconfiguration
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+reproduced
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+Access-Control-Allow-Origin is wildcard (*)
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.9
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (Access-Control-Allow-Origin is wildcard (*))
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.74
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>true_positive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (Access-Control-Allow-Origin is wildcard (*))
+</div>
+
+</div>
+
+<div class="finding true_positive">
+
+<h2>Finding #6</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+Cross-Domain Misconfiguration
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000/sitemap.xml
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+reproduced
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+Access-Control-Allow-Origin is wildcard (*)
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.9
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (Access-Control-Allow-Origin is wildcard (*))
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.74
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>true_positive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (Access-Control-Allow-Origin is wildcard (*))
+</div>
+
+</div>
+
+<div class="finding true_positive">
+
+<h2>Finding #7</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+Cross-Domain Misconfiguration
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000/styles.css
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+reproduced
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+Access-Control-Allow-Origin is wildcard (*)
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.9
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (Access-Control-Allow-Origin is wildcard (*))
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.74
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>true_positive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (Access-Control-Allow-Origin is wildcard (*))
+</div>
+
+</div>
+
+<div class="finding true_positive">
+
+<h2>Finding #8</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+Timestamp Disclosure - Unix
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000/styles.css
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+reproduced
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+Unix-like timestamp was observed in replay response
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.7
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (Unix-like timestamp was observed in replay response)
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.59
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>true_positive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (Unix-like timestamp was observed in replay response)
+</div>
+
+</div>
+
+<div class="finding true_positive">
+
+<h2>Finding #9</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+Timestamp Disclosure - Unix
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000/styles.css
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+reproduced
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+Unix-like timestamp was observed in replay response
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.7
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (Unix-like timestamp was observed in replay response)
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.59
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>true_positive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (Unix-like timestamp was observed in replay response)
+</div>
+
+</div>
+
+<div class="finding true_positive">
+
+<h2>Finding #10</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+Timestamp Disclosure - Unix
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000/styles.css
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+reproduced
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+Unix-like timestamp was observed in replay response
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.7
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (Unix-like timestamp was observed in replay response)
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.59
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>true_positive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (Unix-like timestamp was observed in replay response)
+</div>
+
+</div>
+
+<div class="finding true_positive">
+
+<h2>Finding #11</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+Timestamp Disclosure - Unix
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000/styles.css
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+reproduced
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+Unix-like timestamp was observed in replay response
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.7
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (Unix-like timestamp was observed in replay response)
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.59
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>true_positive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (Unix-like timestamp was observed in replay response)
+</div>
+
+</div>
+
+<div class="finding true_positive">
+
+<h2>Finding #12</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+Timestamp Disclosure - Unix
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000/styles.css
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+reproduced
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+Unix-like timestamp was observed in replay response
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.7
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (Unix-like timestamp was observed in replay response)
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+true_positive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.59
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>true_positive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding was replayed against the live application, and the expected security condition was confirmed. (Unix-like timestamp was observed in replay response)
+</div>
+
+</div>
+
+<div class="finding inconclusive">
+
+<h2>Finding #13</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+User Agent Fuzzer
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000/assets
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+User Agent Fuzzer requires comparison against a baseline response
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.0
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding could not be reliably classified from replay evidence: User Agent Fuzzer requires comparison against a baseline response
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.0
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>inconclusive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding could not be reliably classified from replay evidence: User Agent Fuzzer requires comparison against a baseline response
+</div>
+
+</div>
+
+<div class="finding inconclusive">
+
+<h2>Finding #14</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+User Agent Fuzzer
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000/assets/public
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+User Agent Fuzzer requires comparison against a baseline response
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.0
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding could not be reliably classified from replay evidence: User Agent Fuzzer requires comparison against a baseline response
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.0
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>inconclusive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding could not be reliably classified from replay evidence: User Agent Fuzzer requires comparison against a baseline response
+</div>
+
+</div>
+
+<div class="finding inconclusive">
+
+<h2>Finding #15</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+User Agent Fuzzer
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000/assets/public
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+User Agent Fuzzer requires comparison against a baseline response
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.0
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding could not be reliably classified from replay evidence: User Agent Fuzzer requires comparison against a baseline response
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.0
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>inconclusive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding could not be reliably classified from replay evidence: User Agent Fuzzer requires comparison against a baseline response
+</div>
+
+</div>
+
+<div class="finding inconclusive">
+
+<h2>Finding #16</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+Modern Web Application
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+Modern Web Application is informational and not a direct security condition
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.0
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding could not be reliably classified from replay evidence: Modern Web Application is informational and not a direct security condition
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.0
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>inconclusive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding could not be reliably classified from replay evidence: Modern Web Application is informational and not a direct security condition
+</div>
+
+</div>
+
+<div class="finding inconclusive">
+
+<h2>Finding #17</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+Modern Web Application
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000/
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+Modern Web Application is informational and not a direct security condition
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.0
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding could not be reliably classified from replay evidence: Modern Web Application is informational and not a direct security condition
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.0
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>inconclusive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding could not be reliably classified from replay evidence: Modern Web Application is informational and not a direct security condition
+</div>
+
+</div>
+
+<div class="finding inconclusive">
+
+<h2>Finding #18</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+Modern Web Application
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000/juice-shop/build/routes/fileServer.js:52:13
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+Modern Web Application is informational and not a direct security condition
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.0
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding could not be reliably classified from replay evidence: Modern Web Application is informational and not a direct security condition
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.0
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>inconclusive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding could not be reliably classified from replay evidence: Modern Web Application is informational and not a direct security condition
+</div>
+
+</div>
+
+<div class="finding inconclusive">
+
+<h2>Finding #19</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+Modern Web Application
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000/juice-shop/build/routes/fileServer.js:68:18
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+Modern Web Application is informational and not a direct security condition
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.0
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding could not be reliably classified from replay evidence: Modern Web Application is informational and not a direct security condition
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.0
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>inconclusive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding could not be reliably classified from replay evidence: Modern Web Application is informational and not a direct security condition
+</div>
+
+</div>
+
+<div class="finding inconclusive">
+
+<h2>Finding #20</h2>
+
+<div class="value">
+<span class="label">Rule:</span>
+Modern Web Application
+</div>
+
+<div class="value">
+<span class="label">URL:</span>
+http://juice-shop:3000/sitemap.xml
+</div>
+
+<div class="value">
+<span class="label">Replay Verdict:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">Evidence:</span>
+Modern Web Application is informational and not a direct security condition
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Rule Engine Decision:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">Rule Confidence:</span>
+0.0
+</div>
+
+<div class="value">
+<span class="label">Rule Explanation:</span>
+The finding could not be reliably classified from replay evidence: Modern Web Application is informational and not a direct security condition
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">ML Prediction:</span>
+inconclusive
+</div>
+
+<div class="value">
+<span class="label">ML Confidence:</span>
+0.0
+</div>
+
+<hr>
+
+<div class="value">
+<span class="label">Final Classification:</span>
+<b>inconclusive</b>
+</div>
+
+<div class="value">
+<span class="label">Final Reason:</span>
+The finding could not be reliably classified from replay evidence: Modern Web Application is informational and not a direct security condition
+</div>
+
+</div>
+
+</body>
+</html>
