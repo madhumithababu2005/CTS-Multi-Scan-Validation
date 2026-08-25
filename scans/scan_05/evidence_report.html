@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>CTS Evidence Report</title>
+<style>
+body{font-family:Arial,sans-serif;margin:40px;background:#f5f5f5;color:#222}
+.finding{background:white;padding:22px;margin:18px 0;border-radius:10px;
+box-shadow:0 1px 5px #ccc} .final{font-size:20px}
+</style></head><body><h1>CTS Scan Evidence Report</h1>
+
+        <section class="finding">
+          <h2>Finding #1</h2>
+          <p><b>Rule:</b> SQL injection may be possible.</p>
+          <p><b>URL:</b> http://127.0.0.1:3000/rest/products/search?q=apple%27</p>
+          <p><b>Replay:</b> reproduced</p>
+          <p><b>Evidence:</b> Replay returned a server/database error consistent with the original SQL injection condition.</p>
+          <p><b>Rule decision:</b> true_positive
+             (0.95)</p>
+          <p><b>ML support:</b> true_positive
+             (0.60)</p>
+          <p class="final"><b>Final classification:</b>
+             true_positive</p>
+          <p><b>Reason:</b> Replay evidence reproduced the reported security condition.</p>
+        </section></body></html>

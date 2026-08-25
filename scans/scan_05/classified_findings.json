@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "rule": "SQL injection may be possible.",
+    "url": "http://127.0.0.1:3000/rest/products/search?q=apple%27",
+    "replay_verdict": "reproduced",
+    "evidence": "Replay returned a server/database error consistent with the original SQL injection condition.",
+    "rule_classification": "true_positive",
+    "rule_confidence": 0.95,
+    "rule_explanation": "Replay evidence reproduced the reported security condition.",
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.6,
+    "final_classification": "true_positive",
+    "final_reason": "Replay evidence reproduced the reported security condition."
+  }
+]

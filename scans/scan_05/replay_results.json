@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "rule": "SQL injection may be possible.",
+    "url": "http://127.0.0.1:3000/rest/products/search?q=apple%27",
+    "verdict": "reproduced",
+    "reason": "Internal Server Error",
+    "status": 500,
+    "evidence": "Replay returned a server/database error consistent with the original SQL injection condition."
+  }
+]
