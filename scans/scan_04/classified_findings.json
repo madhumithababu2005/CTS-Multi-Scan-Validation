@@ -8,10 +8,10 @@
     "rule_classification": "true_positive",
     "rule_confidence": 0.95,
     "rule_explanation": "The finding was replayed against the live application and the reported security condition was observed.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.64,
     "final_classification": "true_positive",
-    "final_reason": "Replay evidence reproduced the reported security condition."
+    "final_reason": "Replay reproduced the reported security condition; ML provided supporting evidence."
   },
   {
     "id": 2,
@@ -22,10 +22,10 @@
     "rule_classification": "true_positive",
     "rule_confidence": 0.95,
     "rule_explanation": "The finding was replayed against the live application and the reported security condition was observed.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.64,
     "final_classification": "true_positive",
-    "final_reason": "Replay evidence reproduced the reported security condition."
+    "final_reason": "Replay reproduced the reported security condition; ML provided supporting evidence."
   },
   {
     "id": 3,
@@ -36,10 +36,10 @@
     "rule_classification": "true_positive",
     "rule_confidence": 0.95,
     "rule_explanation": "The finding was replayed against the live application and the reported security condition was observed.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.67,
     "final_classification": "true_positive",
-    "final_reason": "Replay evidence reproduced the reported security condition."
+    "final_reason": "Replay reproduced the reported security condition; ML provided supporting evidence."
   },
   {
     "id": 4,
@@ -50,10 +50,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.5,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 5,
@@ -64,10 +64,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.52,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 6,
@@ -78,10 +78,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.52,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 7,
@@ -92,10 +92,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.52,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 8,
@@ -106,10 +106,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.52,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 9,
@@ -120,10 +120,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.52,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 10,
@@ -134,10 +134,10 @@
     "rule_classification": "true_positive",
     "rule_confidence": 0.95,
     "rule_explanation": "The finding was replayed against the live application and the reported security condition was observed.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "true_positive",
-    "final_reason": "Replay evidence reproduced the reported security condition."
+    "final_reason": "Replay reproduced the reported security condition; ML provided supporting evidence."
   },
   {
     "id": 11,
@@ -148,10 +148,10 @@
     "rule_classification": "true_positive",
     "rule_confidence": 0.95,
     "rule_explanation": "The finding was replayed against the live application and the reported security condition was observed.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "true_positive",
-    "final_reason": "Replay evidence reproduced the reported security condition."
+    "final_reason": "Replay reproduced the reported security condition; ML provided supporting evidence."
   },
   {
     "id": 12,
@@ -162,10 +162,10 @@
     "rule_classification": "true_positive",
     "rule_confidence": 0.95,
     "rule_explanation": "The finding was replayed against the live application and the reported security condition was observed.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "true_positive",
-    "final_reason": "Replay evidence reproduced the reported security condition."
+    "final_reason": "Replay reproduced the reported security condition; ML provided supporting evidence."
   },
   {
     "id": 13,
@@ -176,10 +176,10 @@
     "rule_classification": "true_positive",
     "rule_confidence": 0.95,
     "rule_explanation": "The finding was replayed against the live application and the reported security condition was observed.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "true_positive",
-    "final_reason": "Replay evidence reproduced the reported security condition."
+    "final_reason": "Replay reproduced the reported security condition; ML provided supporting evidence."
   },
   {
     "id": 14,
@@ -190,10 +190,10 @@
     "rule_classification": "true_positive",
     "rule_confidence": 0.95,
     "rule_explanation": "The finding was replayed against the live application and the reported security condition was observed.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "true_positive",
-    "final_reason": "Replay evidence reproduced the reported security condition."
+    "final_reason": "Replay reproduced the reported security condition; ML provided supporting evidence."
   },
   {
     "id": 15,
@@ -204,10 +204,10 @@
     "rule_classification": "true_positive",
     "rule_confidence": 0.95,
     "rule_explanation": "The finding was replayed against the live application and the reported security condition was observed.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "true_positive",
-    "final_reason": "Replay evidence reproduced the reported security condition."
+    "final_reason": "Replay reproduced the reported security condition; ML provided supporting evidence."
   },
   {
     "id": 16,
@@ -218,10 +218,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.54,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 17,
@@ -232,10 +232,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.54,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 18,
@@ -246,10 +246,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.54,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 19,
@@ -260,10 +260,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.54,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 20,
@@ -274,10 +274,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.54,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 21,
@@ -288,10 +288,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 22,
@@ -302,10 +302,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 23,
@@ -316,10 +316,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 24,
@@ -330,10 +330,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 25,
@@ -344,10 +344,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 26,
@@ -358,10 +358,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.54,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 27,
@@ -372,10 +372,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.54,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 28,
@@ -386,10 +386,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.54,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 29,
@@ -400,10 +400,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.54,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 30,
@@ -414,10 +414,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.54,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 31,
@@ -428,10 +428,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 32,
@@ -442,10 +442,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 33,
@@ -456,10 +456,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 34,
@@ -470,10 +470,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 35,
@@ -484,10 +484,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 36,
@@ -498,10 +498,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 37,
@@ -512,10 +512,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 38,
@@ -526,10 +526,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 39,
@@ -540,10 +540,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 40,
@@ -554,10 +554,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 41,
@@ -568,10 +568,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 42,
@@ -582,10 +582,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 43,
@@ -596,10 +596,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 44,
@@ -610,10 +610,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 45,
@@ -624,10 +624,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 46,
@@ -638,10 +638,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 47,
@@ -652,10 +652,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 48,
@@ -666,10 +666,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 49,
@@ -680,10 +680,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 50,
@@ -694,10 +694,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 51,
@@ -708,10 +708,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 52,
@@ -722,10 +722,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 53,
@@ -736,10 +736,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 54,
@@ -750,10 +750,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.67,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 55,
@@ -764,10 +764,10 @@
     "rule_classification": "true_positive",
     "rule_confidence": 0.95,
     "rule_explanation": "The finding was replayed against the live application and the reported security condition was observed.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.68,
     "final_classification": "true_positive",
-    "final_reason": "Replay evidence reproduced the reported security condition."
+    "final_reason": "Replay reproduced the reported security condition; ML provided supporting evidence."
   },
   {
     "id": 56,
@@ -778,10 +778,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.66,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 57,
@@ -792,10 +792,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.66,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 58,
@@ -806,10 +806,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.52,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 59,
@@ -820,10 +820,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 60,
@@ -834,10 +834,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 61,
@@ -848,10 +848,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 62,
@@ -862,10 +862,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 63,
@@ -876,10 +876,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 64,
@@ -890,10 +890,10 @@
     "rule_classification": "true_positive",
     "rule_confidence": 0.95,
     "rule_explanation": "The finding was replayed against the live application and the reported security condition was observed.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "true_positive",
-    "final_reason": "Replay evidence reproduced the reported security condition."
+    "final_reason": "Replay reproduced the reported security condition; ML provided supporting evidence."
   },
   {
     "id": 65,
@@ -904,10 +904,10 @@
     "rule_classification": "true_positive",
     "rule_confidence": 0.95,
     "rule_explanation": "The finding was replayed against the live application and the reported security condition was observed.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "true_positive",
-    "final_reason": "Replay evidence reproduced the reported security condition."
+    "final_reason": "Replay reproduced the reported security condition; ML provided supporting evidence."
   },
   {
     "id": 66,
@@ -918,10 +918,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 67,
@@ -932,10 +932,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 68,
@@ -946,10 +946,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 69,
@@ -960,10 +960,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 70,
@@ -974,10 +974,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 71,
@@ -988,10 +988,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 72,
@@ -1002,10 +1002,10 @@
     "rule_classification": "true_positive",
     "rule_confidence": 0.95,
     "rule_explanation": "The finding was replayed against the live application and the reported security condition was observed.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "true_positive",
-    "final_reason": "Replay evidence reproduced the reported security condition."
+    "final_reason": "Replay reproduced the reported security condition; ML provided supporting evidence."
   },
   {
     "id": 73,
@@ -1016,10 +1016,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 74,
@@ -1030,10 +1030,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 75,
@@ -1044,10 +1044,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 76,
@@ -1058,10 +1058,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 77,
@@ -1072,10 +1072,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 78,
@@ -1086,10 +1086,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.69,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 79,
@@ -1100,10 +1100,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.69,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 80,
@@ -1114,10 +1114,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.69,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 81,
@@ -1128,10 +1128,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.69,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 82,
@@ -1142,10 +1142,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.69,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 83,
@@ -1156,10 +1156,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.53,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 84,
@@ -1170,10 +1170,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.53,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 85,
@@ -1184,10 +1184,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.53,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 86,
@@ -1198,10 +1198,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.53,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 87,
@@ -1212,10 +1212,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.52,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 88,
@@ -1226,10 +1226,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.52,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 89,
@@ -1240,10 +1240,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.52,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 90,
@@ -1254,10 +1254,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.52,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 91,
@@ -1268,10 +1268,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.52,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 92,
@@ -1282,10 +1282,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.52,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 93,
@@ -1296,10 +1296,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.52,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 94,
@@ -1310,10 +1310,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.52,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 95,
@@ -1324,10 +1324,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.67,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 96,
@@ -1338,10 +1338,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 97,
@@ -1352,10 +1352,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 98,
@@ -1366,10 +1366,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 99,
@@ -1380,10 +1380,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 100,
@@ -1394,10 +1394,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 101,
@@ -1408,10 +1408,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.65,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 102,
@@ -1422,10 +1422,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 103,
@@ -1436,10 +1436,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 104,
@@ -1450,10 +1450,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 105,
@@ -1464,10 +1464,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 106,
@@ -1478,10 +1478,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 107,
@@ -1492,10 +1492,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 108,
@@ -1506,10 +1506,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 109,
@@ -1520,10 +1520,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 110,
@@ -1534,10 +1534,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 111,
@@ -1548,10 +1548,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 112,
@@ -1562,10 +1562,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 113,
@@ -1576,10 +1576,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 114,
@@ -1590,10 +1590,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 115,
@@ -1604,10 +1604,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 116,
@@ -1618,10 +1618,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 117,
@@ -1632,10 +1632,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 118,
@@ -1646,10 +1646,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 119,
@@ -1660,10 +1660,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 120,
@@ -1674,10 +1674,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 121,
@@ -1688,10 +1688,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 122,
@@ -1702,10 +1702,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.54,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 123,
@@ -1716,10 +1716,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.54,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 124,
@@ -1730,10 +1730,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.54,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 125,
@@ -1744,10 +1744,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.54,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 126,
@@ -1758,10 +1758,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "false_positive",
+    "ml_confidence": 0.54,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 127,
@@ -1772,10 +1772,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 128,
@@ -1786,10 +1786,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.63,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 129,
@@ -1800,10 +1800,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.67,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 130,
@@ -1814,10 +1814,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.67,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 131,
@@ -1828,10 +1828,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.83,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 132,
@@ -1842,10 +1842,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.83,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 133,
@@ -1856,10 +1856,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.83,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 134,
@@ -1870,10 +1870,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.67,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 135,
@@ -1884,10 +1884,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.67,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 136,
@@ -1898,10 +1898,10 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.67,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   },
   {
     "id": 137,
@@ -1912,9 +1912,9 @@
     "rule_classification": "inconclusive",
     "rule_confidence": 0.5,
     "rule_explanation": "Replay did not provide sufficient evidence to reliably confirm or reject the reported security condition.",
-    "ml_prediction": null,
-    "ml_confidence": null,
+    "ml_prediction": "true_positive",
+    "ml_confidence": 0.83,
     "final_classification": "inconclusive",
-    "final_reason": "Replay evidence was insufficient to make a reliable true-positive or false-positive decision."
+    "final_reason": "Replay was inconclusive; ML prediction was retained as supporting evidence and did not override the inconclusive replay."
   }
 ]
