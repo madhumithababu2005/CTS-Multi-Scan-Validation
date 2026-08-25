@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Evidence Report</title>
+<style>
+:root{
+  --bg:#f6f7f4; --surface:#ffffff; --line:#dcdfd8; --text:#1c2320; --muted:#6b716b;
+  --accent:#2f6f62;
+  --tp:#b23a3a; --tp-soft:#fbf1f1;
+  --fp:#2f8f5b; --fp-soft:#f0f9f4;
+  --inc:#7a8079; --inc-soft:#f1f2f0;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Segoe UI',Arial,sans-serif;}
+header{padding:24px 32px;border-bottom:1px solid var(--line);background:var(--surface);}
+header p{margin:0 0 4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;}
+header h1{margin:0;font-size:24px;}
+main{max-width:980px;margin:0 auto;padding:26px 32px 60px;}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:26px;}
+.summary div{background:var(--surface);padding:14px 16px;}
+.summary .label{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.summary .value{font-size:22px;font-weight:700;font-family:Consolas,monospace;}
+.finding{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:18px 20px;margin-bottom:14px;}
+.finding-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;}
+.finding-id{font-family:Consolas,monospace;font-size:11px;color:var(--muted);}
+.finding-name{font-size:16px;font-weight:700;margin:2px 0 8px;}
+.badge{font-family:Consolas,monospace;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:5px 12px;border-radius:20px;white-space:nowrap;}
+.verdict-tp{color:var(--tp);background:var(--tp-soft);}
+.verdict-fp{color:var(--fp);background:var(--fp-soft);}
+.verdict-inc{color:var(--inc);background:var(--inc-soft);}
+.url{font-family:Consolas,monospace;font-size:11.5px;color:var(--muted);word-break:break-all;margin-bottom:12px;}
+table.detail{width:100%;border-collapse:collapse;font-size:13px;}
+table.detail th{width:170px;text-align:left;vertical-align:top;padding:6px 10px 6px 0;color:var(--muted);
+  font-weight:600;font-size:11px;letter-spacing:.04em;text-transform:uppercase;}
+table.detail td{padding:6px 0;vertical-align:top;line-height:1.5;}
+table.detail tr{border-top:1px solid var(--line);}
+.mono-inline{font-family:Consolas,monospace;font-size:12px;}
+</style>
+</head>
+<body>
+<header>
+  <p>DAST Finding Verification</p>
+  <h1>Evidence Report</h1>
+</header>
+<main>
+  
+<div class="summary">
+  <div><div class="label">Total findings</div><div class="value">22</div></div>
+  <div><div class="label">True positive</div><div class="value" style="color:var(--tp)">17</div></div>
+  <div><div class="label">False positive</div><div class="value" style="color:var(--fp)">0</div></div>
+  <div><div class="label">Inconclusive</div><div class="value" style="color:var(--inc)">5</div></div>
+</div>
+
+  
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#1</div>
+      <div class="finding-name">Content Security Policy (CSP) Header Not Set</div>
+    </div>
+    <div class="badge verdict-tp">true positive</div>
+  </div>
+  <div class="url">http://localhost:3000</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">reproduced</td></tr>
+    <tr><th>Evidence</th><td>Missing Content-Security-Policy header on replay</td></tr>
+    <tr><th>Rule engine decision</th><td>true_positive &middot; confidence 0.9<br>The finding was replayed against the live application, and the expected security condition was confirmed. (Missing Content-Security-Policy header on replay)</td></tr>
+    <tr><th>ML prediction</th><td>true_positive &middot; confidence 1.0</td></tr>
+    <tr><th>Final classification</th><td><strong>true_positive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding was replayed against the live application, and the expected security condition was confirmed. (Missing Content-Security-Policy header on replay)</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#2</div>
+      <div class="finding-name">Content Security Policy (CSP) Header Not Set</div>
+    </div>
+    <div class="badge verdict-tp">true positive</div>
+  </div>
+  <div class="url">http://localhost:3000/ftp/coupons_2013.md.bak</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">reproduced</td></tr>
+    <tr><th>Evidence</th><td>Missing Content-Security-Policy header on replay</td></tr>
+    <tr><th>Rule engine decision</th><td>true_positive &middot; confidence 0.9<br>The finding was replayed against the live application, and the expected security condition was confirmed. (Missing Content-Security-Policy header on replay)</td></tr>
+    <tr><th>ML prediction</th><td>true_positive &middot; confidence 1.0</td></tr>
+    <tr><th>Final classification</th><td><strong>true_positive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding was replayed against the live application, and the expected security condition was confirmed. (Missing Content-Security-Policy header on replay)</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#3</div>
+      <div class="finding-name">Content Security Policy (CSP) Header Not Set</div>
+    </div>
+    <div class="badge verdict-tp">true positive</div>
+  </div>
+  <div class="url">http://localhost:3000/ftp/package-lock.json.bak</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">reproduced</td></tr>
+    <tr><th>Evidence</th><td>Missing Content-Security-Policy header on replay</td></tr>
+    <tr><th>Rule engine decision</th><td>true_positive &middot; confidence 0.9<br>The finding was replayed against the live application, and the expected security condition was confirmed. (Missing Content-Security-Policy header on replay)</td></tr>
+    <tr><th>ML prediction</th><td>true_positive &middot; confidence 1.0</td></tr>
+    <tr><th>Final classification</th><td><strong>true_positive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding was replayed against the live application, and the expected security condition was confirmed. (Missing Content-Security-Policy header on replay)</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#4</div>
+      <div class="finding-name">Content Security Policy (CSP) Header Not Set</div>
+    </div>
+    <div class="badge verdict-tp">true positive</div>
+  </div>
+  <div class="url">http://localhost:3000/ftp/package.json.bak</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">reproduced</td></tr>
+    <tr><th>Evidence</th><td>Missing Content-Security-Policy header on replay</td></tr>
+    <tr><th>Rule engine decision</th><td>true_positive &middot; confidence 0.9<br>The finding was replayed against the live application, and the expected security condition was confirmed. (Missing Content-Security-Policy header on replay)</td></tr>
+    <tr><th>ML prediction</th><td>true_positive &middot; confidence 1.0</td></tr>
+    <tr><th>Final classification</th><td><strong>true_positive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding was replayed against the live application, and the expected security condition was confirmed. (Missing Content-Security-Policy header on replay)</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#5</div>
+      <div class="finding-name">Content Security Policy (CSP) Header Not Set</div>
+    </div>
+    <div class="badge verdict-tp">true positive</div>
+  </div>
+  <div class="url">http://localhost:3000/sitemap.xml</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">reproduced</td></tr>
+    <tr><th>Evidence</th><td>Missing Content-Security-Policy header on replay</td></tr>
+    <tr><th>Rule engine decision</th><td>true_positive &middot; confidence 0.9<br>The finding was replayed against the live application, and the expected security condition was confirmed. (Missing Content-Security-Policy header on replay)</td></tr>
+    <tr><th>ML prediction</th><td>true_positive &middot; confidence 1.0</td></tr>
+    <tr><th>Final classification</th><td><strong>true_positive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding was replayed against the live application, and the expected security condition was confirmed. (Missing Content-Security-Policy header on replay)</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#6</div>
+      <div class="finding-name">CSP: Failure to Define Directive with No Fallback</div>
+    </div>
+    <div class="badge verdict-tp">true positive</div>
+  </div>
+  <div class="url">http://localhost:3000/assets</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">reproduced</td></tr>
+    <tr><th>Evidence</th><td>Missing Content-Security-Policy header on replay</td></tr>
+    <tr><th>Rule engine decision</th><td>true_positive &middot; confidence 0.9<br>The finding was replayed against the live application, and the expected security condition was confirmed. (Missing Content-Security-Policy header on replay)</td></tr>
+    <tr><th>ML prediction</th><td>true_positive &middot; confidence 1.0</td></tr>
+    <tr><th>Final classification</th><td><strong>true_positive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding was replayed against the live application, and the expected security condition was confirmed. (Missing Content-Security-Policy header on replay)</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#7</div>
+      <div class="finding-name">CSP: Failure to Define Directive with No Fallback</div>
+    </div>
+    <div class="badge verdict-tp">true positive</div>
+  </div>
+  <div class="url">http://localhost:3000/assets/public</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">reproduced</td></tr>
+    <tr><th>Evidence</th><td>Missing Content-Security-Policy header on replay</td></tr>
+    <tr><th>Rule engine decision</th><td>true_positive &middot; confidence 0.9<br>The finding was replayed against the live application, and the expected security condition was confirmed. (Missing Content-Security-Policy header on replay)</td></tr>
+    <tr><th>ML prediction</th><td>true_positive &middot; confidence 1.0</td></tr>
+    <tr><th>Final classification</th><td><strong>true_positive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding was replayed against the live application, and the expected security condition was confirmed. (Missing Content-Security-Policy header on replay)</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#8</div>
+      <div class="finding-name">Cross-Domain Misconfiguration</div>
+    </div>
+    <div class="badge verdict-tp">true positive</div>
+  </div>
+  <div class="url">http://localhost:3000</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">reproduced</td></tr>
+    <tr><th>Evidence</th><td>Access-Control-Allow-Origin = *</td></tr>
+    <tr><th>Rule engine decision</th><td>true_positive &middot; confidence 0.9<br>The finding was replayed against the live application, and the expected security condition was confirmed. (Access-Control-Allow-Origin = *)</td></tr>
+    <tr><th>ML prediction</th><td>true_positive &middot; confidence 1.0</td></tr>
+    <tr><th>Final classification</th><td><strong>true_positive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding was replayed against the live application, and the expected security condition was confirmed. (Access-Control-Allow-Origin = *)</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#9</div>
+      <div class="finding-name">Cross-Domain Misconfiguration</div>
+    </div>
+    <div class="badge verdict-tp">true positive</div>
+  </div>
+  <div class="url">http://localhost:3000/assets/public/favicon_js.ico</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">reproduced</td></tr>
+    <tr><th>Evidence</th><td>Access-Control-Allow-Origin = *</td></tr>
+    <tr><th>Rule engine decision</th><td>true_positive &middot; confidence 0.9<br>The finding was replayed against the live application, and the expected security condition was confirmed. (Access-Control-Allow-Origin = *)</td></tr>
+    <tr><th>ML prediction</th><td>true_positive &middot; confidence 1.0</td></tr>
+    <tr><th>Final classification</th><td><strong>true_positive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding was replayed against the live application, and the expected security condition was confirmed. (Access-Control-Allow-Origin = *)</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#10</div>
+      <div class="finding-name">Cross-Domain Misconfiguration</div>
+    </div>
+    <div class="badge verdict-tp">true positive</div>
+  </div>
+  <div class="url">http://localhost:3000/robots.txt</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">reproduced</td></tr>
+    <tr><th>Evidence</th><td>Access-Control-Allow-Origin = *</td></tr>
+    <tr><th>Rule engine decision</th><td>true_positive &middot; confidence 0.9<br>The finding was replayed against the live application, and the expected security condition was confirmed. (Access-Control-Allow-Origin = *)</td></tr>
+    <tr><th>ML prediction</th><td>true_positive &middot; confidence 1.0</td></tr>
+    <tr><th>Final classification</th><td><strong>true_positive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding was replayed against the live application, and the expected security condition was confirmed. (Access-Control-Allow-Origin = *)</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#11</div>
+      <div class="finding-name">Cross-Domain Misconfiguration</div>
+    </div>
+    <div class="badge verdict-tp">true positive</div>
+  </div>
+  <div class="url">http://localhost:3000/scripts.js</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">reproduced</td></tr>
+    <tr><th>Evidence</th><td>Access-Control-Allow-Origin = *</td></tr>
+    <tr><th>Rule engine decision</th><td>true_positive &middot; confidence 0.9<br>The finding was replayed against the live application, and the expected security condition was confirmed. (Access-Control-Allow-Origin = *)</td></tr>
+    <tr><th>ML prediction</th><td>true_positive &middot; confidence 1.0</td></tr>
+    <tr><th>Final classification</th><td><strong>true_positive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding was replayed against the live application, and the expected security condition was confirmed. (Access-Control-Allow-Origin = *)</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#12</div>
+      <div class="finding-name">Cross-Domain Misconfiguration</div>
+    </div>
+    <div class="badge verdict-tp">true positive</div>
+  </div>
+  <div class="url">http://localhost:3000/styles.css</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">reproduced</td></tr>
+    <tr><th>Evidence</th><td>Access-Control-Allow-Origin = *</td></tr>
+    <tr><th>Rule engine decision</th><td>true_positive &middot; confidence 0.9<br>The finding was replayed against the live application, and the expected security condition was confirmed. (Access-Control-Allow-Origin = *)</td></tr>
+    <tr><th>ML prediction</th><td>true_positive &middot; confidence 1.0</td></tr>
+    <tr><th>Final classification</th><td><strong>true_positive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding was replayed against the live application, and the expected security condition was confirmed. (Access-Control-Allow-Origin = *)</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#13</div>
+      <div class="finding-name">Timestamp Disclosure - Unix</div>
+    </div>
+    <div class="badge verdict-tp">true positive</div>
+  </div>
+  <div class="url">http://localhost:3000/styles.css</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">reproduced</td></tr>
+    <tr><th>Evidence</th><td>Unix timestamp found in response: 1528301887</td></tr>
+    <tr><th>Rule engine decision</th><td>true_positive &middot; confidence 0.7<br>The finding was replayed against the live application, and the expected security condition was confirmed. (Unix timestamp found in response: 1528301887)</td></tr>
+    <tr><th>ML prediction</th><td>true_positive &middot; confidence 0.77</td></tr>
+    <tr><th>Final classification</th><td><strong>true_positive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding was replayed against the live application, and the expected security condition was confirmed. (Unix timestamp found in response: 1528301887)</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#14</div>
+      <div class="finding-name">Timestamp Disclosure - Unix</div>
+    </div>
+    <div class="badge verdict-tp">true positive</div>
+  </div>
+  <div class="url">http://localhost:3000/styles.css</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">reproduced</td></tr>
+    <tr><th>Evidence</th><td>Unix timestamp found in response: 1528301887</td></tr>
+    <tr><th>Rule engine decision</th><td>true_positive &middot; confidence 0.7<br>The finding was replayed against the live application, and the expected security condition was confirmed. (Unix timestamp found in response: 1528301887)</td></tr>
+    <tr><th>ML prediction</th><td>true_positive &middot; confidence 0.77</td></tr>
+    <tr><th>Final classification</th><td><strong>true_positive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding was replayed against the live application, and the expected security condition was confirmed. (Unix timestamp found in response: 1528301887)</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#15</div>
+      <div class="finding-name">Timestamp Disclosure - Unix</div>
+    </div>
+    <div class="badge verdict-tp">true positive</div>
+  </div>
+  <div class="url">http://localhost:3000/styles.css</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">reproduced</td></tr>
+    <tr><th>Evidence</th><td>Unix timestamp found in response: 1528301887</td></tr>
+    <tr><th>Rule engine decision</th><td>true_positive &middot; confidence 0.7<br>The finding was replayed against the live application, and the expected security condition was confirmed. (Unix timestamp found in response: 1528301887)</td></tr>
+    <tr><th>ML prediction</th><td>true_positive &middot; confidence 0.77</td></tr>
+    <tr><th>Final classification</th><td><strong>true_positive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding was replayed against the live application, and the expected security condition was confirmed. (Unix timestamp found in response: 1528301887)</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#16</div>
+      <div class="finding-name">Timestamp Disclosure - Unix</div>
+    </div>
+    <div class="badge verdict-tp">true positive</div>
+  </div>
+  <div class="url">http://localhost:3000/styles.css</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">reproduced</td></tr>
+    <tr><th>Evidence</th><td>Unix timestamp found in response: 1528301887</td></tr>
+    <tr><th>Rule engine decision</th><td>true_positive &middot; confidence 0.7<br>The finding was replayed against the live application, and the expected security condition was confirmed. (Unix timestamp found in response: 1528301887)</td></tr>
+    <tr><th>ML prediction</th><td>true_positive &middot; confidence 0.77</td></tr>
+    <tr><th>Final classification</th><td><strong>true_positive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding was replayed against the live application, and the expected security condition was confirmed. (Unix timestamp found in response: 1528301887)</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#17</div>
+      <div class="finding-name">Timestamp Disclosure - Unix</div>
+    </div>
+    <div class="badge verdict-tp">true positive</div>
+  </div>
+  <div class="url">http://localhost:3000/styles.css</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">reproduced</td></tr>
+    <tr><th>Evidence</th><td>Unix timestamp found in response: 1528301887</td></tr>
+    <tr><th>Rule engine decision</th><td>true_positive &middot; confidence 0.7<br>The finding was replayed against the live application, and the expected security condition was confirmed. (Unix timestamp found in response: 1528301887)</td></tr>
+    <tr><th>ML prediction</th><td>true_positive &middot; confidence 0.77</td></tr>
+    <tr><th>Final classification</th><td><strong>true_positive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding was replayed against the live application, and the expected security condition was confirmed. (Unix timestamp found in response: 1528301887)</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#18</div>
+      <div class="finding-name">Modern Web Application</div>
+    </div>
+    <div class="badge verdict-inc">inconclusive</div>
+  </div>
+  <div class="url">http://localhost:3000</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">inconclusive</td></tr>
+    <tr><th>Evidence</th><td>No replay/verification logic defined for this rule type</td></tr>
+    <tr><th>Rule engine decision</th><td>inconclusive &middot; confidence 0.0<br>The finding could not be replayed against the live application: No replay/verification logic defined for this rule type.</td></tr>
+    <tr><th>ML prediction</th><td>inconclusive &middot; confidence 0.0</td></tr>
+    <tr><th>Final classification</th><td><strong>inconclusive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding could not be replayed against the live application: No replay/verification logic defined for this rule type.</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#19</div>
+      <div class="finding-name">Modern Web Application</div>
+    </div>
+    <div class="badge verdict-inc">inconclusive</div>
+  </div>
+  <div class="url">http://localhost:3000/</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">inconclusive</td></tr>
+    <tr><th>Evidence</th><td>No replay/verification logic defined for this rule type</td></tr>
+    <tr><th>Rule engine decision</th><td>inconclusive &middot; confidence 0.0<br>The finding could not be replayed against the live application: No replay/verification logic defined for this rule type.</td></tr>
+    <tr><th>ML prediction</th><td>inconclusive &middot; confidence 0.0</td></tr>
+    <tr><th>Final classification</th><td><strong>inconclusive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding could not be replayed against the live application: No replay/verification logic defined for this rule type.</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#20</div>
+      <div class="finding-name">Modern Web Application</div>
+    </div>
+    <div class="badge verdict-inc">inconclusive</div>
+  </div>
+  <div class="url">http://localhost:3000/juice-shop/build/routes/fileServer.js:52:13</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">inconclusive</td></tr>
+    <tr><th>Evidence</th><td>No replay/verification logic defined for this rule type</td></tr>
+    <tr><th>Rule engine decision</th><td>inconclusive &middot; confidence 0.0<br>The finding could not be replayed against the live application: No replay/verification logic defined for this rule type.</td></tr>
+    <tr><th>ML prediction</th><td>inconclusive &middot; confidence 0.0</td></tr>
+    <tr><th>Final classification</th><td><strong>inconclusive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding could not be replayed against the live application: No replay/verification logic defined for this rule type.</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#21</div>
+      <div class="finding-name">Modern Web Application</div>
+    </div>
+    <div class="badge verdict-inc">inconclusive</div>
+  </div>
+  <div class="url">http://localhost:3000/juice-shop/node_modules/express/lib/router/index.js:421:3</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">inconclusive</td></tr>
+    <tr><th>Evidence</th><td>No replay/verification logic defined for this rule type</td></tr>
+    <tr><th>Rule engine decision</th><td>inconclusive &middot; confidence 0.0<br>The finding could not be replayed against the live application: No replay/verification logic defined for this rule type.</td></tr>
+    <tr><th>ML prediction</th><td>inconclusive &middot; confidence 0.0</td></tr>
+    <tr><th>Final classification</th><td><strong>inconclusive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding could not be replayed against the live application: No replay/verification logic defined for this rule type.</td></tr>
+  </table>
+</div>
+
+
+<div class="finding">
+  <div class="finding-top">
+    <div>
+      <div class="finding-id">#22</div>
+      <div class="finding-name">Modern Web Application</div>
+    </div>
+    <div class="badge verdict-inc">inconclusive</div>
+  </div>
+  <div class="url">http://localhost:3000/sitemap.xml</div>
+  <table class="detail">
+    <tr><th>Replay verdict</th><td class="mono-inline">inconclusive</td></tr>
+    <tr><th>Evidence</th><td>No replay/verification logic defined for this rule type</td></tr>
+    <tr><th>Rule engine decision</th><td>inconclusive &middot; confidence 0.0<br>The finding could not be replayed against the live application: No replay/verification logic defined for this rule type.</td></tr>
+    <tr><th>ML prediction</th><td>inconclusive &middot; confidence 0.0</td></tr>
+    <tr><th>Final classification</th><td><strong>inconclusive</strong></td></tr>
+    <tr><th>Final reason</th><td>The finding could not be replayed against the live application: No replay/verification logic defined for this rule type.</td></tr>
+  </table>
+</div>
+
+</main>
+</body>
+</html>
