@@ -1,0 +1,8554 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+Juice Shop - Evidence Analysis
+</title>
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f3f4f6;
+
+    color: #1f2937;
+}
+
+
+header {
+
+    background: #111827;
+
+    color: white;
+
+    padding: 40px 0;
+
+}
+
+
+.container {
+
+    width: 92%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+}
+
+
+header h1 {
+
+    margin: 0 0 10px;
+
+    font-size: 32px;
+
+}
+
+
+header p {
+
+    margin: 0;
+
+    color: #d1d5db;
+
+    font-size: 16px;
+
+}
+
+
+/* SUMMARY */
+
+.summary {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin: 25px 0;
+
+}
+
+
+.summary-card {
+
+    background: white;
+
+    padding: 22px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0,0,0,0.08);
+
+}
+
+
+.summary-card h3 {
+
+    margin: 0 0 8px;
+
+    font-size: 15px;
+
+    color: #6b7280;
+
+}
+
+
+.summary-card strong {
+
+    font-size: 30px;
+
+}
+
+
+/* FINDING */
+
+.finding-card {
+
+    background: white;
+
+    margin: 28px 0;
+
+    padding: 28px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 3px 12px
+        rgba(0,0,0,0.08);
+
+}
+
+
+.finding-header {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-start;
+
+    gap: 20px;
+
+    border-bottom:
+        1px solid #e5e7eb;
+
+    padding-bottom: 18px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.finding-number {
+
+    font-size: 13px;
+
+    color: #6b7280;
+
+    margin-bottom: 7px;
+
+}
+
+
+.finding-header h2 {
+
+    margin: 0;
+
+    font-size: 22px;
+
+}
+
+
+/* BADGES */
+
+.badge {
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+}
+
+
+.badge.tp {
+
+    background: #dcfce7;
+
+    color: #166534;
+
+}
+
+
+.badge.fp {
+
+    background: #fee2e2;
+
+    color: #991b1b;
+
+}
+
+
+.badge.inc {
+
+    background: #fef3c7;
+
+    color: #92400e;
+
+}
+
+
+.badge.unknown {
+
+    background: #e5e7eb;
+
+    color: #374151;
+
+}
+
+
+/* SECTION */
+
+.section {
+
+    margin: 24px 0;
+
+}
+
+
+.section h3 {
+
+    margin-bottom: 12px;
+
+    font-size: 17px;
+
+}
+
+
+/* INFO */
+
+.info-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr;
+
+    gap: 15px;
+
+}
+
+
+.info-box {
+
+    background: #f9fafb;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    padding: 15px;
+
+}
+
+
+.label {
+
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+    margin-bottom: 7px;
+
+    text-transform:
+        uppercase;
+
+    font-weight: bold;
+
+}
+
+
+code {
+
+    display: block;
+
+    word-break: break-all;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size: 13px;
+
+}
+
+
+/* CONDITION */
+
+.condition-box {
+
+    padding: 18px;
+
+    background: #eff6ff;
+
+    border-left:
+        4px solid #2563eb;
+
+    border-radius: 6px;
+
+    line-height: 1.6;
+
+}
+
+
+/* EVIDENCE */
+
+.evidence-box {
+
+    background: #111827;
+
+    color: #f9fafb;
+
+    padding: 18px;
+
+    border-radius: 8px;
+
+}
+
+
+.evidence-title {
+
+    color: #9ca3af;
+
+    font-size: 12px;
+
+    text-transform:
+        uppercase;
+
+    margin-bottom: 8px;
+
+}
+
+
+.evidence-value {
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size: 14px;
+
+    word-break: break-word;
+
+}
+
+
+/* EXPLANATION */
+
+.explanation {
+
+    line-height: 1.7;
+
+}
+
+
+.explanation-box {
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    background: #f9fafb;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    line-height: 1.6;
+
+}
+
+
+/* DECISIONS */
+
+.decision-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+
+}
+
+
+.decision-box {
+
+    background: #f9fafb;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    padding: 16px;
+
+}
+
+
+.ml-note {
+
+    font-size: 13px;
+
+    color: #6b7280;
+
+    margin-top: 12px;
+
+}
+
+
+/* FINAL */
+
+.final-section {
+
+    margin-top: 28px;
+
+    padding: 22px;
+
+    border-radius: 10px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 2fr;
+
+    gap: 25px;
+
+    align-items: center;
+
+}
+
+
+.final-section.tp {
+
+    background: #f0fdf4;
+
+    border:
+        1px solid #bbf7d0;
+
+}
+
+
+.final-section.fp {
+
+    background: #fef2f2;
+
+    border:
+        1px solid #fecaca;
+
+}
+
+
+.final-section.inc {
+
+    background: #fffbeb;
+
+    border:
+        1px solid #fde68a;
+
+}
+
+
+.final-label {
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    color: #6b7280;
+
+}
+
+
+.final-verdict {
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    margin-top: 7px;
+
+}
+
+
+.final-reason p {
+
+    line-height: 1.6;
+
+}
+
+
+footer {
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: #6b7280;
+
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width: 800px) {
+
+    .summary {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+    .info-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .final-section {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+@media(max-width: 500px) {
+
+    .summary {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .finding-header {
+
+        flex-direction:
+            column;
+
+    }
+
+    .decision-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="container">
+
+<h1>
+Juice Shop Evidence & Replay Analysis
+</h1>
+
+<p>
+Evidence-based analysis for automated
+false-positive detection
+</p>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<!-- SUMMARY -->
+
+<div class="summary">
+
+<div class="summary-card">
+
+<h3>Total Findings</h3>
+
+<strong>
+33
+</strong>
+
+</div>
+
+
+<div class="summary-card">
+
+<h3>True Positives</h3>
+
+<strong>
+14
+</strong>
+
+</div>
+
+
+<div class="summary-card">
+
+<h3>False Positives</h3>
+
+<strong>
+6
+</strong>
+
+</div>
+
+
+<div class="summary-card">
+
+<h3>Inconclusive</h3>
+
+<strong>
+13
+</strong>
+
+</div>
+
+</div>
+
+
+<h2>
+Detailed Evidence
+</h2>
+
+<p>
+This report shows how each scanner finding was
+replayed and classified. The final classification
+is based primarily on replay evidence, while the
+ML prediction is retained as supporting information.
+</p>
+
+
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #1
+                </div>
+
+                <h2>Off-site Redirect</h2>
+
+            </div>
+
+            <div class="badge tp">
+                TRUE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The application should produce the reported external redirect.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    External redirect → https://github.com/juice-shop/juice-shop
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay produced an external redirect target, which directly supports the reported redirect finding.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.95
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was reproduced during live replay and the replay produced direct evidence consistent with the reported security condition. Replay evidence: External redirect → https://github.com/juice-shop/juice-shop.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section tp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    TRUE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Strong replay evidence confirmed the reported security condition. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #2
+                </div>
+
+                <h2>External Redirect</h2>
+
+            </div>
+
+            <div class="badge tp">
+                TRUE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/redirect?to=https%3A%2F%2F59437036280037756.owasp.org%2F%3Fhttps%3A%2F%2Fgithub.com%2Fjuice-shop%2Fjuice-shop
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The application should redirect the request to an external destination.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    External redirect → https://59437036280037756.owasp.org/?https://github.com/juice-shop/juice-shop
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay produced an external redirect target, which directly supports the reported redirect finding.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.95
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was reproduced during live replay and the replay produced direct evidence consistent with the reported security condition. Replay evidence: External redirect → https://59437036280037756.owasp.org/?https://github.com/juice-shop/juice-shop.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section tp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    TRUE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Strong replay evidence confirmed the reported security condition. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #3
+                </div>
+
+                <h2>SQL Injection</h2>
+
+            </div>
+
+            <div class="badge tp">
+                TRUE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/rest/products/search?q=%27%28
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                SQL-related error or behavior indicating the reported SQL injection condition.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    SQL error detected
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay produced SQL-related error evidence, which directly supports the reported SQL injection finding.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.95
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was reproduced during live replay and the replay produced direct evidence consistent with the reported security condition. Replay evidence: SQL error detected.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section tp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    TRUE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Strong replay evidence confirmed the reported security condition. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #4
+                </div>
+
+                <h2>Session ID in URL Rewrite</h2>
+
+            </div>
+
+            <div class="badge inc">
+                INCONCLUSIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=Q0py6e7&amp;sid=Lw1YbBhPKfQ6xfW2AAAM
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The replay should provide sufficient evidence that the session identifier is improperly exposed or rewritten in the URL.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    Fresh Socket.IO session accepted
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay confirmed Socket.IO endpoint behavior, but endpoint availability alone does not prove the reported security vulnerability.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        inconclusive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.50
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The replay confirmed endpoint behavior, but the evidence alone is insufficient to establish the reported security condition.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        0.82
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section inc">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    INCONCLUSIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence was insufficient or unreliable for a definitive classification. The ML prediction is recorded for analysis but does not override the inconclusive replay result.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #5
+                </div>
+
+                <h2>Session ID in URL Rewrite</h2>
+
+            </div>
+
+            <div class="badge inc">
+                INCONCLUSIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=Q0py3MF&amp;sid=z5WKWF5pKOfgf2jUAAAK
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The replay should provide sufficient evidence that the session identifier is improperly exposed or rewritten in the URL.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    Fresh Socket.IO session accepted
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay confirmed Socket.IO endpoint behavior, but endpoint availability alone does not prove the reported security vulnerability.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        inconclusive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.50
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The replay confirmed endpoint behavior, but the evidence alone is insufficient to establish the reported security condition.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        0.82
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section inc">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    INCONCLUSIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence was insufficient or unreliable for a definitive classification. The ML prediction is recorded for analysis but does not override the inconclusive replay result.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #6
+                </div>
+
+                <h2>Session ID in URL Rewrite</h2>
+
+            </div>
+
+            <div class="badge inc">
+                INCONCLUSIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/socket.io/?EIO=4&amp;transport=websocket&amp;sid=Lw1YbBhPKfQ6xfW2AAAM
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The replay should provide sufficient evidence that the session identifier is improperly exposed or rewritten in the URL.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    WebSocket endpoint
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The endpoint was identified as a WebSocket endpoint, but this alone does not prove the reported security vulnerability.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        inconclusive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.50
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The replay confirmed endpoint behavior, but the evidence alone is insufficient to establish the reported security condition.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        0.82
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section inc">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    INCONCLUSIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence was insufficient or unreliable for a definitive classification. The ML prediction is recorded for analysis but does not override the inconclusive replay result.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #7
+                </div>
+
+                <h2>Session ID in URL Rewrite</h2>
+
+            </div>
+
+            <div class="badge inc">
+                INCONCLUSIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/socket.io/?EIO=4&amp;transport=websocket&amp;sid=z5WKWF5pKOfgf2jUAAAK
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The replay should provide sufficient evidence that the session identifier is improperly exposed or rewritten in the URL.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    WebSocket endpoint
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The endpoint was identified as a WebSocket endpoint, but this alone does not prove the reported security vulnerability.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        inconclusive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.50
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The replay confirmed endpoint behavior, but the evidence alone is insufficient to establish the reported security condition.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        0.82
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section inc">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    INCONCLUSIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence was insufficient or unreliable for a definitive classification. The ML prediction is recorded for analysis but does not override the inconclusive replay result.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #8
+                </div>
+
+                <h2>Session ID in URL Rewrite</h2>
+
+            </div>
+
+            <div class="badge inc">
+                INCONCLUSIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=Q0py3MC&amp;sid=z5WKWF5pKOfgf2jUAAAK
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The replay should provide sufficient evidence that the session identifier is improperly exposed or rewritten in the URL.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    Fresh Socket.IO session accepted
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay confirmed Socket.IO endpoint behavior, but endpoint availability alone does not prove the reported security vulnerability.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        inconclusive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.50
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The replay confirmed endpoint behavior, but the evidence alone is insufficient to establish the reported security condition.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        0.82
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section inc">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    INCONCLUSIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence was insufficient or unreliable for a definitive classification. The ML prediction is recorded for analysis but does not override the inconclusive replay result.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #9
+                </div>
+
+                <h2>Missing Anti-clickjacking Header</h2>
+
+            </div>
+
+            <div class="badge inc">
+                INCONCLUSIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=Q0py3MC&amp;sid=z5WKWF5pKOfgf2jUAAAK
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        inconclusive
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The application should provide anti-clickjacking protection such as X-Frame-Options.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    Status mismatch (200 → 400)
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay response status differed from the original finding response. Therefore the replay cannot reliably confirm or reject the finding.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        inconclusive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.30
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding could not be reliably classified because the replay response differed from the original finding or the replay was incomplete.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        0.67
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section inc">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    INCONCLUSIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence was insufficient or unreliable for a definitive classification. The ML prediction is recorded for analysis but does not override the inconclusive replay result.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #10
+                </div>
+
+                <h2>Content Security Policy (CSP) Header Not Set</h2>
+
+            </div>
+
+            <div class="badge tp">
+                TRUE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The Content-Security-Policy security header should be present.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    CSP missing
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replayed response did not contain the Content-Security-Policy header.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.95
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was reproduced during live replay and the replay produced direct evidence consistent with the reported security condition. Replay evidence: CSP missing.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section tp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    TRUE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Strong replay evidence confirmed the reported security condition. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #11
+                </div>
+
+                <h2>Content Security Policy (CSP) Header Not Set</h2>
+
+            </div>
+
+            <div class="badge tp">
+                TRUE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/ftp/coupons_2013.md.bak
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The Content-Security-Policy security header should be present.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    CSP missing
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replayed response did not contain the Content-Security-Policy header.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.95
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was reproduced during live replay and the replay produced direct evidence consistent with the reported security condition. Replay evidence: CSP missing.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section tp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    TRUE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Strong replay evidence confirmed the reported security condition. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #12
+                </div>
+
+                <h2>Content Security Policy (CSP) Header Not Set</h2>
+
+            </div>
+
+            <div class="badge tp">
+                TRUE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/ftp/package-lock.json.bak
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The Content-Security-Policy security header should be present.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    CSP missing
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replayed response did not contain the Content-Security-Policy header.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.95
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was reproduced during live replay and the replay produced direct evidence consistent with the reported security condition. Replay evidence: CSP missing.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section tp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    TRUE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Strong replay evidence confirmed the reported security condition. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #13
+                </div>
+
+                <h2>Content Security Policy (CSP) Header Not Set</h2>
+
+            </div>
+
+            <div class="badge tp">
+                TRUE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/ftp/suspicious_errors.yml
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The Content-Security-Policy security header should be present.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    CSP missing
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replayed response did not contain the Content-Security-Policy header.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.95
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was reproduced during live replay and the replay produced direct evidence consistent with the reported security condition. Replay evidence: CSP missing.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section tp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    TRUE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Strong replay evidence confirmed the reported security condition. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #14
+                </div>
+
+                <h2>Content Security Policy (CSP) Header Not Set</h2>
+
+            </div>
+
+            <div class="badge tp">
+                TRUE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/sitemap.xml
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The Content-Security-Policy security header should be present.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    CSP missing
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replayed response did not contain the Content-Security-Policy header.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.95
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was reproduced during live replay and the replay produced direct evidence consistent with the reported security condition. Replay evidence: CSP missing.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section tp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    TRUE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Strong replay evidence confirmed the reported security condition. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #20
+                </div>
+
+                <h2>Cross-Domain Misconfiguration</h2>
+
+            </div>
+
+            <div class="badge tp">
+                TRUE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The response should not exhibit the reported unsafe CORS configuration.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    CORS misconfiguration
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay exhibited the CORS behavior reported by the scanner.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.95
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was reproduced during live replay and the replay produced direct evidence consistent with the reported security condition. Replay evidence: CORS misconfiguration.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section tp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    TRUE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Strong replay evidence confirmed the reported security condition. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #21
+                </div>
+
+                <h2>Cross-Domain Misconfiguration</h2>
+
+            </div>
+
+            <div class="badge tp">
+                TRUE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/assets/public/favicon_js.ico
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The response should not exhibit the reported unsafe CORS configuration.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    CORS misconfiguration
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay exhibited the CORS behavior reported by the scanner.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.95
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was reproduced during live replay and the replay produced direct evidence consistent with the reported security condition. Replay evidence: CORS misconfiguration.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section tp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    TRUE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Strong replay evidence confirmed the reported security condition. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #22
+                </div>
+
+                <h2>Cross-Domain Misconfiguration</h2>
+
+            </div>
+
+            <div class="badge tp">
+                TRUE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/robots.txt
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The response should not exhibit the reported unsafe CORS configuration.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    CORS misconfiguration
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay exhibited the CORS behavior reported by the scanner.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.95
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was reproduced during live replay and the replay produced direct evidence consistent with the reported security condition. Replay evidence: CORS misconfiguration.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section tp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    TRUE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Strong replay evidence confirmed the reported security condition. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #23
+                </div>
+
+                <h2>Cross-Domain Misconfiguration</h2>
+
+            </div>
+
+            <div class="badge tp">
+                TRUE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/sitemap.xml
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The response should not exhibit the reported unsafe CORS configuration.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    CORS misconfiguration
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay exhibited the CORS behavior reported by the scanner.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.95
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was reproduced during live replay and the replay produced direct evidence consistent with the reported security condition. Replay evidence: CORS misconfiguration.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section tp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    TRUE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Strong replay evidence confirmed the reported security condition. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #24
+                </div>
+
+                <h2>Cross-Domain Misconfiguration</h2>
+
+            </div>
+
+            <div class="badge tp">
+                TRUE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/styles.css
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The response should not exhibit the reported unsafe CORS configuration.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    CORS misconfiguration
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay exhibited the CORS behavior reported by the scanner.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.95
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was reproduced during live replay and the replay produced direct evidence consistent with the reported security condition. Replay evidence: CORS misconfiguration.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section tp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    TRUE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Strong replay evidence confirmed the reported security condition. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #49
+                </div>
+
+                <h2>Private IP Disclosure</h2>
+
+            </div>
+
+            <div class="badge fp">
+                FALSE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/rest/admin/application-configuration
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        not_reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The response should not disclose a private/internal IP address.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    No disclosure
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay response was inspected for the reported private IP disclosure, but no such disclosure was observed.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        false_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.90
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was replayed against the live application, but the expected security condition was not observed. Replay evidence: No disclosure.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        false_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section fp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    FALSE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence showed that the expected security condition was not present. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #58
+                </div>
+
+                <h2>X-Content-Type-Options Header Missing</h2>
+
+            </div>
+
+            <div class="badge inc">
+                INCONCLUSIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=Q0py3MF&amp;sid=z5WKWF5pKOfgf2jUAAAK
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        inconclusive
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The X-Content-Type-Options security header should be present.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    Status mismatch (200 → 400)
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay response status differed from the original finding response. Therefore the replay cannot reliably confirm or reject the finding.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        inconclusive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.30
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding could not be reliably classified because the replay response differed from the original finding or the replay was incomplete.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        0.67
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section inc">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    INCONCLUSIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence was insufficient or unreliable for a definitive classification. The ML prediction is recorded for analysis but does not override the inconclusive replay result.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #59
+                </div>
+
+                <h2>X-Content-Type-Options Header Missing</h2>
+
+            </div>
+
+            <div class="badge tp">
+                TRUE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=Q0py3I-
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The X-Content-Type-Options security header should be present.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    Header missing
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The expected security header was absent from the replay response.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.95
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was reproduced during live replay and the replay produced direct evidence consistent with the reported security condition. Replay evidence: Header missing.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section tp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    TRUE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Strong replay evidence confirmed the reported security condition. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #66
+                </div>
+
+                <h2>X-Content-Type-Options Header Missing</h2>
+
+            </div>
+
+            <div class="badge inc">
+                INCONCLUSIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=Q0py3MC&amp;sid=z5WKWF5pKOfgf2jUAAAK
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        inconclusive
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The X-Content-Type-Options security header should be present.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    Status mismatch (200 → 400)
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay response status differed from the original finding response. Therefore the replay cannot reliably confirm or reject the finding.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        inconclusive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.30
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding could not be reliably classified because the replay response differed from the original finding or the replay was incomplete.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        0.67
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section inc">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    INCONCLUSIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence was insufficient or unreliable for a definitive classification. The ML prediction is recorded for analysis but does not override the inconclusive replay result.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #73
+                </div>
+
+                <h2>Timestamp Disclosure - Unix</h2>
+
+            </div>
+
+            <div class="badge fp">
+                FALSE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        not_reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The response should not disclose a valid Unix timestamp matching the expected condition.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    No disclosure
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay response was inspected for the reported timestamp disclosure, but no matching timestamp evidence was found.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        false_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.90
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was replayed against the live application, but the expected security condition was not observed. Replay evidence: No disclosure.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        false_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section fp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    FALSE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence showed that the expected security condition was not present. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #74
+                </div>
+
+                <h2>Timestamp Disclosure - Unix</h2>
+
+            </div>
+
+            <div class="badge fp">
+                FALSE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        not_reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The response should not disclose a valid Unix timestamp matching the expected condition.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    No disclosure
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay response was inspected for the reported timestamp disclosure, but no matching timestamp evidence was found.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        false_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.90
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was replayed against the live application, but the expected security condition was not observed. Replay evidence: No disclosure.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        false_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section fp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    FALSE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence showed that the expected security condition was not present. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #75
+                </div>
+
+                <h2>Timestamp Disclosure - Unix</h2>
+
+            </div>
+
+            <div class="badge fp">
+                FALSE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/sitemap.xml
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        not_reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The response should not disclose a valid Unix timestamp matching the expected condition.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    No disclosure
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay response was inspected for the reported timestamp disclosure, but no matching timestamp evidence was found.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        false_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.90
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was replayed against the live application, but the expected security condition was not observed. Replay evidence: No disclosure.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        false_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section fp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    FALSE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence showed that the expected security condition was not present. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #76
+                </div>
+
+                <h2>Timestamp Disclosure - Unix</h2>
+
+            </div>
+
+            <div class="badge fp">
+                FALSE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/sitemap.xml
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        not_reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The response should not disclose a valid Unix timestamp matching the expected condition.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    No disclosure
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay response was inspected for the reported timestamp disclosure, but no matching timestamp evidence was found.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        false_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.90
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was replayed against the live application, but the expected security condition was not observed. Replay evidence: No disclosure.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        false_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section fp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    FALSE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence showed that the expected security condition was not present. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #77
+                </div>
+
+                <h2>Timestamp Disclosure - Unix</h2>
+
+            </div>
+
+            <div class="badge fp">
+                FALSE POSITIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/styles.css
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        not_reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The response should not disclose a valid Unix timestamp matching the expected condition.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    No disclosure
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The replay response was inspected for the reported timestamp disclosure, but no matching timestamp evidence was found.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        false_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.90
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The finding was replayed against the live application, but the expected security condition was not observed. Replay evidence: No disclosure.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        false_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        1.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section fp">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    FALSE POSITIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence showed that the expected security condition was not present. The ML prediction is retained as supporting information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #110
+                </div>
+
+                <h2>Modern Web Application</h2>
+
+            </div>
+
+            <div class="badge inc">
+                INCONCLUSIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The endpoint should return web application content.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    Web app response detected
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The available replay evidence is insufficient to reliably confirm or reject the finding.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        inconclusive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.50
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The replay confirmed endpoint behavior, but the evidence alone is insufficient to establish the reported security condition.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        0.82
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section inc">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    INCONCLUSIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence was insufficient or unreliable for a definitive classification. The ML prediction is recorded for analysis but does not override the inconclusive replay result.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #111
+                </div>
+
+                <h2>Modern Web Application</h2>
+
+            </div>
+
+            <div class="badge inc">
+                INCONCLUSIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The endpoint should return web application content.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    Web app response detected
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The available replay evidence is insufficient to reliably confirm or reject the finding.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        inconclusive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.50
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The replay confirmed endpoint behavior, but the evidence alone is insufficient to establish the reported security condition.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        0.82
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section inc">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    INCONCLUSIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence was insufficient or unreliable for a definitive classification. The ML prediction is recorded for analysis but does not override the inconclusive replay result.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #112
+                </div>
+
+                <h2>Modern Web Application</h2>
+
+            </div>
+
+            <div class="badge inc">
+                INCONCLUSIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/assets/public/images/uploads/%E1%93%9A%E1%98%8F%E1%97%A2-
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The endpoint should return web application content.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    Web app response detected
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The available replay evidence is insufficient to reliably confirm or reject the finding.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        inconclusive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.50
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The replay confirmed endpoint behavior, but the evidence alone is insufficient to establish the reported security condition.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        0.82
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section inc">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    INCONCLUSIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence was insufficient or unreliable for a definitive classification. The ML prediction is recorded for analysis but does not override the inconclusive replay result.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #113
+                </div>
+
+                <h2>Modern Web Application</h2>
+
+            </div>
+
+            <div class="badge inc">
+                INCONCLUSIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/ftp/
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The endpoint should return web application content.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    Web app response detected
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The available replay evidence is insufficient to reliably confirm or reject the finding.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        inconclusive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.50
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The replay confirmed endpoint behavior, but the evidence alone is insufficient to establish the reported security condition.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        0.82
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section inc">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    INCONCLUSIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence was insufficient or unreliable for a definitive classification. The ML prediction is recorded for analysis but does not override the inconclusive replay result.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+    <article class="finding-card">
+
+        <!-- HEADER -->
+
+        <div class="finding-header">
+
+            <div>
+
+                <div class="finding-number">
+                    Finding #114
+                </div>
+
+                <h2>Modern Web Application</h2>
+
+            </div>
+
+            <div class="badge inc">
+                INCONCLUSIVE
+            </div>
+
+        </div>
+
+
+        <!-- REPLAY INFORMATION -->
+
+        <div class="section">
+
+            <h3>1. Replay Information</h3>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Request URL
+                    </span>
+
+                    <code>
+                        http://localhost:3000/sitemap.xml
+                    </code>
+
+                </div>
+
+                <div class="info-box">
+
+                    <span class="label">
+                        Replay Verdict
+                    </span>
+
+                    <strong>
+                        reproduced
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPECTED CONDITION -->
+
+        <div class="section">
+
+            <h3>2. Expected Security Condition</h3>
+
+            <div class="condition-box">
+
+                The endpoint should return web application content.
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL EVIDENCE -->
+
+        <div class="section">
+
+            <h3>3. Evidence Observed</h3>
+
+            <div class="evidence-box">
+
+                <div class="evidence-title">
+                    Replay Evidence
+                </div>
+
+                <div class="evidence-value">
+                    Web app response detected
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVIDENCE INTERPRETATION -->
+
+        <div class="section">
+
+            <h3>4. Evidence Interpretation</h3>
+
+            <p class="explanation">
+
+                The available replay evidence is insufficient to reliably confirm or reject the finding.
+
+            </p>
+
+        </div>
+
+
+        <!-- RULE ENGINE -->
+
+        <div class="section">
+
+            <h3>5. Rule Engine Decision</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Classification
+                    </span>
+
+                    <strong>
+                        inconclusive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        Confidence
+                    </span>
+
+                    <strong>
+                        0.50
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="explanation-box">
+
+                <strong>
+                    Rule Explanation
+                </strong>
+
+                <p>
+                    The replay confirmed endpoint behavior, but the evidence alone is insufficient to establish the reported security condition.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ML -->
+
+        <div class="section">
+
+            <h3>6. ML Supporting Prediction</h3>
+
+            <div class="decision-grid">
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Prediction
+                    </span>
+
+                    <strong>
+                        true_positive
+                    </strong>
+
+                </div>
+
+                <div class="decision-box">
+
+                    <span class="label">
+                        ML Confidence
+                    </span>
+
+                    <strong>
+                        0.82
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p class="ml-note">
+
+                ML prediction is supporting evidence.
+                It does not override unreliable or
+                inconclusive replay evidence.
+
+            </p>
+
+        </div>
+
+
+        <!-- FINAL -->
+
+        <div class="final-section inc">
+
+            <div>
+
+                <span class="final-label">
+                    FINAL CLASSIFICATION
+                </span>
+
+                <div class="final-verdict">
+                    INCONCLUSIVE
+                </div>
+
+            </div>
+
+            <div class="final-reason">
+
+                <strong>
+                    Why?
+                </strong>
+
+                <p>
+                    Replay evidence was insufficient or unreliable for a definitive classification. The ML prediction is recorded for analysis but does not override the inconclusive replay result.
+                </p>
+
+            </div>
+
+        </div>
+
+    </article>
+    
+
+
+</main>
+
+
+<footer>
+
+Automated False Positive Detection Pipeline
+<br>
+OWASP Juice Shop
+
+</footer>
+
+
+</body>
+
+</html>

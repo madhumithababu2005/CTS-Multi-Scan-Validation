@@ -1,0 +1,233 @@
+[
+  {
+    "id": 1,
+    "rule": "Off-site Redirect",
+    "verdict": "reproduced",
+    "reason": "External redirect \u2192 https://github.com/juice-shop/juice-shop",
+    "url": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop"
+  },
+  {
+    "id": 2,
+    "rule": "External Redirect",
+    "verdict": "reproduced",
+    "reason": "External redirect \u2192 https://59437036280037756.owasp.org/?https://github.com/juice-shop/juice-shop",
+    "url": "http://localhost:3000/redirect?to=https%3A%2F%2F59437036280037756.owasp.org%2F%3Fhttps%3A%2F%2Fgithub.com%2Fjuice-shop%2Fjuice-shop"
+  },
+  {
+    "id": 3,
+    "rule": "SQL Injection",
+    "verdict": "reproduced",
+    "reason": "SQL error detected",
+    "url": "http://localhost:3000/rest/products/search?q=%27%28"
+  },
+  {
+    "id": 4,
+    "rule": "Session ID in URL Rewrite",
+    "verdict": "reproduced",
+    "reason": "Fresh Socket.IO session accepted",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0py6e7&sid=Lw1YbBhPKfQ6xfW2AAAM"
+  },
+  {
+    "id": 5,
+    "rule": "Session ID in URL Rewrite",
+    "verdict": "reproduced",
+    "reason": "Fresh Socket.IO session accepted",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0py3MF&sid=z5WKWF5pKOfgf2jUAAAK"
+  },
+  {
+    "id": 6,
+    "rule": "Session ID in URL Rewrite",
+    "verdict": "reproduced",
+    "reason": "WebSocket endpoint",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=websocket&sid=Lw1YbBhPKfQ6xfW2AAAM"
+  },
+  {
+    "id": 7,
+    "rule": "Session ID in URL Rewrite",
+    "verdict": "reproduced",
+    "reason": "WebSocket endpoint",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=websocket&sid=z5WKWF5pKOfgf2jUAAAK"
+  },
+  {
+    "id": 8,
+    "rule": "Session ID in URL Rewrite",
+    "verdict": "reproduced",
+    "reason": "Fresh Socket.IO session accepted",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0py3MC&sid=z5WKWF5pKOfgf2jUAAAK"
+  },
+  {
+    "id": 9,
+    "rule": "Missing Anti-clickjacking Header",
+    "verdict": "inconclusive",
+    "reason": "Status mismatch (200 \u2192 400)",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0py3MC&sid=z5WKWF5pKOfgf2jUAAAK"
+  },
+  {
+    "id": 10,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "CSP missing",
+    "url": "http://localhost:3000"
+  },
+  {
+    "id": 11,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "CSP missing",
+    "url": "http://localhost:3000/ftp/coupons_2013.md.bak"
+  },
+  {
+    "id": 12,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "CSP missing",
+    "url": "http://localhost:3000/ftp/package-lock.json.bak"
+  },
+  {
+    "id": 13,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "CSP missing",
+    "url": "http://localhost:3000/ftp/suspicious_errors.yml"
+  },
+  {
+    "id": 14,
+    "rule": "Content Security Policy (CSP) Header Not Set",
+    "verdict": "reproduced",
+    "reason": "CSP missing",
+    "url": "http://localhost:3000/sitemap.xml"
+  },
+  {
+    "id": 20,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "reproduced",
+    "reason": "CORS misconfiguration",
+    "url": "http://localhost:3000"
+  },
+  {
+    "id": 21,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "reproduced",
+    "reason": "CORS misconfiguration",
+    "url": "http://localhost:3000/assets/public/favicon_js.ico"
+  },
+  {
+    "id": 22,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "reproduced",
+    "reason": "CORS misconfiguration",
+    "url": "http://localhost:3000/robots.txt"
+  },
+  {
+    "id": 23,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "reproduced",
+    "reason": "CORS misconfiguration",
+    "url": "http://localhost:3000/sitemap.xml"
+  },
+  {
+    "id": 24,
+    "rule": "Cross-Domain Misconfiguration",
+    "verdict": "reproduced",
+    "reason": "CORS misconfiguration",
+    "url": "http://localhost:3000/styles.css"
+  },
+  {
+    "id": 49,
+    "rule": "Private IP Disclosure",
+    "verdict": "not_reproduced",
+    "reason": "No disclosure",
+    "url": "http://localhost:3000/rest/admin/application-configuration"
+  },
+  {
+    "id": 58,
+    "rule": "X-Content-Type-Options Header Missing",
+    "verdict": "inconclusive",
+    "reason": "Status mismatch (200 \u2192 400)",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0py3MF&sid=z5WKWF5pKOfgf2jUAAAK"
+  },
+  {
+    "id": 59,
+    "rule": "X-Content-Type-Options Header Missing",
+    "verdict": "reproduced",
+    "reason": "Header missing",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0py3I-"
+  },
+  {
+    "id": 66,
+    "rule": "X-Content-Type-Options Header Missing",
+    "verdict": "inconclusive",
+    "reason": "Status mismatch (200 \u2192 400)",
+    "url": "http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Q0py3MC&sid=z5WKWF5pKOfgf2jUAAAK"
+  },
+  {
+    "id": 73,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "not_reproduced",
+    "reason": "No disclosure",
+    "url": "http://localhost:3000"
+  },
+  {
+    "id": 74,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "not_reproduced",
+    "reason": "No disclosure",
+    "url": "http://localhost:3000"
+  },
+  {
+    "id": 75,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "not_reproduced",
+    "reason": "No disclosure",
+    "url": "http://localhost:3000/sitemap.xml"
+  },
+  {
+    "id": 76,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "not_reproduced",
+    "reason": "No disclosure",
+    "url": "http://localhost:3000/sitemap.xml"
+  },
+  {
+    "id": 77,
+    "rule": "Timestamp Disclosure - Unix",
+    "verdict": "not_reproduced",
+    "reason": "No disclosure",
+    "url": "http://localhost:3000/styles.css"
+  },
+  {
+    "id": 110,
+    "rule": "Modern Web Application",
+    "verdict": "reproduced",
+    "reason": "Web app response detected",
+    "url": "http://localhost:3000"
+  },
+  {
+    "id": 111,
+    "rule": "Modern Web Application",
+    "verdict": "reproduced",
+    "reason": "Web app response detected",
+    "url": "http://localhost:3000/"
+  },
+  {
+    "id": 112,
+    "rule": "Modern Web Application",
+    "verdict": "reproduced",
+    "reason": "Web app response detected",
+    "url": "http://localhost:3000/assets/public/images/uploads/%E1%93%9A%E1%98%8F%E1%97%A2-"
+  },
+  {
+    "id": 113,
+    "rule": "Modern Web Application",
+    "verdict": "reproduced",
+    "reason": "Web app response detected",
+    "url": "http://localhost:3000/ftp/"
+  },
+  {
+    "id": 114,
+    "rule": "Modern Web Application",
+    "verdict": "reproduced",
+    "reason": "Web app response detected",
+    "url": "http://localhost:3000/sitemap.xml"
+  }
+]
